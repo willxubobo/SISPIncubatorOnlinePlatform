@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>我的办公室租赁</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/keleyidivpager.css" />
+
+    <link href="../Content/pc-style.css" rel="stylesheet" />
+    <link href="../Content/select2.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script language="javascript" src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+
+    <script src="../Scripts/keleyidivpager.js"></script>
+    <script src="../Scripts/select2.js"></script>
+    <script src="../Scripts/laydate/laydate.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script type="text/javascript" language="javascript" src="../Scripts/custom.js"></script>
+    <script src="../Scripts/custom-pc.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+
+
+
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+
+    <script src="../Scripts/Office/myofficesettledaapply.js"></script>
+
+    <link href="../Content/poptips.css" rel="stylesheet" />
+    <script src="../Scripts/yanue.pop.js"></script>
+</head>
+<body>
+    <div class="divTopNav"></div>
+    <div class="div-content">
+        <div class="main-content">
+            <div class="functional-area relative">
+                <div id="divLeftNav">
+                </div>
+                <div class="right-result-box">
+                    <div class="activities-box">
+                        <div class="tab-content-box">
+                            <div class="tab-content">
+                                <div class="tab-filtrate-box">
+                                    <a class="filtrate-btn left" style="cursor: pointer;" onclick=" OpenApply(); ">租赁申请</a>
+                                    <div class="search-box tab-search-style right">
+                                        <input class="search-ipt" id="divSearchCondition" type="text" placeholder="关键字">
+                                        <div onclick=" Search() " class="search-btn"></div>
+                                    </div>
+                                </div>
+                                <div class="base-table-box tableStyle">
+                                    <table class="base-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 20%;">项目负责人</th>
+                                                <th style="width: 20%;">公司名称</th>
+                                                <th style="width: 15%;">申请日期</th>
+                                                <th style="width: 15%;">审核状态</th>
+                                                <th style="width: 20%;">操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbBodyContent"></tbody>
+                                    </table>
+                                    <div id='divNodata' style="display: none;">
+                                        <div class="no-result-img"></div>
+                                        <div style='text-align: center; margin-top: 5px; margin-bottom: 10px'>暂无数据</div>
+                                    </div>
+                                </div>
+                                <div class="page-box">
+                                    <div id="div_pager" class="divPager">
+                                    </div>
+                                </div>
+                                <input id="hidApplyId" type="hidden" />
+                                <input id="hidItemApplyId" class="hidItemApplyId" type="hidden" />
+                                <input id="hidCallbackFunc" value="GetMyOfficeSettleApply" type="hidden" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divTopFlag"></div>
+    <div id="divFoot"></div>
+    <div class="popupDiv divConfirm" style="display: none;">
+        <div class="center" style="width: 290px;height: 268px;">
+            <div class="popupBox padding45">
+                <div class="quitTips">您确定要执行【撤销】操作吗？</div>
+                <div class="quitBtnBox">
+                    <input class="baseBtn registerBtn blueBtn left" type="button" id="btnOk" onclick="SetRevoke()" value="确定" />
+                    <input class="baseBtn registerBtn darkBlueBtn right" onclick="CloseConfirm();" type="button" id="btnCancel" value="取消">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>搜索</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link href="../Content/pc-style.css" rel="stylesheet" />
+    <link href="../Content/select2.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../Content/keleyidivpager.css"/>
+    <link href="../Content/custom-pc.css" rel="stylesheet" />
+
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script language="javascript" src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script language="javascript" src="../Scripts/keleyidivpager.js"></script>
+    <script src="../Scripts/select2.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script type="text/javascript" language="javascript" src="../Scripts/custom.js"></script>
+    <script src="../Scripts/custom-pc.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/Search/search.js"></script>
+    <script src="../Scripts/Message/chartdialog.js"></script>
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+
+    <link href="../Content/poptips.css" rel="stylesheet" />
+    <script src="../Scripts/yanue.pop.js"></script>
+</head>
+<body>
+    <div class="divTopNav"></div>
+    <div class="clear"></div>
+    <!-- Search Txt Content Started -->
+    <div class="search_div_area">
+        <div class="search_div_areaContent">
+            <div class="inputDiv">
+                <input type="text" id="txtCondition" placeholder="投资机构、项目融资、业务合作" />
+                <div id="divGlobalSearch" onclick="GlobalSearch()"></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <!--Search Result Content Started -->
+    <div class="search_resultDiv">
+        <div class="search_resultDiv_Content">
+            <ul class="ulSearchFilter">
+                <li class="litab selected" id="0" onclick=" SwitchTap(this) ">
+                    投资机构（<span id="spanNum1">0</span>）
+                </li>
+                <li class="liSeperate"></li>
+                <li class="litab" id="1" onclick=" SwitchTap(this) ">融资项目（<span id="spanNum2">0</span>）</li>
+                <li class="liSeperate"></li>
+                <li class="litab" id="2" onclick=" SwitchTap(this) ">服务（<span id="spanNum3">0</span>）</li>
+                <li class="liSeperate"></li>
+                <li class="litab" id="3" onclick=" SwitchTap(this) ">需求（<span id="spanNum4">0</span>）</li>
+            </ul>
+            <div class="search_result_content1 part0">
+                <table class="table_company_2" style="width: 100%;" id="tabInvestor"></table>
+                <div class="search_resultDiv" id="divNodata1" style="display: none">
+                    <div class="search_resultDiv_Content">
+                        <div class="search_noResult_div">
+                            <div></div>
+                            <div>抱歉，您搜索的关键字没有相关内容</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-box">
+                    <div id="div_pager" class="div_pager1">
+                    </div>
+                </div>
+            </div>
+            <div class="search_result_content1 part1" style="display: none;">
+                <table class="table_company_2" style="width: 100%;" id="tabFinancingRequirements"></table>
+                <div class="search_resultDiv" id="divNodata2" style="display: none">
+                    <div class="search_resultDiv_Content">
+                        <div class="search_noResult_div">
+                            <div></div>
+                            <div>抱歉，您搜索的关键字没有相关内容</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-box">
+                    <div id="div_pager" class="div_pager2">
+                    </div>
+                </div>
+            </div>
+            <div class="search_result_content1 part2" style="display: none;">
+                <table class="table_company table_servicedemand" style="width: 100%;" id="tabServicesPubilshs"></table>
+                <div class="search_resultDiv" id="divNodata3" style="display: none">
+                    <div class="search_resultDiv_Content">
+                        <div class="search_noResult_div">
+                            <div></div>
+                            <div>抱歉，您搜索的关键字没有相关内容</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-box">
+                    <div id="div_pager" class="divpager3">
+                    </div>
+                </div>
+            </div>
+            <div class="search_result_content1 part3" style="display: none;">
+                <table class="table_company table_servicedemand" style="width: 100%;" id="tabDemandPubilshs"></table>
+                <div class="search_resultDiv" id="divNodata4" style="display: none">
+                    <div class="search_resultDiv_Content">
+                        <div class="search_noResult_div">
+                            <div></div>
+                            <div>抱歉，您搜索的关键字没有相关内容</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-box">
+                    <div id="div_pager" class="divpager4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Search Result Content Ended -->
+    <!--//<div class="divTopFlag"></div>-->
+    <div class="divTopFlag"></div>
+    <div id="divFoot"></div>
+    <input id="hidCallbackFunc" value="InitFormData" type="hidden" />
+</body>
+
+</html>

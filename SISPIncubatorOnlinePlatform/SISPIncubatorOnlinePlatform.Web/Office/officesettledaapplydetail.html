@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>办公室租赁详情</title>
+    <link href="../Content/base.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link href="../Content/pc-style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../Content/keleyidivpager.css" />
+    <link href="../Content/puplic.css" rel="stylesheet" />
+
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="../Scripts/custom.js"></script>
+    <script type="text/javascript" src="../Scripts/custom-pc.js?14"></script>
+    <script src="../Scripts/keleyidivpager.js"></script>
+
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+
+    <script src="../Scripts/Office/officesettledaapplydetail.js"></script>
+
+    <link href="../Content/poptips.css" rel="stylesheet" />
+    <script src="../Scripts/yanue.pop.js"></script>
+</head>
+<body>
+    <!--List Content Started-->
+    <div class="divTopNav"></div>
+    <div class="div-content">
+        <div class="main-content">
+            <div class="functional-area relative">
+                <div id="divLeftNav">
+
+                </div>
+                <div class="right-result-box">
+                    <table class="tableApproveContent">
+                        <tbody>
+                            <tr>
+                                <td class="tdTitle">项目负责人：</td>
+                                <td>
+                                    <div class="showInput" id="divProjectOwner">nihao</div>
+                                </td>
+                                <td class="tdTitle">性别：</td>
+                                <td>
+                                    <div class="showInput" id="divSex"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdTitle">学位：</td>
+                                <td>
+                                    <div class="showInput" id="divDegree"></div>
+                                </td>
+                                <td class="tdTitle">专业领域：</td>
+                                <td>
+                                    <div class="showInput" id="divSpecialty"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdTitle">联系地址：</td>
+                                <td>
+                                    <div class="showInput" id="divAddress"></div>
+                                </td>
+                                <td class="tdTitle">联系电话：</td>
+                                <td>
+                                    <div class="showInput" id="divContactPhone"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdTitle">电子邮箱：</td>
+                                <td>
+                                    <div class="showInput" id="divEmail"></div>
+                                </td>
+                                <td class="tdTitle"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="tdContentInfo">
+                                    <p class='pWorkHistoryTitle'>学校或工作单位（大学起）：</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="tdContentInfo">
+                                    <p>取得学历（学位）和资质证书情况：</p>
+                                    <p id="divDiplomas" class="pContent">
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="tdContentInfo">
+                                    <p>项目负责人及创业团队拥有的知识产权情况：</p>
+                                    <p id="divIntellectualProperty" class="pContent"></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdTitle">公司名称：</td>
+                                <td>
+                                    <div class="showInput" id="divCompanyName"></div>
+                                </td>
+                                <td class="tdTitle">注册资本：</td>
+                                <td>
+                                    <div class="showInput" id="divRegisteredCapital"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdTitle">需求面积：</td>
+                                <td>
+                                    <div class="showInput" id="divDemandForSpace"></div>
+                                </td>
+                                <td class="tdTitle">初期规模：</td>
+                                <td>
+                                    <div class="showInput" id="divInitialStaff"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="tdContentInfo">
+                                    <p>项目主要产品（服务）简介：</p>
+                                    <p id="divProductDescription" class="pContent"></p>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="tdContentInfo">
+                                    <p>研发与管理团队成员情况：</p>
+                                    <p id="divMemberDescription" class="pContent"></p>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="tdContentInfo">
+                                    <p>团队获得投融资及收入情况：</p>
+                                    <p id="divFinancingAndRevenue"></p>
+
+                                </td>
+                            </tr>
+                            <!--<tr id="trApproveHistory">
+                                <td colspan="4" class="tdTitle2">审批记录</td>
+                            </tr>-->
+
+                            <tr>
+                                <td colspan="4" class="tdBtnAction">
+                                    <div>
+                                        <div onclick=" javascript: window.close(); ">取消</div>
+                                        <!--<div>返回</div>-->
+                                        <input id="hidApplyId" type="hidden" />
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--List Content Ended-->
+            <!--List Invest Content Ended-->
+            <input id="hidMessageId" type="hidden" />
+            <input id="hidMessageType" type="hidden" />
+            <input id="hidCallbackFunc" value="InitFormData" type="hidden" />
+        </div>
+
+    </div>
+    <div class="divTopFlag"></div>
+    <!--List Content Ended-->
+    <div id="divFoot"></div>
+</body>
+
+</html>

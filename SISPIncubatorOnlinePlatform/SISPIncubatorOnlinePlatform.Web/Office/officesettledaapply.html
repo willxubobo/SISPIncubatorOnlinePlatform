@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>办公室租赁</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link href="../Content/pc-style.css" rel="stylesheet" />
+    <link href="../Content/select2.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script language="javascript" src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+
+    <script src="../Scripts/select2.js"></script>
+    <script src="../Scripts/laydate/laydate.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script type="text/javascript" language="javascript" src="../Scripts/custom.js"></script>
+    <script src="../Scripts/custom-pc.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+
+
+
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+
+    <script src="../Scripts/Office/officesettledaapply.js"></script>
+    <script src="../Scripts/agreement.js"></script>
+
+    <link href="../Content/poptips.css" rel="stylesheet" />
+    <script src="../Scripts/yanue.pop.js"></script>
+</head>
+<body>
+    <div class="divTopNav"></div>
+    <div class="In_div_list">
+        <div class="In_div_list_content divContent">
+            <div class="content-div">
+                <div class="base-title">办公室租赁申请</div>
+                <table class="layout-table">
+                    <tr>
+                        <td>
+                            <div class="left">
+                                <label class="ipt-txt">项目负责人</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" isrequired="true" id="txtPorjectOwner" maxlength='100' type="text">
+                                    <div class="ipt-enter-tips hide">项目负责人不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="right">
+                                <label class="ipt-txt">性别</label>
+                                <div class="ipt-sm left">
+                                    <input class="registerRadio boy on" value="男" type="button" />
+                                    <input class="registerRadio girl" type="button" value="女" />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="left">
+                                <label class="ipt-txt">学位</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" isrequired="true" id="txtDegree" maxlength="100" type="text" />
+                                    <div class="ipt-enter-tips hide">学位不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="right">
+                                <label class="ipt-txt">专业领域</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" isrequired="true" id="txtSpecialty" maxlength="100" type="text" />
+                                    <div class="ipt-enter-tips hide">专业领域不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="left">
+                                <label class="ipt-txt">联系地址</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" isrequired="true" id="txtAddress" maxlength="100" type="text" />
+                                    <div class="ipt-enter-tips hide">联系地址不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="right">
+                                <label class="ipt-txt">联系电话</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" isrequired="true" ctype="Phone" id="txtPhone" maxlength="15" type="text" pattern="[0-9]*" />
+                                    <div class="ipt-enter-tips hide">联系电话不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="left">
+                                <label class="ipt-txt">电子邮箱</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" ctype="Email" isrequired="true" id="txtEmail" maxlength="50" type="email" />
+                                    <div class="ipt-enter-tips hide">电子邮箱不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="add-box">
+                                <div class="add-title-box">学校或工作单位（大学起）</div>
+                                <div class="add-info-content">
+                                    <div class="add-module divWorkExperience">
+                                    </div>
+                                    <div class="add-module addContentArea" style="display: none;">
+                                        <table class="layout-table add-info-table">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <div class="left">
+                                                        <label class="ipt-txt" style="width: 120px;">开始日期</label>
+                                                        <div class="left">
+                                                            <input class="ipt-enter ipt-sm" readonly="readonly" style="width: 250px;" id="txtStartDate" maxlength="12" type="text" />
+                                                            <div class="ipt-enter-tips hide">开始日期不能空！</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="right">
+                                                        <label class="ipt-txt">结束日期</label>
+                                                        <div class="left">
+                                                            <input class="ipt-enter ipt-sm" readonly="readonly" style="width: 250px;" id="txtEndDate" maxlength="12" type="text" />
+                                                            <div class="ipt-enter-tips hide">开始日期不能空！</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="txt-top">
+                                                    <div class="left">
+                                                        <label class="ipt-txt" style="width: 120px;">学校或工作单位</label>
+                                                        <div class="left">
+                                                            <input class="ipt-enter ipt-sm" style="width: 250px;" id="txtWorkAddress" onblur=" ValidationWorkLayer(); " maxlength="100" type="text" />
+                                                            <div class="ipt-enter-tips hide" id="divWorkTips">学校或工作单位不能为空！</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="right">
+                                                        <label class="ipt-txt">职务</label>
+                                                        <div class="left">
+                                                            <input class="ipt-enter ipt-sm" style="width: 250px;" id="txtPosition" maxlength="100" type="text" />
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <input id="hidIndex" type="hidden" />
+                                        <div class="btn-box add-module-btn">
+                                            <a class="base-btn sm-btn bule-btn space25" onclick=" SaveOk() " href="javascript:;">保存</a>
+                                            <a class="base-btn sm-btn space25" onclick=" CancelWorkExperience(); " href="javascript:;">取消</a>
+                                            <input id="hidId" type="hidden" />
+                                            <input id="hidOperator" value="add" type="hidden" />
+                                        </div>
+                                    </div>
+                                    <div class="add-module addBtnArea">
+                                        <div class="add-module-btn-div" onclick=" ShowWorkExperience(); ">
+                                            <div class="add-txt-icon">新增</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ipt-enter-tips divWorkTips" style="display: none;">工作或者学习经历不能为空！</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="ipt-Title">取得学历（学位）和资质证书情况</div>
+                            <textarea class="textarea-enter" maxlength="1000" isrequired="true" id="txtDiplomas" style="height: 100px;" placeholder="简要罗列说明"></textarea>
+                            <div class="ipt-enter-tips hide">取得学历（学位）和资质证书情况不能为空！</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="ipt-Title">项目负责人及创业团队拥有的知识产权情况</div>
+                            <textarea class="textarea-enter" maxlength="1000" isrequired="true" id="txtIntellectualProperty" style="height: 100px;" placeholder="简要罗列说明"></textarea>
+                            <div class="ipt-enter-tips hide">项目负责人及创业团队拥有的知识产权情况不能为空！</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="left">
+                                <label class="ipt-txt">公司名称</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" isrequired="true" id="txtCompanyName" maxlength="100" type="text" />
+                                    <div class="ipt-enter-tips hide">公司名称不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="right">
+                                <label class="ipt-txt">注册资本</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" isrequired="true" id="txtRegisteredCapital" placeholder="万元" maxlength="10" type="text" />
+                                    <div class="ipt-enter-tips hide">注册资本不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="left">
+                                <label class="ipt-txt">需求面积</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" isrequired="true" id="txtDemandForSpace" placeholder="平方" maxlength="10" type="text" />
+                                    <div class="ipt-enter-tips hide">需求面积不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="right">
+                                <label class="ipt-txt">初期规模</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" isrequired="true" id="txtInitialStaff" placeholder="人数" maxlength="10" type="text" />
+                                    <div class="ipt-enter-tips hide">初期规模不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="ipt-Title">项目主要产品（服务）简介</div>
+                            <textarea class="textarea-enter" isrequired="true" id="txtProductDescription" placeholder="项目主要产品（服务）简介" maxlength="5000" style="height: 100px;"></textarea>
+                            <div class="ipt-enter-tips hide">项目主要产品（服务）简介不能为空！</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="ipt-Title">研发与管理团队成员情况</div>
+                            <textarea class="textarea-enter" isrequired="true" id="txtMemberDescription" placeholder="研发与管理团队成员情况" maxlength="5000" style="height: 100px;"></textarea>
+                            <div class="ipt-enter-tips hide">研发与管理团队成员情况不能为空！</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="ipt-Title">团队获得投融资及收入情况</div>
+                            <textarea class="textarea-enter" isrequired="true" id="txtFinancingAndRevenue" placeholder="团队获得投融资及收入情况" maxlength="5000" style="height: 100px;"></textarea>
+                            <div class="ipt-enter-tips hide">团队获得投融资及收入情况不能为空！</div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="agreement-box">
+                    <input class="check-ipt" onclick=" ClickAgree(this) " checked="checked" type="checkbox">
+                    <label class="check-txt" onclick=" OpenAgreement() " style="cursor: pointer">已阅读并同意协议</label>
+                     <div style="font-weight: bold;color: red;text-align: left">特别提醒：注册用户或使用、接受本网站提供的一切服务时，请您仔细阅读本条款。如用户勾选“已阅读并同意协议”，即表示您与苏州工业园区科技发展有限公司已达成协议，除非违反国家强制性法律，否则始终有效，这其中包括苏州工业园区科技发展有限公司对服务条款适时做的任何修改。 </div>
+                </div>
+                <div class="btn-box" style="margin-top: 20px;">
+                    <input id="hidApplyId" type="hidden" />
+                    <a class="base-btn sm-btn bule-btn  space25" id="aSubmit" style="cursor: pointer" onclick=" SubmitForm(); " href="javascript:;">提交</a>
+
+                    <input class="baseBtn registerBtn redBtn  hide btnDeleteApply" type="button" onclick=' DeleteIncubatorAppply(); ' value="删除申请" />
+                    <a class="base-btn sm-btn  space25" href="javascript:window.close();;">取消</a>
+                    <input id="hidCallbackFunc" value="InitFormData" type="hidden" />
+                </div>
+            </div>
+        </div>
+        <div class="popupDiv divConfirm" style="display: none;">
+            <div class="center" style="width: 290px; height: 268px;">
+                <div class="popupBox padding45">
+                    <div class="quitTips">您确定要执行【删除】操作吗？</div>
+                    <div class="quitBtnBox">
+                        <input class="baseBtn registerBtn blueBtn left" type="button" style="cursor: pointer" id="btnOk" onclick=" DeleteWorkEx() " value="确定" />
+                        <input class="baseBtn registerBtn darkBlueBtn right" style="cursor: pointer" onclick=" CloseConfirm(); " type="button" id="btnCancel" value="取消">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divTopFlag"></div>
+    <div id="divFoot"></div>
+</body>
+</html>

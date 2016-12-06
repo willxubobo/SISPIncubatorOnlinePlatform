@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="/Scripts/publicjs.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#liHome").click(function () {
+                window.location.href = "/Home.html";
+            });
+            $("#liIncubatorApply").click(function () {
+                window.location.href = "/Incubator/incubatorlist.html";
+            });
+            $("#liOfficeApply").click(function () {
+                //添加是否已登录判断
+                window.location.href = "/Office/officesettledaapply.html";
+            });
+            $("#liinvestor").click(function () {
+                window.location.href = "/Investor/investorlist.html";
+            });
+            $("#lifinancing").click(function () {
+                window.location.href = "/Investment/financingprojectlist.html";
+            });
+            $("#liBusiness").click(function () {
+                window.location.href = "/Cooperate/servicedemand.html";
+            });
+            $("#liActivity").click(function () {
+                //添加活动列表页面链接
+            });
+            $("#liSuccessCase").click(function () {
+                window.location.href = "/SuccessCase/successfulcase.html";
+            });
+            var arUrl = window.location.href;
+            if (arUrl) {
+                if (arUrl.toLowerCase().indexOf("/home.html") >= 0 || arUrl.toLowerCase().indexOf(".html") < 0) {
+                    $("#liHome").addClass("selected");
+                }
+                else if (arUrl.toLowerCase().indexOf("/incubatorlist.html") >= 0) {
+                    $("#liIncubatorApply").addClass("selected");
+                }
+                else if (arUrl.toLowerCase().indexOf("/officesettledaapply.html") >= 0) {
+                    $("#liOfficeApply").addClass("selected");
+                }
+                else if (arUrl.toLowerCase().indexOf("/investorlist.html") >= 0 || arUrl.toLowerCase().indexOf("/investorinfo.html") >= 0) {
+                    $("#liinvestor").addClass("selected");
+                }
+                else if (arUrl.toLowerCase().indexOf("/financingprojectlist.html") >= 0 || arUrl.toLowerCase().indexOf("/financingprojectinfo.html") >= 0) {
+                    $("#lifinancing").addClass("selected");
+                }
+                else if (arUrl.toLowerCase().indexOf("/servicedemand.html") >= 0 || arUrl.toLowerCase().indexOf("/demanddetail.html") >= 0 || arUrl.toLowerCase().indexOf("/servicedetail.html") >= 0) {
+                    $("#liBusiness").addClass("selected");
+                }
+                else if (arUrl.toLowerCase().indexOf("/incubatorinfo.html") >= 0 || arUrl.toLowerCase().indexOf("/incubatorlist.html") >= 0 || arUrl.toLowerCase().indexOf("/incubatorapply.html") >= 0) {
+                    $("#liIncubatorApply").addClass("selected");
+                }
+                else if (arUrl.toLowerCase().indexOf("/successfulcase.html") >= 0 || arUrl.toLowerCase().indexOf("/successfulcasedetail.html") >= 0) {
+                    $("#liSuccessCase").addClass("selected");
+                }
+            }
+            InitUserData_Home();
+            $(".weChat_divImg").mouseover(function () {
+                $(".divWechat_pop").show();
+            });
+
+            $(".divWechat_pop").mouseout(function () {
+                $(".divWechat_pop").hide();
+            });
+
+            if (typeof (popup) == "function") {
+                popup();
+            }
+        });
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?4338f5653bdca1a24cb0291a4e3de1a5";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+        function ChangeFile(obj) {
+            var str = $(obj).val();
+            var fileexten = str.substring(str.lastIndexOf('.') + 1).toLowerCase();
+            if (fileexten != "png" && fileexten != "jpg" && fileexten != "bmp" && fileexten != "gif") {
+                $(this).alert("只能上传图片格式文件！");
+                $(obj).val("");
+            } else {
+                $(obj).next().html(str.substring(str.lastIndexOf('\\') + 1));
+                $(obj).next().next().hide();
+            }
+        }
+        function checkcomname() {
+            var comname = $.trim($(".CompanyName").val());
+            if (comname == "") {
+                $(".CompanyNameTip").show();
+            } else {
+                $(".CompanyNameTip").hide();
+            }
+        }
+</script>
+</head>
+<body>
+   <div class="divTopNavContent">
+            <div></div>
+            <ul id="ulNavigation">
+                <li id="liHome"><a>首页</a></li>
+                <li id="liIncubatorApply"><a>入驻孵化器</a></li>
+                <li id="liOfficeApply"><a>租赁办公室</a></li>
+                <li id="liinvestor"><a>投资机构</a></li>
+                <li id="lifinancing"><a>项目融资</a></li>
+                <li id="liBusiness"><a>业务合作</a></li>     
+                <li id="liSuccessCase"><a>关于我们</a></li>            
+            </ul>
+            <div class="weChat_div">
+                <div class="weChatImgContent">
+                    <img id="userlogo" class="weChat_divImg" style="width: 82px; height: 81px;"/>
+                    <div class="divWechat_pop">
+                        <img id="imglogo_l" alt=""/>
+                    </div>
+                </div>
+                <div class="wd-img hide webuserlogonewdiv">
+                    <div class="wd-shade webuserlogoshade"></div>
+                    <img class="weChat_divImgHead" id="webuserlogonew" />
+                </div>
+                <div class="divScanInfo" id="Login" onclick="$(this).loginconfirmPC();">微信注册&amp;登录</div>
+                <div class="divScanInfo hide" id="logOut"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+     <!--注册弹出开始-->
+    <div class="popup-div registerdiv hide">
+        <div class="popup-bg"></div>
+        <div class="popup-content center" style="width: 625px; height: 722px;">
+            <div class="popup-main-content padding0-45 white-bg">
+                <p class="popup-title">用户注册</p>
+                <ul class="user-operate-box">
+                    <li>
+                        <div class="enter-txt">头像</div>
+                        <div class="enter-ipt-box" style="overflow: hidden;">
+                            <div class="logo-img-box left croplogo"></div>
+                            <a class="add-btn add-btn-layout left" href="javascript:;" onclick="showupload();"></a>
+                           <!-- <div class="ipt-enter-tips hide logotip" style="clear: both;">头像不能为空!</div>-->
+                        </div>
+                        
+                    </li>
+                    <li>
+                        <div class="enter-txt">联系人</div>
+                        <div class="enter-ipt-box">
+                            <input class="ipt-enter ipt-lg UserName" type="text" maxlength="200" placeholder="请输入联系人" isrequired="true" />
+                            <div class="ipt-enter-tips hide">联系人不能为空!</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="enter-txt">手机号</div>
+                        <div class="enter-ipt-box">
+                            <input class="ipt-enter ipt-lg Mobile" type="text" maxlength="11" colname="Mobile" placeholder="请输入手机号" isrequired="true" ctype="Mobile" />
+                            <div class="ipt-enter-tips hide">手机号不能为空!</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="enter-txt">短信验证码</div>
+                        <div class="enter-ipt-box">
+                            <div class="enter-btn-box">
+                                <input class="ipt-enter ipt-lg Code" type="text" maxlength="6" placeholder="请输入短信验证码" isrequired="true" />
+                                <div class="ipt-enter-tips hide">短信验证码不能为空!</div>
+                            </div>
+                            <input id="btnSendCode" class="enter-btn" style="cursor: pointer;" type="button" value="获取验证码" onclick="SendValidateCode(); return false;" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="enter-txt">电子邮箱</div>
+                        <div class="enter-ipt-box">
+                            <input class="ipt-enter ipt-lg Email" type="email" maxlength="150" placeholder="请输入电子邮箱" isrequired="true" ctype="Email" />
+                            <div class="ipt-enter-tips hide">电子邮箱不能为空!</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="enter-txt">企业/个人</div>
+                        <div class="enter-ipt-box">
+                            <button class="registerRadio person on" onclick="settype('个人'); return false;">个人</button>
+                            <button class="registerRadio bussiness" onclick="settype('企业'); return false;">企业</button>
+                        </div>
+                        <input type="hidden" id="hidutype" class="hidutype" value="个人"/>
+                    </li>
+                    <li class="hide companyuser">
+                        <div class="enter-txt">公司名称</div>
+                        <div class="enter-ipt-box">
+                            <input class="ipt-enter ipt-lg CompanyName" type="text" maxlength="500" onblur="checkcomname()" placeholder="请输入公司名称" />
+                            <div class="ipt-enter-tips hide CompanyNameTip">公司名称不能为空！</div>
+                        </div>
+                    </li>
+                    <li class="hide companyuser">
+                        <div class="enter-txt">营业执照</div>
+                        <div class="enter-ipt-box">
+                            <div class="view-file-box" style="padding-top: 10px;">
+                                <a class="viewImgBtn left" href="javascript:;">浏览本地文件</a>
+                                <input class="view-file-btncom" id="filelinense" type="file" name="filelinense" onchange="ChangeFile(this)" style=""/>
+                                <div id="divlinense"></div>
+                                <div class="ipt-enter-tips hide comLicenselogo" style="margin-top: 31px;">营业执照不能为空！</div>
+                            </div></div>
+                    </li>
+                    <li class="hide companyuser">
+                        <div class="enter-txt">身份证</div>
+                        <div class="enter-ipt-box">
+                            <div class="view-file-box" style="padding-top: 10px;">
+                                <a class="viewImgBtn left" href="javascript:;">浏览本地文件</a>
+                                <input class="view-file-btncom" id="filecard" type="file" name="filecard" onchange="ChangeFile(this)"/>
+                                <div></div>
+                                <div class="ipt-enter-tips hide comcardlogo" style="margin-top: 31px;">身份证不能为空！</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="hide companyuser">
+                        <div class="enter-txt">备注</div>
+                        <div class="enter-ipt-box">
+                            <textarea class="ipt-enter ipt-lg Description" colname="Description" maxlength="500"></textarea>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="enter-txt">联系地址</div>
+                        <div class="enter-ipt-box">
+                            <input class="ipt-enter ipt-lg Address" maxlength="500" placeholder="请输入联系地址" isrequired="true" />
+                            <div class="ipt-enter-tips hide">联系地址不能为空!</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="enter-txt">登录密码</div>
+                        <div class="enter-ipt-box">
+                            <input class="ipt-enter ipt-lg Password" maxlength="20" type="password" placeholder="请输入6-20位登录密码" isrequired="true" ctype="loginpwd" />
+                            <div class="ipt-enter-tips hide">登录密码不能为空!</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="enter-txt">确认密码</div>
+                        <div class="enter-ipt-box">
+                            <input class="ipt-enter ipt-lg SurePwd" type="password" maxlength="20" placeholder="确认密码" isrequired="true" ctype="surepwdreg" />
+                            <div class="ipt-enter-tips hide">确认密码不能为空!</div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="agreement-box">
+                    <input class="check-ipt" type="checkbox" checked="checked" onclick="cansubmit(this)" />
+                    <label class="check-txt"  onclick="OpenAgreement()" style="cursor: pointer">已阅读并同意协议</label>
+                    <div style="font-weight: bold;color: red;text-align: left">特别提醒：注册用户或使用、接受本网站提供的一切服务时，请您仔细阅读本条款。如用户勾选“已阅读并同意协议”，即表示您与苏州工业园区科技发展有限公司已达成协议，除非违反国家强制性法律，否则始终有效，这其中包括苏州工业园区科技发展有限公司对服务条款适时做的任何修改。 </div>
+                </div>
+                <div class="btn-box padding45">
+                    <button class="base-btn sm-btn bule-btn space25 regbtn" type="button" onclick="PostRegister(); return false;">提交</button>
+                    <a class="base-btn sm-btn space25" href="javascript:;" onclick="backlogin();">取消</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--注册弹出结束-->
+    <div class="popup-div userlogodiv hide">
+        <div class="popup-bg"></div>
+        <div class="popup-content center uploaddivsize">
+            <div class="popup-main-content relative white-bg">
+                <div class="img-change-box">
+                    <div class="apply-settled-title">上传用户头像</div>
+                    <div class="change-img">
+                        <div class="left-file-area">
+                            <div class="view-file-box">
+                                <a class="viewImgBtn left" href="javascript:;">浏览本地文件</a>
+                                <input class="view-file-btn" id="file1" type="file" name="file1" onchange="ajaxFileUpload();" />
+                                <span class="add-tips-txt left">（*上传图片不超过1M）</span>
+                            </div>
+                        </div>
+                        <div class="right-img-area imgreview"></div>
+                    </div>
+                    <div class="change-img-btn-box">
+                        <a class="change-operate-btn right" href="javascript:" onclick="cancelupload();">取消</a>
+                        <a class="change-operate-btn bule-btn right" href="javascript:" onclick="cropfile();">确定</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="hidimgname" />
+    <div class="popup-div hide retrievePwdDiv" id="retrievePwdDiv">
+        <div class="popup-bg"></div>
+        <div class="popup-content center" style="width: 625px;">
+            <div class="popup-main-content padding45 white-bg">
+                <ul class="user-operate-box">
+                    <li>
+                        <div class="enter-txt">手机号码</div>
+                        <div class="enter-ipt-box">
+                            <input class="ipt-enter ipt-lg" maxlength="11" ctype="Mobile" placeholder="手机号码" isrequired="true" id="txtRetMobile" type="text" pattern="[0-9]*" />
+                            <div class="failInfo hide" id="divPhone">手机号码不能为空！</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="enter-txt">验证码</div>
+                        <div class="enter-ipt-box">
+                            <input class="ipt-enter ipt-lg" type="number" pattern="[0-9]*" id="txtRetVerifyCode" placeholder="手机验证码" maxlength="6" isrequired="true" />
+                            <div class="failInfo hide">验证码不能为空！</div>
+                        </div>
+                        <button class="authCodeBtn" onclick="sendReMessage()" id="btnReSendCode">获取验证码</button>
+                        <div class="shadeBtn"></div>
+                    </li>
+                    <li>
+                        <div class="enter-txt">新密码</div>
+                        <div class="enter-ipt-box">
+                            <input class="ipt-enter ipt-lg" id="txtRetPassword" type="password" placeholder="6-20位字母、数字或符号" maxlength="20" isrequired="true" ctype="loginpwd" />
+                            <div class="failInfo hide">密码不能为空！</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="enter-txt">确认密码</div>
+                        <div class="enter-ipt-box">
+                            <input class="ipt-enter ipt-lg" id="txtConfirmPassword" type="password" placeholder="确认密码" maxlength="20" isrequired="true" ctype="surepwd" />
+                            <div class="failInfo hide">确认密码不能为空！</div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="btn-box">
+                    <a class="base-btn sm-btn bule-btn space25" href="javascript:;" onclick="submitRePwd()">提交</a>
+                    <a class="base-btn sm-btn space25" href="javascript:;" onclick="CancelRePwd()">取消</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="popupDiv divlogOutConfirm" style="display: none;">
+    <div class="center" style="width: 290px; height: 268px;">
+        <div class="popupBox padding45">
+            <div class="quitTips">您确定要退出吗？</div>
+            <div class="quitBtnBox">
+                <input class="baseBtn registerBtn blueBtn left" type="button" id="btnOk" onclick="LogOut()" value="确定"/>
+                <input class="baseBtn registerBtn darkBlueBtn right" onclick="CloselogOutConfirm();" type="button" id="btnCancel" value="取消">
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="hidopenid" class="hidopenid"/>
+</body>
+</html>
