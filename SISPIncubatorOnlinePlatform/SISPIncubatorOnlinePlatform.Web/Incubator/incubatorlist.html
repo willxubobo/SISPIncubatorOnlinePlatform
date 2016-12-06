@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>孵化器列表</title>
+    <link rel="stylesheet" type="text/css" href="/Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/mobiscroll.custom-2.17.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/superSlide.css" />
+    <link href="/Content/puplic.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/Content/pc-style.css" />
+    <link href="/Content/Jcrop.min.css" rel="stylesheet" type="text/css" />
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="../Scripts/custom.js"></script>
+    <!–[if lt IE9]>
+    <script src="../Scripts/html5.js"></script>
+    <![endif]–>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/home.js"></script>
+    <script src="../Scripts/common.js"></script>
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/resize.js"></script>
+
+
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+
+    <script src="../Scripts/Incubator/incubatorlist.js"></script>
+
+    <link href="../Content/poptips.css" rel="stylesheet" />
+    <script src="../Scripts/yanue.pop.js"></script>
+</head>
+<body>
+    <div class="divTopNav"></div>
+    <div class="clear"></div>
+    <!--Search Content Started-->
+    <div class="Inc_divSearch">
+        <div class="Inc_divSearch_content">
+            <div class="Inc_searchInput_div">
+                <input type="text" style="padding: 10px 10px 10px 15px !important; line-height: 20px;" id="txtCondition" />
+                <div class="Inc_searchInput_divIcon" onclick="SearchData()"></div>
+            </div>
+            <div class="Inc_changePng">
+                <span onclick="SwitchPatch();">换一批</span>
+            </div>
+        </div>
+    </div>
+    <!--Search Content Ended-->
+    <!--List Content Started-->
+    <div class="Inc_divList">
+        <div class="Inc_divList_content">
+            <div class="Inc_divList_imgBorder divIncubatorBorder">
+                <img src="../images/pc/placeHolder.png" class="imgPlaceHolder1_1" usemap="#planetmap1_1" />
+                <img src="../images/pc/placeHolder.png" class="imgPlaceHolder1_2" usemap="#planetmap1_2" />
+                <img src="../images/pc/placeHolder.png" class="imgPlaceHolder1_3" usemap="#planetmap1_3" />
+                <img src="../images/pc/placeHolder.png" class="imgPlaceHolder1_4" usemap="#planetmap1_4" />
+                <img src="../images/pc/placeHolder.png" class="imgPlaceHolder2_1" usemap="#planetmap2_1" />
+                <img src="../images/pc/placeHolder.png" class="imgPlaceHolder2_2" usemap="#planetmap2_2" />
+                <img src="../images/pc/placeHolder.png" class="imgPlaceHolder2_3" usemap="#planetmap2_3" />
+                <img src="../images/pc/placeHolder.png" class="imgPlaceHolder2_4" usemap="#planetmap2_4" />
+                <img src="../images/pc/placeHolder.png" class="imgPlaceHolder2_5" usemap="#planetmap2_5" />
+                <img src="../images/pc/placeHolder.png" class="imgPlaceHolder3_1" usemap="#planetmap3_1" />
+                <img src="../images/pc/placeHolder.png" class="imgPlaceHolder3_2" usemap="#planetmap3_2" />
+                <img src="../images/pc/placeHolder.png" class="imgPlaceHolder3_3" usemap="#planetmap3_3" />
+                <img src="../images/pc/placeHolder.png" class="imgPlaceHolder3_4" usemap="#planetmap3_4" />
+
+
+                <map name="planetmap1_1" id="planetmap1_1">
+                    <area shape="polygon" coords="92,0,184,52,184,158,92,213,,0,158,0,52" target="_blank" style="cursor: pointer" />
+                </map>
+                <map name="planetmap1_2" id="planetmap1_2">
+                    <area shape="polygon" coords="92,0,184,52,184,158,92,213,,0,158,0,52" target="_blank" style="cursor: pointer" />
+                </map>
+                <map name="planetmap1_3" id="planetmap1_3">
+                    <area shape="polygon" coords="92,0,184,52,184,158,92,213,,0,158,0,52" target="_blank" style="cursor: pointer" />
+                </map>
+                <map name="planetmap1_4" id="planetmap1_4">
+                    <area shape="polygon" coords="92,0,184,52,184,158,92,213,,0,158,0,52" target="_blank" style="cursor: pointer" />
+                </map>
+                <map name="planetmap2_1" id="planetmap2_1">
+                    <area shape="polygon" coords="92,0,184,52,184,158,92,213,,0,158,0,52" target="_blank" style="cursor: pointer" />
+                </map>
+                <map name="planetmap2_2" id="planetmap2_2">
+                    <area shape="polygon" coords="92,0,184,52,184,158,92,213,,0,158,0,52" target="_blank" style="cursor: pointer" />
+                </map>
+                <map name="planetmap2_3" id="planetmap2_3">
+                    <area shape="polygon" coords="92,0,184,52,184,158,92,213,,0,158,0,52" target="_blank" style="cursor: pointer" />
+                </map>
+                <map name="planetmap2_4" id="planetmap2_4">
+                    <area shape="polygon" coords="92,0,184,52,184,158,92,213,,0,158,0,52" target="_blank" style="cursor: pointer" />
+                </map>
+                <map name="planetmap2_5" id="planetmap2_5">
+                    <area shape="polygon" coords="92,0,184,52,184,158,92,213,,0,158,0,52" target="_blank" style="cursor: pointer" />
+                </map>
+                <map name="planetmap3_1" id="planetmap3_1">
+                    <area shape="polygon" coords="92,0,184,52,184,158,92,213,,0,158,0,52" target="_blank" style="cursor: pointer" />
+                </map>
+                <map name="planetmap3_2" id="planetmap3_2">
+                    <area shape="polygon" coords="92,0,184,52,184,158,92,213,,0,158,0,52" target="_blank" style="cursor: pointer" />
+                </map>
+                <map name="planetmap3_3" id="planetmap3_3">
+                    <area shape="polygon" coords="92,0,184,52,184,158,92,213,,0,158,0,52" target="_blank" style="cursor: pointer" />
+                </map>
+                <map name="planetmap3_4" id="planetmap3_4">
+                    <area shape="polygon" coords="92,0,184,52,184,158,92,213,,0,158,0,52" target="_blank" style="cursor: pointer" />
+                </map>
+            </div>
+            <ul class="Inc_ul_List ulIncubatorList">
+            </ul>
+
+        </div>
+    </div>
+    <!--List Content Ended-->
+    <!--List Invest Content Ended-->
+    <div class="div_treeBottom extraBottom"></div>
+    <div id="divFoot"></div>
+    <input id="hidCallbackFunc" type="hidden" />
+</body>
+
+</html>

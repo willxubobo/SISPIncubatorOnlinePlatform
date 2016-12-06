@@ -1,0 +1,109 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>投资机构详情</title>
+    <link href="../Content/base.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link href="../Content/puplic.css" rel="stylesheet" />
+
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/common.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="../Scripts/custom.js"></script>
+    <script type="text/javascript" src="../Scripts/custom-pc.js?14"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/Investor/investorinfo.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="divTopMenu" class="divTopMenu"></div>
+        <div class="content">
+            <div class="main">
+                <div class="breadcrumb-nav">
+                    <ul class="bn-list">
+                        <li class="oneleval">投资机构管理</li>
+                        <li class="bn-spacer"></li>
+                        <li class="last-menu">投资机构详情</li>
+                    </ul>
+                </div>
+                <div class="module module-style">
+                    <div class="">
+                        <div class="right-result-box">
+                            <table class="tableApproveContent">
+                                <tbody>
+                                <tr>
+                                    <td class="tdTitle" valign="top" style="vertical-align: middle;">公司Logo：</td>
+                                    <td colspan="3">
+                                        <img id="imglogo" alt="" class="investorcomlogo vimgborder hide" onload="AutoResizeImage(200,200,this)" style="margin-top: 5px;">
+                                    </td>
+
+                                </tr>
+                                    <tr>
+                                        <td class="tdTitle">公司名称：</td>
+                                        <td>
+                                            <div class="showInput" id="CompanyName"></div>
+                                        </td>
+                                        <td class="tdTitle">首页显示：</td>
+                                        <td>
+                                            <div class="showInput" id="IsIndexShow"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdTitle">投资人姓名：</td>
+                                        <td>
+                                            <div class="showInput" id="InvestorName"></div>
+                                        </td>
+                                        <td class="tdTitle">投资领域：</td>
+                                        <td>
+                                            <div class="showInput" id="InvestmentField"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdTitle">基金规模：</td>
+                                        <td>
+                                            <div class="showInput" id="FundScale"></div>
+                                        </td>
+                                        <td class="tdTitle">投资阶段：</td>
+                                        <td>
+                                            <div class="showInput" id="InvestmentStage"></div>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                    <td class="tdTitle">邮箱：</td>
+                                    <td>
+                                        <div class="showInput" id="Email"></div>
+                                    </td>
+                                    <td class="tdTitle">公司地址：</td>
+                                    <td>
+                                        <div class="showInput" id="Address"></div>
+                                    </td>
+                                </tr>
+
+                                    <tr>
+                                        <td colspan="4" class="tdContentInfo">
+                                            <p>投资案例：</p>
+                                            <p id="InvestmentCase" class="pContent">
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="btn-box operate-btn-box">
+                                <a class="base-btn lg-btn" href="javascript:" onclick="returnmain();">关闭</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

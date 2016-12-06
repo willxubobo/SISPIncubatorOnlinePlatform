@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>融资项目信息维护</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link href="../Content/puplic.css" rel="stylesheet" />
+    <link href="../Content/select2.css" rel="stylesheet" />
+    <link href="../Content/Jcrop.min.css" rel="stylesheet" type="text/css" />
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script language="javascript" src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../Scripts/select2.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/Investment/financingprojectpublish.js"></script>
+    <script src="../Scripts/JqueryCrop/Jcrop.min.js" type="text/javascript"></script>
+    <script src="../Scripts/checkform.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+</head>
+<body>
+    <input type="hidden" id="userId" />
+    <input type="hidden" id="X" />
+    <input type="hidden" id="Y" />
+    <input type="hidden" id="W" />
+    <input type="hidden" id="H" />
+    <input type="hidden" id="hidlogourl" />
+    <input type="hidden" id="hidxy" />
+    <input type="hidden" id="hidradio" />
+    <div class="wrap">
+        <div id="divTopMenu" class="divTopMenu"></div>
+        <div class="content">
+            <div class="main">
+                <div class="breadcrumb-nav">
+                    <ul class="bn-list">
+                        <li>融资项目管理</li>
+                        <li class="bn-spacer"></li>
+                        <li class="last-menu lastmenu">修改融资项目</li>
+                    </ul>
+                </div>
+                <div class="module module-style">
+                    <div class="module-title" style="text-align: center;">基本信息</div>
+                    <div class="module-content">
+                        <table class="base-layout-table financingtable">
+                            <tbody>
+                                <tr>
+                                    <td class="tableformtdwidth">公司Logo</td>
+                                    <td>
+                                        <div class="add-img-btn croplogo" onclick="showuploadprologo();"></div>
+                                        <div class="ipt-enter-tips hide logotip" style="clear: both;">公司Logo不能为空!</div>
+                                    </td>
+                                    <td class="tableformtdwidth">产品名称</td>
+                                    <td>
+                                        <input class="base-ipt sm-ipt" isrequired="true" id="ProductionName" maxlength='200' type="text" style="width: 100%;">
+                                        <div class="ipt-enter-tips hide">产品名称不能为空！</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        所属行业
+                                    </td>
+                                    <td colspan="3" id="tdindustry"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        融资金额
+                                    </td>
+                                    <td>
+                                        <input class="base-ipt sm-ipt" id="FinancingAmount" maxlength="50" onkeyup="clearNoNum(this)" isrequired="true" type="text" style="display: inline-block;" placeholder="万元">
+                                        <div class="ipt-enter-tips hide">融资金额不能为空！</div>
+                                    </td>
+                                    <td>首页显示</td>
+                                    <td><input class="check-ipt IsShowIndex" type="checkbox"></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        公司简介
+                                    </td>
+                                    <td colspan="3">
+                                        <textarea class="base-textarea max-ipt" id="CompanyDescription" maxlength="4000" isrequired="true"></textarea>
+                                        <div class="ipt-enter-tips hide">公司简介不能为空！</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>产品简介</td>
+                                    <td colspan="3">
+                                        <textarea class="base-textarea max-ipt" id="ProductionDescription" maxlength="4000" isrequired="true"></textarea>
+                                        <div class="ipt-enter-tips hide">产品简介不能为空！</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>发展阶段</td>
+                                    <td colspan="3">
+                                        <textarea class="base-textarea max-ipt" id="DevelopmentalStage" maxlength="4000" isrequired="true"></textarea>
+                                        <div class="ipt-enter-tips hide">发展阶段不能为空！</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>市场分析</td>
+                                    <td colspan="3">
+                                        <textarea class="base-textarea max-ipt" id="MarketAnalysis" placeholder="介绍目标市场定位，商业模式、目前的市场竞争表现，可能存在的风险等。" isrequired="true" maxlength="4000"></textarea>
+                                        <div class="ipt-enter-tips hide">市场分析不能为空！</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>核心团队</td>
+                                    <td colspan="3">
+                                        <textarea class="base-textarea max-ipt" id="CoreTeam" isrequired="true" maxlength="4000"></textarea>
+                                        <div class="ipt-enter-tips hide">核心团队不能为空！</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>其他</td>
+                                    <td colspan="3">
+                                        <textarea class="base-textarea max-ipt" id="OtherInfo" maxlength="4000"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>访问控制</td>
+                                    <td colspan="3">
+                                        <div class="left" id="tdindustry" style="padding-top: 12px;">
+                                            <input id="VistorRadio" class="iptradio" type="radio" name="访客" value="0">访客</input>
+                                            <input id="LoginRadio" class="iptradio" type="radio" name="仅登陆" value="1" style="margin-left:10px;">仅登陆</input>
+                                            <input id="InvestorRadio" class="iptradio" type="radio" name="仅投资人" value="2" style="margin-left: 10px;">仅投资人</input>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btn-box operate-btn-box" style="margin-top: 20px;">
+                        <input id="hidApplyId" type="hidden" />
+                        <a class="base-btn blue-btn lg-btn space15" id="aSubmit" onclick="SubmitFinancingForm()" style="cursor: pointer;" href="javascript:;">提交</a>
+                        <a class="base-btn lg-btn space15" href="javascript:;" onclick="FinancingCancel();">取消</a>
+                        <input type="hidden" id="hidCallbackFunc" class="hidCallbackFunc" value="initfinancingprojectedit" />
+                    </div>
+                </div>
+                <div class="popup-div prologodiv hide">
+                    <div class="popup-bg"></div>
+                    <div class="popup-content center uploaddivsize">
+                        <div class="popup-main-content relative white-bg">
+                            <div class="img-change-box">
+                                <div class="apply-settled-title">上传公司Logo</div>
+                                <div class="change-img">
+                                    <div class="left-file-area">
+                                        <div class="view-file-box">
+                                            <a class="viewImgBtn left" href="javascript:;">浏览本地文件</a>
+                                            <input class="view-file-btn" id="fileprologo" type="file" name="fileprologo" onchange="UploadProLogo();" />
+                                            <span class="add-tips-txt left">（*上传图片不超过1M）</span>
+                                        </div>
+                                    </div>
+                                    <div class="right-img-area imgprologoreview"></div>
+                                </div>
+                                <div class="change-img-btn-box">
+                                    <a class="change-operate-btn right" href="javascript:" onclick="hideuploadprologo();">取消</a>
+                                    <a class="change-operate-btn bule-btn right" href="javascript:" onclick="cropprologofile();">确定</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id="hidimgname" />
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

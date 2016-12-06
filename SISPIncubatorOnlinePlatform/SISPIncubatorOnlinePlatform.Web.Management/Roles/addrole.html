@@ -1,0 +1,80 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>角色信息维护</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link href="../Content/Jcrop.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/puplic.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="../Scripts/custom.js"></script>
+    <script type="text/javascript" src="../Scripts/custom-pc.js?14"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/Roles/addrole.js"></script>
+    <script src="../Scripts/checkform.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+</head>
+<body>
+    <!-- Top Nav Started -->
+    <input type="hidden" id="hidroleid" class="hidroleid" />
+<div class="wrap">
+    <div id="divTopMenu" class="divTopMenu"></div>
+    <div class="content">
+        <div class="main">
+            <div class="breadcrumb-nav">
+                <ul class="bn-list">
+                    <li>角色管理</li>
+                    <li class="bn-spacer"></li>
+                    <li class="last-menu lastmenu">添加角色</li>
+                </ul>
+            </div>
+            <div class="module module-style">
+                <div class="module-title" style="text-align: center;">基本信息</div>
+                <div class="module-content">
+                    <table class="base-layout-table">
+                        <tr>
+                            <td width="85">
+                                <label class="ipt-txt">角色名称</label>
+                            </td>
+                            <td>
+                                <input class="base-ipt sm-ipt RoleName" type="text" maxlength="200" placeholder="请输入角色名称" isrequired="true"/>
+                                <div class="ipt-enter-tips hide">角色名称不能为空!</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="ipt-txt">是否管理员</label>
+                            </td>
+                            <td>
+                                <input class="check-ipt IsAdmin" type="checkbox">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label class="ipt-txt">描述</label>
+                            </td>
+                            <td>
+                                <textarea class="base-textarea max-ipt Description" maxlength="500" placeholder="请输入描述" isrequired="true"></textarea>
+                                <div class="ipt-enter-tips hide">描述不能为空!</div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="btn-box operate-btn-box" style="margin-top: 20px;">
+                        <a class="base-btn blue-btn lg-btn space15" href="javascript:" onclick="saveroleform();">提交</a>
+                        <a class="base-btn lg-btn space15" href="javascript:" onclick="returnmain();">取消</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

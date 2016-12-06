@@ -1,0 +1,150 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>我的信息</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/pc-style.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/select2.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/pc-style.css" />
+    <link href="../Content/puplic.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/common.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script language="javascript" src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../Scripts/select2.js"></script>
+    <script type="text/javascript" language="javascript" src="../Scripts/custom.js"></script>
+    <script type="text/javascript" language="javascript" src="../Scripts/custom-pc.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/checkform.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/Account/improveuserinfo.js"></script>
+     <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/yanue.pop.js"></script>
+    <link href="../Content/poptips.css" rel="stylesheet" />
+</head>
+<body>
+<input type="hidden" id="enterfunction" class="enterfunction" value="saveform"/>
+    <input type="hidden" id="hidCallbackFunc" value="GetUserInfo" />
+<!-- Top Nav Started -->
+<div class="divTopNav">
+</div>
+<!-- Top Nav Ended -->
+<!--List Invest Content Started-->
+<div class="div-content">
+    <div class="main-content">
+        <div class="functional-area relative">
+            <div class="divLeftNav" id="divLeftNav">
+            </div>
+            <div class="right-result-box">
+                <div class="result-box">
+                    <div class="padding20-30">
+                        <input type="hidden" id="hiduserid" class="hiduserid"/>
+                        <input type="hidden" id="hidlocalid" class="hidlocalid"/>
+                        <input type="hidden" id="hidmedid" class="hidmedid"/>
+                        <input id="hidphone" type="hidden" class="hidphone"/>
+                        <table class="layout-table webimproveuserinfo">
+                            <tr>
+                                <td width="85">
+                                    <label class="ipt-txt">联系人</label>
+                                </td>
+                                <td>
+                                    <input class="ipt-enter ipt-sm UserNameimp" type="text" colname="UserName" maxlength="200" placeholder="请输入联系人" isrequired="true"/>
+                                    <div class="ipt-enter-tips hide">联系人不能为空!</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="ipt-txt">手机号</label>
+                                </td>
+                                <td id="divphone"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="ipt-txt">电子邮箱</label>
+                                </td>
+                                <td>
+                                    <input class="ipt-enter ipt-sm Emailimp" type="email" maxlength="150" placeholder="请输入电子邮件" isrequired="true" ctype="Email"/>
+                                    <div class="ipt-enter-tips hide">电子邮箱不能为空!</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="ipt-txt">个人/企业</label><input type="hidden" id="hidutype" class="hidutype" value="个人" />
+                                </td>
+                                <td class="cptype">
+
+                                    <!--<div class="enter-ipt-box" style="padding-left: 0 !important;">
+            <button class="registerRadio person on" onclick="settype('个人'); return false;">个人</button>
+            <button class="registerRadio bussiness" onclick="settype('企业'); return false;">企业</button>
+        </div>-->
+                                </td>
+                            </tr>
+                            <tr class="hide companyuser">
+                                <td>
+                                    <label class="ipt-txt">公司名称</label>
+                                </td>
+                                <td class="CompanyNameimpro">
+                                </td>
+                            </tr>
+                            <tr class="hide companyuser">
+                                <td>
+                                    <label class="ipt-txt">营业执照</label>
+                                </td>
+                                <td><img alt="" class="userlogo linenseimg" onload="AutoResizeImage(600,350,this)"></td>
+                            </tr>
+                            <tr class="hide companyuser">
+                                <td>
+                                    <label class="ipt-txt">身份证</label>
+                                </td>
+                                <td><img alt="" class="userlogo cardimg" onload="AutoResizeImage(400,300,this)"></td>
+                            </tr>
+                            <tr class="hide companyuser">
+                                <td>
+                                    <label class="ipt-txt">备注</label>
+                                </td>
+                                <td class="Description"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="ipt-txt">联系地址</label>
+                                </td>
+                                <td>
+                                    <textarea class="ipt-enter ipt-sm Addressimp" maxlength="500" placeholder="请输入联系地址" isrequired="true"></textarea>
+                                    <div class="ipt-enter-tips hide">联系地址不能为空!</div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="btn-box apply-btn-layout">
+                            <a class="base-btn sm-btn bule-btn space25 impsaveform" href="javascript:;" onclick="saveform();">保存</a>
+                            <a class="base-btn sm-btn space25" href="javascript:;" onclick="cancelsave();">取消</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="divTopFlag"></div>
+<div id="divFoot"></div>
+<!--List Invest Content Ended-->
+<!--Bottom Div Started-->
+<!--Bottom Div Ended-->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".selectIpt").select2({
+            minimumResultsForSearch: Infinity
+        });
+    });
+</script>
+</body>
+</html>

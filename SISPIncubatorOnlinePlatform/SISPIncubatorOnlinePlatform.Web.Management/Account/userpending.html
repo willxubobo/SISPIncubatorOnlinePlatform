@@ -1,0 +1,76 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>注册用户列表</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link href="../Content/paging.css" rel="stylesheet" />
+    <link href="../Content/keleyidivpager.css" rel="stylesheet" />
+    <link href="../Content/select2.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/checkform.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/custom-pc.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../Scripts/select2.js"></script>
+    <script src="../Scripts/keleyidivpager.js"></script>
+    <script src="../Scripts/paging.js"></script>
+    <script src="../Scripts/Account/userpendinglist.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+</head>
+<body style="background-color: #f2f4f5;"><input type="hidden" id="enterfunction" class="enterfunction" value="InitGetuserData" />
+    <div class="wrap">
+        <div id="divTopMenu" class="divTopMenu"></div>
+        <div class="content">
+            <div class="main">
+                <div class="divLeftNav"></div>
+                <div class="right-area">
+                    <div class="breadcrumb-nav">
+                        <ul class="bn-list">
+                            <li>用户管理</li>
+                            <li class="bn-spacer"></li>
+                            <li class="last-menu">注册用户列表</li>
+                        </ul>
+                        
+                    </div>
+                    <div class="tab-filtrate-boxman">
+                        <div class="search-box tab-search-style right">
+                            <input class="search-ipt" type="text" id="txtkeyword" placeholder="关键字">
+                            <input type="hidden" id="searchServiceValue">
+                            <div class="search-btn" onclick="InitGetuserData();"></div>
+                        </div>
+                    </div>
+                    <div class="base-table-box tableStyle">
+                        <table class="base-table">
+                            <thead>
+                                <tr>
+                                    <th>用户名</th>
+                                    <th>手机号</th>
+                                    <th>邮箱</th>
+                                    <th>注册时间</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="userBody"></tbody>
+                        </table>
+                        <div id='divNodata' style="display: none;">
+                            <div class="no-result-img"></div>
+                            <div style='text-align: center; margin-top: 5px; margin-bottom: 10px'>暂无数据</div>
+                        </div>
+                    </div>
+                    <div class="page-box">
+                        <div id="div_pager" class="div_pager">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></div>
+        <input type="hidden" id="hiduserid" class="hiduserid" />
+</body>
+</html>

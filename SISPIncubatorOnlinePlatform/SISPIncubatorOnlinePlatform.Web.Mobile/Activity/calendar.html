@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>活动日历</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css?V2016062701" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css?V2016062701" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css?V2016062701"/>
+    <link rel="stylesheet" type="text/css" href="../Content/calendar.css?V2016062701" />
+    <script src="../Scripts/jquery-2.2.2.min.js?V2016062701"></script>
+    <script src="../Scripts/jquery-ui.min.js?V2016062701"></script>
+    <script src="../Scripts/jquery.touchSwipe.js?V2016062701"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js?V2016062701"></script>
+    <script src="../Scripts/resize.js?V2016062701"></script>
+    <script src="../Scripts/base.js?V2016062701"></script>
+    <script src="../Scripts/jquery.alert.js?V2016062701"></script>
+    <script src="../Scripts/publicjs.js?V2016062701"></script>
+    <script src="../Scripts/checkform.js?V2016062701"></script>
+    <script src="../Scripts/Activity/calendar.js?V2016062701"></script>
+    <script src="../Scripts/mainMenu.js?V2016062701"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js?V2016062701"></script>
+    <script type="text/javascript" src="../Scripts/WeChat/initweixinsdk.js?V2016062701"></script>
+    <script src="../Scripts/baidu.js?V2016062701"></script>  
+</head>
+<body style="background-color: #f1f4f9;">
+    <div class="wrap">
+        <div class="content">
+            <div class="calendarBox">
+                <div class="calendarHeader">
+                    <div class="curDate">
+                        <span class="curYear"></span>
+                        <span>.</span>
+                        <span class="curMonth"></span>
+                    </div>
+                </div>
+                <div class="calendar"></div>
+            </div>
+            <div class="eventsBox">
+                <ul class="eventsList marginBottom60"></ul>
+            </div>
+        </div>
+        <div class="agreenBtnBox">
+            <input class="baseBtn activityBtn blueBtn" type="button" onclick="OpenLayer()" value="申请"/>
+        </div>
+        <div class="popupDiv hide">
+            <div class="center" style="width: 300px;height: auto;">
+                <div class="popupBox padding20">
+                    <div class="officeTimeBox">
+                        <div class="registerList">
+                            <div class="baseIptBox">
+                                <ul class="radioBtnBox">
+                                    <li>
+                                        <input class="radioBtn projectType" type="radio" name="2" checked="checked" />
+                                        <label class="radioTxt" onclick="checkBtnSelect(this)">活动发布申请</label>
+                                    </li>
+                                    <li style="margin-top:10px">
+                                        <input class="radioBtn projectType" type="radio" name="2" />
+                                        <label class="radioTxt" onclick="checkBtnSelect(this)">举办孵化器活动申请</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quitBtnBox">
+                        <input id="hidItemsGuid" type="hidden" />
+                        <input class="baseBtn registerBtn blueBtn left" type="button" onclick=" SaveOk() " value="确定" />
+                        <input class="baseBtn registerBtn darkBlueBtn right" onclick=" CloseLayer() " type="button" value="取消" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

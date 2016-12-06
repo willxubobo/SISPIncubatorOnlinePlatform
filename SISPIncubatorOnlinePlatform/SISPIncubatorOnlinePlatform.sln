@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SISPIncubatorOnlinePlatform.Service", "SISPIncubatorOnlinePlatform.Service\SISPIncubatorOnlinePlatform.Service.csproj", "{16353649-90FB-453E-BB08-CF9097993C5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SISPIncubatorOnlinePlatform.Service.Tests", "SISPIncubatorOnlinePlatform.Service.Tests\SISPIncubatorOnlinePlatform.Service.Tests.csproj", "{F393B580-2303-41DA-97A7-C5778330C7EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SISPIncubatorOnlinePlatform.Web", "SISPIncubatorOnlinePlatform.Web\SISPIncubatorOnlinePlatform.Web.csproj", "{A5098FF7-6AD8-42A3-B6F1-B53A553857C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SISPIncubatorOnlinePlatform.Web.Mobile", "SISPIncubatorOnlinePlatform.Web.Mobile\SISPIncubatorOnlinePlatform.Web.Mobile.csproj", "{98444B57-8169-4DEF-B8EB-BD1117555560}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SISPIncubatorOnlinePlatform.Web.Management", "SISPIncubatorOnlinePlatform.Web.Management\SISPIncubatorOnlinePlatform.Web.Management.csproj", "{DE75B824-B5F4-4035-8AFA-69E74914A898}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SISPIncubatorOnlinePlatform.Web.Wechart", "SISPIncubatorOnlinePlatform.Web.Wechart\SISPIncubatorOnlinePlatform.Web.Wechart.csproj", "{E65784E0-5973-4BC1-9EA6-BC826FDCCCAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16353649-90FB-453E-BB08-CF9097993C5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16353649-90FB-453E-BB08-CF9097993C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16353649-90FB-453E-BB08-CF9097993C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16353649-90FB-453E-BB08-CF9097993C5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F393B580-2303-41DA-97A7-C5778330C7EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F393B580-2303-41DA-97A7-C5778330C7EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F393B580-2303-41DA-97A7-C5778330C7EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F393B580-2303-41DA-97A7-C5778330C7EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5098FF7-6AD8-42A3-B6F1-B53A553857C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5098FF7-6AD8-42A3-B6F1-B53A553857C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5098FF7-6AD8-42A3-B6F1-B53A553857C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5098FF7-6AD8-42A3-B6F1-B53A553857C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98444B57-8169-4DEF-B8EB-BD1117555560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98444B57-8169-4DEF-B8EB-BD1117555560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98444B57-8169-4DEF-B8EB-BD1117555560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98444B57-8169-4DEF-B8EB-BD1117555560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE75B824-B5F4-4035-8AFA-69E74914A898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE75B824-B5F4-4035-8AFA-69E74914A898}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE75B824-B5F4-4035-8AFA-69E74914A898}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE75B824-B5F4-4035-8AFA-69E74914A898}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E65784E0-5973-4BC1-9EA6-BC826FDCCCAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E65784E0-5973-4BC1-9EA6-BC826FDCCCAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E65784E0-5973-4BC1-9EA6-BC826FDCCCAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E65784E0-5973-4BC1-9EA6-BC826FDCCCAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

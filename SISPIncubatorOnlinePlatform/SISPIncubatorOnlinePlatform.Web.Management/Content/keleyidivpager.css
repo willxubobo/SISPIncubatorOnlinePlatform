@@ -1,0 +1,80 @@
+﻿/*
+keleyidivpagver 分页插件
+http://keleyi.com
+柯乐义
+*/
+#div_pager{
+	clear:both;
+	height:30px;
+	line-height:30px;
+	margin-top:20px;
+	color:#999999;
+}
+
+#div_pager a{
+	padding:4px 8px;
+	margin:10px 3px;
+	font-size:12px;
+	border:1px solid #DFDFDF;
+	background-color:#FFF;
+	color:#9d9d9d;
+	text-decoration:none;
+}
+
+#div_pager span{
+	padding:4px 8px;
+	margin:10px 3px;
+	font-size:14px;
+}
+
+#div_pager span.disabled{
+	padding:4px 8px;
+	margin:10px 3px;
+	font-size:12px;
+	border:1px solid #DFDFDF;
+	background-color:#FFF;
+	color:#DFDFDF;
+}
+
+#div_pager span.curr{
+	padding:4px 8px;
+	margin:10px 3px;
+	font-size:12px;
+	border:1px solid #FF6600;
+	background-color:#FF6600;
+	color:#FFF;
+}
+
+#div_pager a:hover{
+	background-color:#FFEEE5;
+	border:1px solid #FF6600;
+}
+
+#div_pager span.normalsize{
+	font-size:12px;
+}
+.page-box{
+	position: relative;
+	overflow: hidden;
+}
+#div_pager{
+	float: right;
+	margin-right: 80px;
+}
+#btn_go_input{
+	padding: 0 !important;
+	line-height: 16px !important;
+	font-size: 12px !important;
+	color: #666 !important;
+}
+#btn_go{
+	display: block !important;
+	left: 75px !important;
+	/*background: none !important;*/
+	color: #01acf4;
+	border: 1px solid #01acf4;
+	font-family: Microsoft YaHei,微软雅黑;
+	font-size: 12px;
+	line-height: 18px !important;
+	z-index: 2;
+}

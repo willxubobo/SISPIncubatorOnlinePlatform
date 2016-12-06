@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>选择投资人</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/select2.css"/>
+    <link href="../Content/paging.css" rel="stylesheet"/>
+    <link href="../Content/keleyidivpager.css" rel="stylesheet" />
+    <link href="../Content/Jcrop.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/puplic.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../Scripts/select2.js"></script>
+    <script type="text/javascript" src="../Scripts/custom.js"></script>
+    <script type="text/javascript" src="../Scripts/custom-pc.js?14"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/keleyidivpager.js"></script>
+    <script src="../Scripts/paging.js"></script>
+    <script src="../Scripts/Investor/selectuser.js"></script>
+
+</head>
+<body>
+    <!-- Top Nav Started -->
+    <div class="divTopNav"></div>
+    <div class="main">
+        <div class="breadcrumb-nav">
+            <ul class="bn-list">
+                <li>投资机构管理</li>
+                <li class="bn-spacer"></li>
+                <li class="last-menu lastmenu">选择投资人</li>
+            </ul>
+        </div>
+        <div class="activities-box">
+            <div class="tab-content-box">
+                <div class="tab-content">
+                    <div class="tab-filtrate-box">
+                        <div class="search-box tab-search-style right">
+                            <input class="search-ipt" type="text" id="txtkeyword" placeholder="关键字">
+                            <input type="hidden" id="searchServiceValue">
+                            <div class="search-btn" onclick="GetinvesoruserData(1, 0);"></div>
+                        </div>
+                    </div>
+                    <div class="base-table-box tableStyle">
+                        <table class="base-table">
+                            <thead>
+                            <tr>
+                                <th>选择</th>
+                                <th>用户名</th>
+                                <th>手机号</th>
+                                <th>用户类型</th>
+                                <th>邮箱</th>
+                            </tr>
+                            </thead>
+                            <tbody id="userBody"></tbody>
+                        </table>
+                        <div id='divNodata' style="display: none;">
+                            <div class="no-result-img"></div>
+                            <div style='text-align: center; margin-top: 5px; margin-bottom: 10px'>暂无数据</div>
+                        </div>
+                    </div>
+                    <div class="page-box">
+                        <div id="div_pager" class="div_pager">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-box operate-btn-box">
+            <a class="base-btn blue-btn lg-btn space15" href="javascript:" onclick="sureselectuser();">选择</a>
+            <a class="base-btn lg-btn space15" href="javascript:" onclick="returnmain();">取消</a>
+        </div>
+    </div>
+</body>
+</html>

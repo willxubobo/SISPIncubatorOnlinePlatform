@@ -1,0 +1,173 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>投资机构信息维护</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/select2.css" />
+    <link href="../Content/Jcrop.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/puplic.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../Scripts/select2.js"></script>
+    <script type="text/javascript" src="../Scripts/custom.js"></script>
+    <script type="text/javascript" src="../Scripts/custom-pc.js?14"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <!--<script src="../Scripts/uploadfile.js"></script>-->
+    <script src="../Scripts/Investor/investorauth.js"></script>
+    <script src="../Scripts/JqueryCrop/Jcrop.min.js" type="text/javascript"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+</head>
+<body>
+    <!-- Top Nav Started -->
+    <input type="hidden" id="userId" />
+    <input type="hidden" id="X" />
+    <input type="hidden" id="Y" />
+    <input type="hidden" id="W" />
+    <input type="hidden" id="H" />
+    <input type="hidden" id="hidlogourl" />
+<input type="hidden" id="hidxy"/>
+    <input type="hidden" id="hidradio" />
+<div class="wrap">
+    <div id="divTopMenu" class="divTopMenu"></div>
+    <div class="content">
+        <div class="main">
+            <div class="breadcrumb-nav">
+                <ul class="bn-list">
+                    <li>投资机构管理</li>
+                    <li class="bn-spacer"></li>
+                    <li class="last-menu lastmenu">修改投资机构</li>
+                </ul>
+            </div>
+            <div class="module module-style">
+                <div class="module-title" style="text-align: center;">基本信息</div>
+                <div class="module-content">
+                    <table class="base-layout-table investortable">
+                        <tr>
+                            <td width="85">
+                                <label class="ipt-txt">公司名称</label>
+                            </td>
+                            <td>
+                                <input class="base-ipt sm-ipt" type="text" id="CompanyName" maxlength="200" isrequired="true">
+                                <div class="ipt-enter-tips hide">公司名称不能为空!</div>
+                            </td>
+                            <td class="tableformtdwidth">
+                                <label class="ipt-txt">公司Logo</label>
+                            </td>
+                            <td>
+                                <div class="add-img-btn croplogo" onclick="showuploadcomlogo();"></div>
+                                <div class="ipt-enter-tips hide logotip" style="clear: both;">公司Logo不能为空!</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="ipt-txt">基金规模</label>
+                            </td>
+                            <td>
+                                <input class="base-ipt sm-ipt" type="text" id="FundScale" maxlength="200" isrequired="true"/>
+                                <div class="ipt-enter-tips hide">基金规模不能为空!</div>
+                            </td>
+                            <td>
+                                <label class="ipt-txt">投资领域</label>
+                            </td>
+                            <td>
+                                <input class="base-ipt sm-ipt" type="text" id="InvestmentField" maxlength="500" isrequired="true"/>
+                                <div class="ipt-enter-tips hide">投资领域不能为空!</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="ipt-txt">投资人姓名</label>
+                            </td>
+                            <td>
+                                <input class="base-ipt sm-ipt" type="text" id="InvestorName" maxlength="200" disabled="disabled" style="width: 85%;"/><input id="btnselectuser" class="enter-btn" style="cursor: pointer; width: 50px;" type="button" value="选择" onclick="SelectInvestorUser(); return false;">
+                                <div class="ipt-enter-tips hide investorerrortip">投资人姓名不能为空!</div>
+                                <input type="hidden" id="hiduserid" class="hiduserid"/>
+                            </td>
+                            <td>
+                                <label class="ipt-txt">邮箱</label>
+                            </td>
+                            <td>
+                                <input class="base-ipt sm-ipt Email" type="email" maxlength="150" id="Email" isrequired="true" ctype="Email"/>
+                                <div class="ipt-enter-tips hide">邮箱不能为空!</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="ipt-txt">投资阶段</label>
+                            </td>
+                            <td>
+                                <select class="ipt-enter ipt-sm selectIpt left" id="selectBtn" style="width: 275px;"></select>
+                            </td>
+                            <td>
+                                <label class="ipt-txt">公司地址</label>
+                            </td>
+                            <td>
+                                <input class="base-ipt sm-ipt" type="text" isrequired="true" maxlength="500" id="Address"/>
+                                <div class="ipt-enter-tips hide">公司地址不能为空!</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>投资案例</td>
+                            <td colspan="3">
+                                <textarea class="base-textarea max-ipt" id="InvestmentCase" isrequired="true"></textarea>
+                                <div class="ipt-enter-tips hide">投资案例不能为空!</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>首页显示</td>
+                            <td colspan="3">
+                                <input class="check-ipt IsShowIndex" type="checkbox">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="btn-box operate-btn-box" style="margin-top: 20px;">
+                        <a class="base-btn blue-btn lg-btn space15" href="javascript:" onclick="PostInvestorAuthPublish();">提交</a>
+                        <a class="base-btn lg-btn space15" href="javascript:" onclick="returnmain();">取消</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup-div comlogodiv hide">
+                <div class="popup-bg"></div>
+                <div class="popup-content center uploaddivsize">
+                    <div class="popup-main-content relative white-bg">
+                        <div class="img-change-box">
+                            <div class="apply-settled-title">上传公司Logo</div>
+                            <div class="change-img">
+                                <div class="left-file-area">
+                                    <div class="view-file-box">
+                                        <a class="viewImgBtn left" href="javascript:;">浏览本地文件</a>
+                                        <input class="view-file-btn" id="filecomlogo" type="file" name="filecomlogo" onchange="UploadComLogo();"/>
+                                        <span class="add-tips-txt left">（*上传图片不超过1M）</span>
+                                    </div>
+                                </div>
+                                <div class="right-img-area imgcomlogoreview"></div>
+                            </div>
+                            <div class="change-img-btn-box">
+                                <a class="change-operate-btn right" href="javascript:" onclick="hideuploadcomlogo();">取消</a>
+                                <a class="change-operate-btn bule-btn right" href="javascript:" onclick="cropcomlogofile();">确定</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <input type="hidden" id="hidimgname" />
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $(".selectIpt").select2({
+                        minimumResultsForSearch: Infinity
+                    });
+                });
+            </script>
+</body>
+</html>

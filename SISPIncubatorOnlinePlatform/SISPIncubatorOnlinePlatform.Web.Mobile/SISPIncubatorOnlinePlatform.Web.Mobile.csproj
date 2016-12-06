@@ -1,0 +1,620 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98444B57-8169-4DEF-B8EB-BD1117555560}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SISPIncubatorOnlinePlatform.Web.Mobile</RootNamespace>
+    <AssemblyName>SISPIncubatorOnlinePlatform.Web.Mobile</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\packages\DotNetZip.1.9.8\lib\net20\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\login.html" />
+    <Content Include="Account\myfollow.html" />
+    <Content Include="Account\myprofile.html" />
+    <Content Include="Account\register.html" />
+    <Content Include="Account\retrievepassword.html" />
+    <Content Include="Activity\activitydetail.html" />
+    <Content Include="Activity\activitypublishapply.html" />
+    <Content Include="Activity\calendar.html" />
+    <Content Include="Activity\incubatoractivityapply.html" />
+    <Content Include="Activity\myactivity.html" />
+    <Content Include="Agreement\publishprotocal.html" />
+    <Content Include="Agreement\registerprotocal.html" />
+    <Content Include="approveprogress.html" />
+    <Content Include="contactus.html" />
+    <Content Include="Content\base.css" />
+    <Content Include="Account\improveuserinfo.html" />
+    <Content Include="Content\calendar.css" />
+    <Content Include="Content\custom.css" />
+    <Content Include="Content\icons_mobiscroll.svg" />
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\icons-png\action-black.png" />
+    <Content Include="Content\images\icons-png\action-white.png" />
+    <Content Include="Content\images\icons-png\alert-black.png" />
+    <Content Include="Content\images\icons-png\alert-white.png" />
+    <Content Include="Content\images\icons-png\arrow-d-black.png" />
+    <Content Include="Content\images\icons-png\arrow-d-l-black.png" />
+    <Content Include="Content\images\icons-png\arrow-d-l-white.png" />
+    <Content Include="Content\images\icons-png\arrow-d-r-black.png" />
+    <Content Include="Content\images\icons-png\arrow-d-r-white.png" />
+    <Content Include="Content\images\icons-png\arrow-d-white.png" />
+    <Content Include="Content\images\icons-png\arrow-l-black.png" />
+    <Content Include="Content\images\icons-png\arrow-l-white.png" />
+    <Content Include="Content\images\icons-png\arrow-r-black.png" />
+    <Content Include="Content\images\icons-png\arrow-r-white.png" />
+    <Content Include="Content\images\icons-png\arrow-u-black.png" />
+    <Content Include="Content\images\icons-png\arrow-u-l-black.png" />
+    <Content Include="Content\images\icons-png\arrow-u-l-white.png" />
+    <Content Include="Content\images\icons-png\arrow-u-r-black.png" />
+    <Content Include="Content\images\icons-png\arrow-u-r-white.png" />
+    <Content Include="Content\images\icons-png\arrow-u-white.png" />
+    <Content Include="Content\images\icons-png\audio-black.png" />
+    <Content Include="Content\images\icons-png\audio-white.png" />
+    <Content Include="Content\images\icons-png\back-black.png" />
+    <Content Include="Content\images\icons-png\back-white.png" />
+    <Content Include="Content\images\icons-png\bars-black.png" />
+    <Content Include="Content\images\icons-png\bars-white.png" />
+    <Content Include="Content\images\icons-png\bullets-black.png" />
+    <Content Include="Content\images\icons-png\bullets-white.png" />
+    <Content Include="Content\images\icons-png\calendar-black.png" />
+    <Content Include="Content\images\icons-png\calendar-white.png" />
+    <Content Include="Content\images\icons-png\camera-black.png" />
+    <Content Include="Content\images\icons-png\camera-white.png" />
+    <Content Include="Content\images\icons-png\carat-d-black.png" />
+    <Content Include="Content\images\icons-png\carat-d-white.png" />
+    <Content Include="Content\images\icons-png\carat-l-black.png" />
+    <Content Include="Content\images\icons-png\carat-l-white.png" />
+    <Content Include="Content\images\icons-png\carat-r-black.png" />
+    <Content Include="Content\images\icons-png\carat-r-white.png" />
+    <Content Include="Content\images\icons-png\carat-u-black.png" />
+    <Content Include="Content\images\icons-png\carat-u-white.png" />
+    <Content Include="Content\images\icons-png\check-black.png" />
+    <Content Include="Content\images\icons-png\check-white.png" />
+    <Content Include="Content\images\icons-png\clock-black.png" />
+    <Content Include="Content\images\icons-png\clock-white.png" />
+    <Content Include="Content\images\icons-png\cloud-black.png" />
+    <Content Include="Content\images\icons-png\cloud-white.png" />
+    <Content Include="Content\images\icons-png\comment-black.png" />
+    <Content Include="Content\images\icons-png\comment-white.png" />
+    <Content Include="Content\images\icons-png\delete-black.png" />
+    <Content Include="Content\images\icons-png\delete-white.png" />
+    <Content Include="Content\images\icons-png\edit-black.png" />
+    <Content Include="Content\images\icons-png\edit-white.png" />
+    <Content Include="Content\images\icons-png\eye-black.png" />
+    <Content Include="Content\images\icons-png\eye-white.png" />
+    <Content Include="Content\images\icons-png\forbidden-black.png" />
+    <Content Include="Content\images\icons-png\forbidden-white.png" />
+    <Content Include="Content\images\icons-png\forward-black.png" />
+    <Content Include="Content\images\icons-png\forward-white.png" />
+    <Content Include="Content\images\icons-png\gear-black.png" />
+    <Content Include="Content\images\icons-png\gear-white.png" />
+    <Content Include="Content\images\icons-png\grid-black.png" />
+    <Content Include="Content\images\icons-png\grid-white.png" />
+    <Content Include="Content\images\icons-png\heart-black.png" />
+    <Content Include="Content\images\icons-png\heart-white.png" />
+    <Content Include="Content\images\icons-png\home-black.png" />
+    <Content Include="Content\images\icons-png\home-white.png" />
+    <Content Include="Content\images\icons-png\info-black.png" />
+    <Content Include="Content\images\icons-png\info-white.png" />
+    <Content Include="Content\images\icons-png\link-more.png" />
+    <Content Include="Content\images\icons-png\list-bg.png" />
+    <Content Include="Content\images\icons-png\list-style.png" />
+    <Content Include="Content\images\icons-png\location-black.png" />
+    <Content Include="Content\images\icons-png\location-white.png" />
+    <Content Include="Content\images\icons-png\lock-black.png" />
+    <Content Include="Content\images\icons-png\lock-white.png" />
+    <Content Include="Content\images\icons-png\mail-black.png" />
+    <Content Include="Content\images\icons-png\mail-white.png" />
+    <Content Include="Content\images\icons-png\minus-black.png" />
+    <Content Include="Content\images\icons-png\minus-white.png" />
+    <Content Include="Content\images\icons-png\navigation-black.png" />
+    <Content Include="Content\images\icons-png\navigation-white.png" />
+    <Content Include="Content\images\icons-png\phone-black.png" />
+    <Content Include="Content\images\icons-png\phone-white.png" />
+    <Content Include="Content\images\icons-png\plus-black.png" />
+    <Content Include="Content\images\icons-png\plus-white.png" />
+    <Content Include="Content\images\icons-png\power-black.png" />
+    <Content Include="Content\images\icons-png\power-white.png" />
+    <Content Include="Content\images\icons-png\recycle-black.png" />
+    <Content Include="Content\images\icons-png\recycle-white.png" />
+    <Content Include="Content\images\icons-png\refresh-black.png" />
+    <Content Include="Content\images\icons-png\refresh-white.png" />
+    <Content Include="Content\images\icons-png\search-black.png" />
+    <Content Include="Content\images\icons-png\search-white.png" />
+    <Content Include="Content\images\icons-png\shop-black.png" />
+    <Content Include="Content\images\icons-png\shop-white.png" />
+    <Content Include="Content\images\icons-png\star-black.png" />
+    <Content Include="Content\images\icons-png\star-white.png" />
+    <Content Include="Content\images\icons-png\tag-black.png" />
+    <Content Include="Content\images\icons-png\tag-white.png" />
+    <Content Include="Content\images\icons-png\user-black.png" />
+    <Content Include="Content\images\icons-png\user-white.png" />
+    <Content Include="Content\images\icons-png\video-black.png" />
+    <Content Include="Content\images\icons-png\video-white.png" />
+    <Content Include="Content\images\icons-svg\action-black.svg" />
+    <Content Include="Content\images\icons-svg\action-white.svg" />
+    <Content Include="Content\images\icons-svg\alert-black.svg" />
+    <Content Include="Content\images\icons-svg\alert-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-l-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-l-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-r-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-r-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-d-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-l-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-l-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-r-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-r-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-l-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-l-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-r-black.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-r-white.svg" />
+    <Content Include="Content\images\icons-svg\arrow-u-white.svg" />
+    <Content Include="Content\images\icons-svg\audio-black.svg" />
+    <Content Include="Content\images\icons-svg\audio-white.svg" />
+    <Content Include="Content\images\icons-svg\back-black.svg" />
+    <Content Include="Content\images\icons-svg\back-white.svg" />
+    <Content Include="Content\images\icons-svg\bars-black.svg" />
+    <Content Include="Content\images\icons-svg\bars-white.svg" />
+    <Content Include="Content\images\icons-svg\bullets-black.svg" />
+    <Content Include="Content\images\icons-svg\bullets-white.svg" />
+    <Content Include="Content\images\icons-svg\calendar-black.svg" />
+    <Content Include="Content\images\icons-svg\calendar-white.svg" />
+    <Content Include="Content\images\icons-svg\camera-black.svg" />
+    <Content Include="Content\images\icons-svg\camera-white.svg" />
+    <Content Include="Content\images\icons-svg\carat-d-black.svg" />
+    <Content Include="Content\images\icons-svg\carat-d-white.svg" />
+    <Content Include="Content\images\icons-svg\carat-l-black.svg" />
+    <Content Include="Content\images\icons-svg\carat-l-white.svg" />
+    <Content Include="Content\images\icons-svg\carat-r-black.svg" />
+    <Content Include="Content\images\icons-svg\carat-r-white.svg" />
+    <Content Include="Content\images\icons-svg\carat-u-black.svg" />
+    <Content Include="Content\images\icons-svg\carat-u-white.svg" />
+    <Content Include="Content\images\icons-svg\check-black.svg" />
+    <Content Include="Content\images\icons-svg\check-white.svg" />
+    <Content Include="Content\images\icons-svg\clock-black.svg" />
+    <Content Include="Content\images\icons-svg\clock-white.svg" />
+    <Content Include="Content\images\icons-svg\cloud-black.svg" />
+    <Content Include="Content\images\icons-svg\cloud-white.svg" />
+    <Content Include="Content\images\icons-svg\comment-black.svg" />
+    <Content Include="Content\images\icons-svg\comment-white.svg" />
+    <Content Include="Content\images\icons-svg\delete-black.svg" />
+    <Content Include="Content\images\icons-svg\delete-white.svg" />
+    <Content Include="Content\images\icons-svg\edit-black.svg" />
+    <Content Include="Content\images\icons-svg\edit-white.svg" />
+    <Content Include="Content\images\icons-svg\eye-black.svg" />
+    <Content Include="Content\images\icons-svg\eye-white.svg" />
+    <Content Include="Content\images\icons-svg\forbidden-black.svg" />
+    <Content Include="Content\images\icons-svg\forbidden-white.svg" />
+    <Content Include="Content\images\icons-svg\forward-black.svg" />
+    <Content Include="Content\images\icons-svg\forward-white.svg" />
+    <Content Include="Content\images\icons-svg\gear-black.svg" />
+    <Content Include="Content\images\icons-svg\gear-white.svg" />
+    <Content Include="Content\images\icons-svg\grid-black.svg" />
+    <Content Include="Content\images\icons-svg\grid-white.svg" />
+    <Content Include="Content\images\icons-svg\heart-black.svg" />
+    <Content Include="Content\images\icons-svg\heart-white.svg" />
+    <Content Include="Content\images\icons-svg\home-black.svg" />
+    <Content Include="Content\images\icons-svg\home-white.svg" />
+    <Content Include="Content\images\icons-svg\info-black.svg" />
+    <Content Include="Content\images\icons-svg\info-white.svg" />
+    <Content Include="Content\images\icons-svg\location-black.svg" />
+    <Content Include="Content\images\icons-svg\location-white.svg" />
+    <Content Include="Content\images\icons-svg\lock-black.svg" />
+    <Content Include="Content\images\icons-svg\lock-white.svg" />
+    <Content Include="Content\images\icons-svg\mail-black.svg" />
+    <Content Include="Content\images\icons-svg\mail-white.svg" />
+    <Content Include="Content\images\icons-svg\minus-black.svg" />
+    <Content Include="Content\images\icons-svg\minus-white.svg" />
+    <Content Include="Content\images\icons-svg\navigation-black.svg" />
+    <Content Include="Content\images\icons-svg\navigation-white.svg" />
+    <Content Include="Content\images\icons-svg\phone-black.svg" />
+    <Content Include="Content\images\icons-svg\phone-white.svg" />
+    <Content Include="Content\images\icons-svg\plus-black.svg" />
+    <Content Include="Content\images\icons-svg\plus-white.svg" />
+    <Content Include="Content\images\icons-svg\power-black.svg" />
+    <Content Include="Content\images\icons-svg\power-white.svg" />
+    <Content Include="Content\images\icons-svg\recycle-black.svg" />
+    <Content Include="Content\images\icons-svg\recycle-white.svg" />
+    <Content Include="Content\images\icons-svg\refresh-black.svg" />
+    <Content Include="Content\images\icons-svg\refresh-white.svg" />
+    <Content Include="Content\images\icons-svg\search-black.svg" />
+    <Content Include="Content\images\icons-svg\search-white.svg" />
+    <Content Include="Content\images\icons-svg\shop-black.svg" />
+    <Content Include="Content\images\icons-svg\shop-white.svg" />
+    <Content Include="Content\images\icons-svg\star-black.svg" />
+    <Content Include="Content\images\icons-svg\star-white.svg" />
+    <Content Include="Content\images\icons-svg\tag-black.svg" />
+    <Content Include="Content\images\icons-svg\tag-white.svg" />
+    <Content Include="Content\images\icons-svg\user-black.svg" />
+    <Content Include="Content\images\icons-svg\user-white.svg" />
+    <Content Include="Content\images\icons-svg\video-black.svg" />
+    <Content Include="Content\images\icons-svg\video-white.svg" />
+    <Content Include="Content\iscroll.css" />
+    <Content Include="Content\jquery.mobile-1.4.5.css" />
+    <Content Include="Content\jquery.mobile-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.external-png-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.external-png-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.icons-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.icons-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.inline-png-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.inline-png-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.inline-svg-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.inline-svg-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.structure-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.structure-1.4.5.min.css" />
+    <Content Include="Content\jquery.mobile.theme-1.4.5.css" />
+    <Content Include="Content\jquery.mobile.theme-1.4.5.min.css" />
+    <Content Include="Content\mobiscroll.2.13.2.css" />
+    <Content Include="Content\mobiscroll.custom-2.17.0.min.css" />
+    <Content Include="Cooperate\demanddetail.html" />
+    <Content Include="Cooperate\demandpublish.html" />
+    <Content Include="Cooperate\servicedetail.html" />
+    <Content Include="Cooperate\serviceinformation.html" />
+    <Content Include="Cooperate\servicepublish.html" />
+    <Content Include="DemoPage.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.html" />
+    <Content Include="images\01.png" />
+    <Content Include="images\02.png" />
+    <Content Include="images\03.png" />
+    <Content Include="images\04.png" />
+    <Content Include="images\05.png" />
+    <Content Include="images\06.png" />
+    <Content Include="images\07.png" />
+    <Content Include="images\08.png" />
+    <Content Include="images\09.png" />
+    <Content Include="images\1.png" />
+    <Content Include="images\10.png" />
+    <Content Include="images\11.png" />
+    <Content Include="images\12.png" />
+    <Content Include="images\13.png" />
+    <Content Include="images\14.png" />
+    <Content Include="images\15.png" />
+    <Content Include="images\16.png" />
+    <Content Include="images\17.png" />
+    <Content Include="images\18.png" />
+    <Content Include="images\19.png" />
+    <Content Include="images\2.png" />
+    <Content Include="images\20.png" />
+    <Content Include="images\21.png" />
+    <Content Include="images\22.png" />
+    <Content Include="images\23-2.png" />
+    <Content Include="images\23.png" />
+    <Content Include="images\24.png" />
+    <Content Include="images\25.png" />
+    <Content Include="images\26.png" />
+    <Content Include="images\27.png" />
+    <Content Include="images\28.png" />
+    <Content Include="images\29.png" />
+    <Content Include="images\30.png" />
+    <Content Include="images\31.png" />
+    <Content Include="images\32.png" />
+    <Content Include="images\33.png" />
+    <Content Include="images\35.png" />
+    <Content Include="images\add.png" />
+    <Content Include="images\addPic.png" />
+    <Content Include="images\addproject.png" />
+    <Content Include="images\agreement.png" />
+    <Content Include="images\alertbg.png" />
+    <Content Include="images\arrow.png" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\bg1.jpg" />
+    <Content Include="images\bg2.png" />
+    <Content Include="images\bg_large.jpg" />
+    <Content Include="images\button.png" />
+    <Content Include="images\calendar.png" />
+    <Content Include="images\chatproject.png" />
+    <Content Include="images\chick.png" />
+    <Content Include="images\chick1.png" />
+    <Content Include="images\chick1on.png" />
+    <Content Include="images\chickon.png" />
+    <Content Include="images\chick_on.png" />
+    <Content Include="images\clear-icon.png" />
+    <Content Include="images\delete.png" />
+    <Content Include="images\edit.png" />
+    <Content Include="images\f1.jpg" />
+    <Content Include="images\f2.jpg" />
+    <Content Include="images\f3.jpg" />
+    <Content Include="images\f4.jpg" />
+    <Content Include="images\f5.jpg" />
+    <Content Include="images\f6.jpg" />
+    <Content Include="images\f7.jpg" />
+    <Content Include="images\f8.jpg" />
+    <Content Include="images\female.png" />
+    <Content Include="images\female_on.png" />
+    <Content Include="images\fuwu-on.png" />
+    <Content Include="images\fuwu.png" />
+    <Content Include="images\home.png" />
+    <Content Include="images\home_on.png" />
+    <Content Include="images\hr.png" />
+    <Content Include="images\incubatorPic.png" />
+    <Content Include="images\index-bg.jpg" />
+    <Content Include="images\index-bg.png" />
+    <Content Include="images\index-logo.png" />
+    <Content Include="images\index-meun1.png" />
+    <Content Include="images\index-meun2.png" />
+    <Content Include="images\index-meun3.png" />
+    <Content Include="images\index-meun4.png" />
+    <Content Include="images\index-meun5.png" />
+    <Content Include="images\index-meun6.png" />
+    <Content Include="images\index.png" />
+    <Content Include="images\indexlink1.png" />
+    <Content Include="images\indexlink2.png" />
+    <Content Include="images\indexlink3.png" />
+    <Content Include="images\indexlink4.png" />
+    <Content Include="images\indexlink5.png" />
+    <Content Include="images\indexlink6.png" />
+    <Content Include="images\indexLinkBg.png" />
+    <Content Include="images\jishu-on.png" />
+    <Content Include="images\jishu.png" />
+    <Content Include="images\left-icon.png" />
+    <Content Include="images\line.png" />
+    <Content Include="images\link-more.png" />
+    <Content Include="images\list-bg.png" />
+    <Content Include="images\list-style.png" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\main-menu.png" />
+    <Content Include="images\male.png" />
+    <Content Include="images\male_on.png" />
+    <Content Include="images\mine.png" />
+    <Content Include="images\mine_on.png" />
+    <Content Include="images\my.png" />
+    <Content Include="images\noavatar.png" />
+    <Content Include="images\noruselt.png" />
+    <Content Include="images\operatebg.png" />
+    <Content Include="images\p.png" />
+    <Content Include="images\password.png" />
+    <Content Include="images\pic.png" />
+    <Content Include="images\pic1.png" />
+    <Content Include="images\picbg.png" />
+    <Content Include="images\popupbg.png" />
+    <Content Include="images\progress-audit.png" />
+    <Content Include="images\project-img.png" />
+    <Content Include="images\p_press.png" />
+    <Content Include="images\q.png" />
+    <Content Include="images\quitbg.png" />
+    <Content Include="images\q_press.png" />
+    <Content Include="images\remove-icon.png" />
+    <Content Include="images\right-icon.png" />
+    <Content Include="images\rightproject.png" />
+    <Content Include="images\search-icon.png" />
+    <Content Include="images\search.png" />
+    <Content Include="images\select-bg.png" />
+    <Content Include="images\titlebg.png" />
+    <Content Include="images\titleTabbg.png" />
+    <Content Include="images\user.png" />
+    <Content Include="images\头像.png" />
+    <Content Include="images\标记.png" />
+    <Content Include="images\标题bg.png" />
+    <Content Include="images\标题bg1.png" />
+    <Content Include="images\标题bg2.png" />
+    <Content Include="images\标题bg3.png" />
+    <Content Include="images\清空.png" />
+    <Content Include="images\清空1.png" />
+    <Content Include="IncubationRules.html" />
+    <Content Include="Incubator\incubatorapplydetail.html" />
+    <Content Include="Incubator\incubatorapply.html" />
+    <Content Include="Incubator\modifyincubator.html" />
+    <Content Include="Incubator\incubatorinfo.html" />
+    <Content Include="Incubator\myincubatorlist.html" />
+    <Content Include="Incubator\incubatorlist.html" />
+    <Content Include="investment\financingprojectinfo.html" />
+    <Content Include="investment\financingprojectlist.html" />
+    <Content Include="investment\financingrequirementspublish.html" />
+    <Content Include="investor\applyforainvestor.html" />
+    <Content Include="investor\investorinfo.html" />
+    <Content Include="investor\investorlist.html" />
+    <Content Include="Message\messagecenterinfo.html" />
+    <Content Include="Message\messagecenter.html" />
+    <Content Include="myapply.html" />
+    <Content Include="Office\officesettledaapplydetail.html" />
+    <Content Include="Office\officesettledaapply.html" />
+    <Content Include="Scripts\Account\myfollow.js" />
+    <Content Include="Scripts\Activity\activitydetail.js" />
+    <Content Include="Scripts\Activity\myactivity.js" />
+    <Content Include="Scripts\Agreement\protocal.js" />
+    <Content Include="Scripts\Approve\approveprogress.js" />
+    <Content Include="Scripts\Approve\myapply.js" />
+    <Content Include="Scripts\baidu.js" />
+    <Content Include="Scripts\Cooperate\demanddetail.js" />
+    <Content Include="Scripts\Cooperate\servicedetail.js" />
+    <Content Include="Scripts\Cooperate\serviceinformation.js" />
+    <Content Include="Scripts\Incubator\incubatorapplydetail.js" />
+    <Content Include="Scripts\Incubator\modifyincubator.js" />
+    <Content Include="Scripts\Incubator\incubatorinfo.js" />
+    <Content Include="Scripts\Incubator\myincubatorlist.js" />
+    <Content Include="Scripts\Investment\financingprojectinfo.js" />
+    <Content Include="Scripts\Investment\financingprojectlist.js" />
+    <Content Include="Scripts\Investor\investorinfo.js" />
+    <Content Include="Scripts\Investor\investorlist.js" />
+    <Content Include="Scripts\jquery.alert.js" />
+    <Content Include="Scripts\mainMenu.js" />
+    <Content Include="Scripts\Message\chartdialog.js" />
+    <Content Include="Scripts\Message\messagecenterinfo.js" />
+    <Content Include="Scripts\Message\messagecenter.js" />
+    <Content Include="Scripts\OfficeApply\officesettledaapplydetail.js" />
+    <Content Include="Scripts\WeChat\initweixinsdk.js" />
+    <Content Include="Scripts\WeChat\wechat.js" />
+    <Content Include="success.html" />
+    <Content Include="Scripts\Account\improveuserinfo.js" />
+    <Content Include="Scripts\Account\login.js" />
+    <Content Include="Scripts\Account\myprofile.js" />
+    <Content Include="Scripts\Account\register.js" />
+    <Content Include="Scripts\Account\retrievepassword.js" />
+    <Content Include="Scripts\Activity\activitypublishapply.js" />
+    <Content Include="Scripts\Activity\calendar.js" />
+    <Content Include="Scripts\Activity\incubatoractivityapply.js" />
+    <Content Include="Scripts\base.js" />
+    <Content Include="Scripts\checkcode.js" />
+    <Content Include="Scripts\checkform.js" />
+    <Content Include="Content\icons_mobiscroll.eot" />
+    <Content Include="Content\icons_mobiscroll.ttf" />
+    <Content Include="Content\icons_mobiscroll.woff" />
+    <Content Include="WeChatIndex.html" />
+    <Content Include="WeChat\menumanager.html" />
+    <Content Include="WeChat\wechatmenu.txt" />
+    <None Include="Properties\PublishProfiles\Mobile.pubxml" />
+    <None Include="Scripts\jquery-2.2.2.intellisense.js" />
+    <Content Include="Scripts\Cooperate\demandpublish.js" />
+    <Content Include="Scripts\Cooperate\servicepublish.js" />
+    <Content Include="Scripts\Incubator\incubatorapply.js" />
+    <Content Include="Scripts\Incubator\incubatorlist.js" />
+    <Content Include="Scripts\Investment\financingrequirementspublish.js" />
+    <Content Include="Scripts\Investor\applyforainvestor.js" />
+    <Content Include="Scripts\iscroll.js" />
+    <Content Include="Scripts\jquery-2.2.2.js" />
+    <Content Include="Scripts\jquery-2.2.2.min.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jquery.mobile-1.4.5.js" />
+    <Content Include="Scripts\jquery.mobile-1.4.5.min.js" />
+    <Content Include="Scripts\jquery.touchSwipe.js" />
+    <Content Include="Scripts\mobiscroll.2.13.2.js" />
+    <Content Include="Scripts\mobiscroll.custom-2.17.0.min.js" />
+    <Content Include="Scripts\OfficeApply\officesettledaapply.js" />
+    <Content Include="Scripts\publicjs.js" />
+    <Content Include="Scripts\resize.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="wechatresponse.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HttpProxyController.cs" />
+    <Compile Include="CustomAttributes\DeflateCompressionAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AuthToken.cs" />
+    <Compile Include="Models\HttpRequestBody.cs" />
+    <Compile Include="Models\ResponseError.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\WeiXinRequest.cs" />
+    <Compile Include="Module\MyHttpModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="wechatresponse.ashx.cs">
+      <DependentUpon>wechatresponse.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Scripts\jquery.mobile-1.4.5.min.map" />
+    <Content Include="Scripts\jquery-2.2.2.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>19523</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62145/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

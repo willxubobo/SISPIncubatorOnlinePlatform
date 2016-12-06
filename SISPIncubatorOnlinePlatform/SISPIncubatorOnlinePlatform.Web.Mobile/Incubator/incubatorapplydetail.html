@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>孵化器入驻申请详情</title>
+    <link href="../Content/base.css?V2016062701" rel="stylesheet" />
+    <link href="../Content/iscroll.css?V2016062701" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css?V2016062701" />
+    <link href="../Content/iscroll.css?V2016062701" rel="stylesheet" />
+    <script src="../Scripts/jquery-2.2.2.min.js?V2016062701"></script>
+    <script src="../Scripts/jquery-ui.min.js?V2016062701"></script>
+    <script src="../Scripts/jquery.touchSwipe.js?V2016062701"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js?V2016062701"></script>
+    <script src="../Scripts/resize.js?V2016062701"></script>
+    <script src="../Scripts/base.js?V2016062701"></script>
+    <script src="../Scripts/checkform.js?V2016062701"></script>
+    <script src="../Scripts/jquery.alert.js?V2016062701"></script>
+    <script src="../Scripts/publicjs.js?V2016062701"></script>
+    <script src="../Scripts/Incubator/incubatorapplydetail.js?V2016062701"></script>
+    <script src="../Scripts/mainMenu.js?V2016062701"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js?V2016062701"></script>
+    <script type="text/javascript" src="../Scripts/WeChat/initweixinsdk.js?V2016062701"></script>
+    <style>
+        .showInput {
+            padding-top: 9px;
+            color:#506e94;
+            min-height: 38px;
+        }        
+    </style>
+    <script src="../Scripts/baidu.js?V2016062701"></script>  
+</head>
+<body style="background-color: #f1f4f9;">
+    <div class="wrap">
+        <div class="content">
+            <div style="min-height: 500px;">
+                <div class="clear"></div>
+                <div class="businessHeadPic">
+                    <img src="" id="imgIncubatorPath" alt="" />
+                </div>
+                <div class="businessInfoBox">
+                    <p class="businessInfoTxt" id="pIncubatorName"></p>
+                </div>
+                <div class="businessInfoTitle">
+                    <div class="lineBg"></div>
+                    <div class="infoTitleLinkBox newsTitleBox">
+                        <div class="infoLineBg"></div>
+                        <div class="infoTitle infoTitleOne curTitle"><div>基本信息</div></div>
+                        <div class="infoTitle infoTitleThree"><div>其他信息</div></div>
+                    </div>
+                </div>
+                <div class="businessTxtBox bottom60">
+                    <div class="businessTxtContent">
+                        <div class="activityInfo businessInfoBox">
+                            <table class="AITable">
+                                <tr>
+                                    <td width="90">项目名称：</td>
+                                    <td class="showInput" style="color:#506e94" id="divProjectName"></td>
+                                </tr>
+                                <tr>
+                                    <td>公司名称：</td>
+                                    <td class="showInput" style="color:#506e94" id="divCompanyName"></td>
+                                </tr>
+                                <tr>
+                                    <td>公司电话：</td>
+                                    <td class="showInput" style="color:#506e94" id="divCompanyPhone"></td>
+                                </tr>
+                                <tr>
+                                    <td>项目负责人：</td>
+                                    <td class="showInput" style="color:#506e94" id="divProjectOwner"></td>
+                                </tr>
+                                <tr>
+                                    <td>联系电话：</td>
+                                    <td class="showInput" style="color:#506e94"  id="divContactPhone"></td>
+                                </tr>
+
+                                <tr>
+                                    <td>电子邮箱：</td>
+                                    <td class="showInput" style="color:#506e94"  id="divEmail"></td>
+                                </tr>
+                                <tr>
+                                    <td>团队人数：</td>
+                                    <td class="showInput" id="divTeamMembers" style="color:#506e94" ></td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div class="businessTxtContent">
+                        <div class="activityInfo businessInfoBox">
+                            <div class="registerList">
+                                <div style="color: #475367;">项目主要产品（服务）简介：</div>
+                                <div class="baseIptBox">
+                                    <div class="showInput" id="divProductDescription"></div>
+                                </div>
+                            </div>
+                            <div class="registerList">
+                                <div style="color: #475367;">团队核心人员履历：</div>
+                                <div class="baseIptBox">
+                                    <div class="showInput" id="divCoreStaffResume"></div>
+                                </div>
+                            </div>
+                            <div class="registerList">
+                                <div style="color: #475367;">市场及风险分析：</div>
+                                <div class="baseIptBox">
+                                    <div class="showInput" id="divMarketRiskAnalysis"></div>
+                                </div>
+                            </div>
+                            <div class="registerList">
+                                <div style="color: #475367;">融资情况：</div>
+                                <div class="baseIptBox">
+                                    <div class="showInput" id="divFinancingSituation"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="registerBox">
+
+                <div class="registerBtnBox" style="width: 250px;">
+                    <input class="baseBtn registerBtn darkBlueBtn" type="button" onclick=' prepage() ' value="返回" />
+                    <input id="hidApplyId" type="hidden" />
+                </div>
+
+            </div>
+        </div>
+        <div class="loadingBox hide">
+            <div class="loadPic center">
+                <img src="../images/loading.gif" alt="" />
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

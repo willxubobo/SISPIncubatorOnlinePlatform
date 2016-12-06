@@ -1,0 +1,2700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SISPIncubatorOnlinePlatformModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AboutUs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActivityImages">
+          <Key>
+            <PropertyRef Name="ImgID" />
+          </Key>
+          <Property Name="ImgID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ActivityID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ImgSrc" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Sort" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActivityPublishApply">
+          <Key>
+            <PropertyRef Name="ActivityID" />
+          </Key>
+          <Property Name="ActivityID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Topic" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Sponsor" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Co-sponsor" Type="nvarchar" MaxLength="200" />
+          <Property Name="Industry" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="TimeBucket" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="2000" />
+          <Property Name="ActivityDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Origin" Type="nvarchar" MaxLength="10" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActivitySignUp">
+          <Key>
+            <PropertyRef Name="SignUpID" />
+          </Key>
+          <Property Name="SignUpID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ActivityID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SignUpName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="WorkingCompany" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Advertisement">
+          <Key>
+            <PropertyRef Name="AdID" />
+          </Key>
+          <Property Name="AdID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Picture" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Url" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Hits" Type="int" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Sort" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="IsShow" Type="bit" Nullable="false" />
+          <Property Name="Module" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AgreementAttachment">
+          <Key>
+            <PropertyRef Name="AttachementID" />
+          </Key>
+          <Property Name="AttachementID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="FileUrl" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="IncubatorApplyID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="AgreementTemplate">
+          <Key>
+            <PropertyRef Name="AttachmentID" />
+          </Key>
+          <Property Name="AttachmentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="FileUrl" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="IncubatorID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="ApproveRecord">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApproveRelateID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApproveNode" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ApproveResult" Type="nvarchar" MaxLength="10" />
+          <Property Name="Approver" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApplyType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Applicant" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BlockedIP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BlockIP" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Created" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DemandPublish">
+          <Key>
+            <PropertyRef Name="DemandID" />
+          </Key>
+          <Property Name="DemandID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Contacts" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="FoundedTime" Type="datetime" Nullable="false" />
+          <Property Name="Members" Type="int" Nullable="false" />
+          <Property Name="ProjectDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DemandDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IntentionPartner" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="IsShow" Type="bit" />
+          <Property Name="ExpiryDate" Type="date" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Dictionary">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Sort" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="FinancingRequirementFollow">
+          <Key>
+            <PropertyRef Name="FollowID" />
+          </Key>
+          <Property Name="FollowID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FRID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FollowType" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FinancingRequirements">
+          <Key>
+            <PropertyRef Name="FRID" />
+          </Key>
+          <Property Name="FRID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductionName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ProjectLogo" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CompanyDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProductionDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Industry" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="FinancingAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="DevelopmentalStage" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MarketAnalysis" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OtherInfo" Type="nvarchar(max)" />
+          <Property Name="CoreTeam" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IsShow" Type="bit" />
+          <Property Name="PermissionControl" Type="nvarchar" MaxLength="10" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Function_Actions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FunctionID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ControllerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ActionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Functions">
+          <Key>
+            <PropertyRef Name="FunctionID" />
+          </Key>
+          <Property Name="FunctionID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FunctionName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ParentID" Type="uniqueidentifier" />
+          <Property Name="Controller" Type="nvarchar" MaxLength="200" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Sort" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="IncubatorActivityApply">
+          <Key>
+            <PropertyRef Name="ActivityID" />
+          </Key>
+          <Property Name="ActivityID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Topic" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Sponsor" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Co-sponsor" Type="nvarchar" MaxLength="200" />
+          <Property Name="Participants" Type="int" Nullable="false" />
+          <Property Name="Industry" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="TimeBucket" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="2000" />
+          <Property Name="ActivityDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DemandForSpace" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="DemandForStall" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="FreeItem" Type="nvarchar" MaxLength="500" />
+          <Property Name="ChargeItem" Type="nvarchar" MaxLength="500" />
+          <Property Name="Status" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Origin" Type="nvarchar" MaxLength="10" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IncubatorApply">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+          </Key>
+          <Property Name="ApplyID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProjectName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="200" />
+          <Property Name="CompanyTel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProjectOwner" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContactTel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="TeamMembers" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CoreStaffResume" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MarketRiskAnalysis" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FinancingSituation" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IncubatorID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApplyStatus" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="IsSign" Type="bit" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IncubatorApprove">
+          <Key>
+            <PropertyRef Name="ApproveID" />
+          </Key>
+          <Property Name="ApproveID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApplyID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IncubatorID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApproveStatus" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="IsSign" Type="bit" />
+        </EntityType>
+        <EntityType Name="IncubatorInformation">
+          <Key>
+            <PropertyRef Name="IncubatorID" />
+          </Key>
+          <Property Name="IncubatorID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IncubatorName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="OperationAddress" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="RegTime" Type="date" Nullable="false" />
+          <Property Name="Logo" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="FinancialSupport" Type="bit" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Service" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SiteFavorable" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OtherService" Type="nvarchar" MaxLength="2000" />
+          <Property Name="IndustryRequirement" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LocationRequirement" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OtherRequirement" Type="nvarchar(max)" />
+          <Property Name="RoleID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Sort" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="IsShow" Type="bit" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IncubatorProjects">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IncubatorID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProjectType" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ProjectPicture" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2000" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InvestorInformation">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CompanyLogo" Type="nvarchar" MaxLength="200" />
+          <Property Name="FundScale" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="InvestmentField" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="InvestorName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="InvestmentStage" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="InvestmentCase" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="IsShow" Type="bit" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LinkList">
+          <Key>
+            <PropertyRef Name="LinkID" />
+          </Key>
+          <Property Name="LinkID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Url" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="Sort" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoginLog">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Name="LogID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LoginIP" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LoginTime" Type="datetime" Nullable="false" />
+          <Property Name="LoginStatsus" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="MessageID" />
+          </Key>
+          <Property Name="MessageID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Content" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="MsgType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SessionID" Type="uniqueidentifier" />
+          <Property Name="SendFrom" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SendTo" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="DeleteFlagS" Type="bit" Nullable="false" />
+          <Property Name="DeleteFlagR" Type="bit" Nullable="false" />
+          <Property Name="IsPop" Type="bit" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OfficeApply">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+          </Key>
+          <Property Name="ApplyID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProjectOwner" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Degree" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Specialty" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Diplomas" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="IntellectualProperty" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="RegisteredCapital" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DemandForSpace" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="InitialStaff" Type="int" Nullable="false" />
+          <Property Name="ProductDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MemberDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FinancingAndRevenue" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ApplyStatus" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OfficeApplyWorkExperience">
+          <Key>
+            <PropertyRef Name="WEID" />
+          </Key>
+          <Property Name="WEID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApplyID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
+          <Property Name="SchoolOrEmployer" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="JobTitle" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RequestRecords">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ClientType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserAgent" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserHostAddress" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="RequestUri" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="HttpMethod" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RequestTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role_Functions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FunctionID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="IsAdmin" Type="bit" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ServicePublish">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Industry" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="IsShow" Type="bit" />
+          <Property Name="ExpiryDate" Type="date" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SMSValidateCode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SuccessfulCase">
+          <Key>
+            <PropertyRef Name="CaseID" />
+          </Key>
+          <Property Name="CaseID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Picture" Type="nvarchar" MaxLength="200" />
+          <Property Name="Category" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserType" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="LoginTimes" Type="int" />
+          <Property Name="LastLogin" Type="datetime" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="LoginIP" Type="nvarchar" MaxLength="100" />
+          <Property Name="Flag" Type="bit" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User_Roles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserExtension">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="BusinessLicenseImg" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="IDCardImg" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IsApproval" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WeChat">
+          <Key>
+            <PropertyRef Name="WeChatID" />
+          </Key>
+          <Property Name="WeChatID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="200" />
+          <Property Name="Province" Type="nvarchar" MaxLength="200" />
+          <Property Name="City" Type="nvarchar" MaxLength="200" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="10" />
+          <Property Name="Nickname" Type="nvarchar" MaxLength="200" />
+          <Property Name="Language" Type="nvarchar" MaxLength="10" />
+          <Property Name="Headimgurl" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Subscribe" Type="bit" />
+          <Property Name="SubscribeTime" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="1000" />
+          <Property Name="GroupID" Type="nvarchar" MaxLength="100" />
+          <Property Name="OpenID" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="WeChatAccessToken">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WeChatRandom">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Random" Type="int" Nullable="false" />
+          <Property Name="OpenID" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AboutUs_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="AboutUs" Type="Self.AboutUs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="AboutUs">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActivityPublishApply_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ActivityPublishApply" Type="Self.ActivityPublishApply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ActivityPublishApply">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActivitySignUp_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ActivitySignUp" Type="Self.ActivitySignUp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ActivitySignUp">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Advertisement_Advertisement">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Advertisement" Type="Self.Advertisement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Advertisement">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApproveRecord_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ApproveRecord" Type="Self.ApproveRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ApproveRecord">
+              <PropertyRef Name="Approver" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApproveRecord_User1">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ApproveRecord" Type="Self.ApproveRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ApproveRecord">
+              <PropertyRef Name="Applicant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DemandPublish_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="DemandPublish" Type="Self.DemandPublish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="DemandPublish">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FinancingRequirementFollow_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="FinancingRequirementFollow" Type="Self.FinancingRequirementFollow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="FinancingRequirementFollow">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FinancingRequirements_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="FinancingRequirements" Type="Self.FinancingRequirements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="FinancingRequirements">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_INCUBATO_REFERENCE_INCUBATO">
+          <End Role="IncubatorInformation" Type="Self.IncubatorInformation" Multiplicity="1" />
+          <End Role="IncubatorApprove" Type="Self.IncubatorApprove" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IncubatorInformation">
+              <PropertyRef Name="IncubatorID" />
+            </Principal>
+            <Dependent Role="IncubatorApprove">
+              <PropertyRef Name="IncubatorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncubatorActivityApply_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="IncubatorActivityApply" Type="Self.IncubatorActivityApply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="IncubatorActivityApply">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncubatorApply_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="IncubatorApply" Type="Self.IncubatorApply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="IncubatorApply">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncubatorApprove_IncubatorApply">
+          <End Role="IncubatorApply" Type="Self.IncubatorApply" Multiplicity="1" />
+          <End Role="IncubatorApprove" Type="Self.IncubatorApprove" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IncubatorApply">
+              <PropertyRef Name="ApplyID" />
+            </Principal>
+            <Dependent Role="IncubatorApprove">
+              <PropertyRef Name="ApplyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncubatorInformation_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="IncubatorInformation" Type="Self.IncubatorInformation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="IncubatorInformation">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncubatorProjects_IncubatorInformation">
+          <End Role="IncubatorInformation" Type="Self.IncubatorInformation" Multiplicity="1" />
+          <End Role="IncubatorProjects" Type="Self.IncubatorProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IncubatorInformation">
+              <PropertyRef Name="IncubatorID" />
+            </Principal>
+            <Dependent Role="IncubatorProjects">
+              <PropertyRef Name="IncubatorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvestorInformation_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="InvestorInformation" Type="Self.InvestorInformation" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="InvestorInformation">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_User_SendFrom">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Message" Type="Self.Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="SendFrom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_User_SendTo">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Message" Type="Self.Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="SendTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OFFICEAP_REFERENCE_OFFICEAP">
+          <End Role="OfficeApply" Type="Self.OfficeApply" Multiplicity="1" />
+          <End Role="OfficeApplyWorkExperience" Type="Self.OfficeApplyWorkExperience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OfficeApply">
+              <PropertyRef Name="ApplyID" />
+            </Principal>
+            <Dependent Role="OfficeApplyWorkExperience">
+              <PropertyRef Name="ApplyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OfficeApply_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="OfficeApply" Type="Self.OfficeApply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="OfficeApply">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLE_FUN_REFERENCE_FUNCTION">
+          <End Role="Functions" Type="Self.Functions" Multiplicity="1" />
+          <End Role="Role_Functions" Type="Self.Role_Functions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Functions">
+              <PropertyRef Name="FunctionID" />
+            </Principal>
+            <Dependent Role="Role_Functions">
+              <PropertyRef Name="FunctionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLE_FUN_REFERENCE_ROLES">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="Role_Functions" Type="Self.Role_Functions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Role_Functions">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ServicePublish_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ServicePublish" Type="Self.ServicePublish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ServicePublish">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SuccessfulCase_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="SuccessfulCase" Type="Self.SuccessfulCase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="SuccessfulCase">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_ROL_REFERENCE_ROLES">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="User_Roles" Type="Self.User_Roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="User_Roles">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_ROL_REFERENCE_USER">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="User_Roles" Type="Self.User_Roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="User_Roles">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WeChat_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="WeChat" Type="Self.WeChat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="WeChat">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SISPIncubatorOnlinePlatformModelStoreContainer">
+          <EntitySet Name="AboutUs" EntityType="Self.AboutUs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ActivityImages" EntityType="Self.ActivityImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ActivityPublishApply" EntityType="Self.ActivityPublishApply" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ActivitySignUp" EntityType="Self.ActivitySignUp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Advertisement" EntityType="Self.Advertisement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AgreementAttachment" EntityType="Self.AgreementAttachment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AgreementTemplate" EntityType="Self.AgreementTemplate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ApproveRecord" EntityType="Self.ApproveRecord" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BlockedIP" EntityType="Self.BlockedIP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DemandPublish" EntityType="Self.DemandPublish" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dictionary" EntityType="Self.Dictionary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FinancingRequirementFollow" EntityType="Self.FinancingRequirementFollow" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FinancingRequirements" EntityType="Self.FinancingRequirements" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Function_Actions" EntityType="Self.Function_Actions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Functions" EntityType="Self.Functions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IncubatorActivityApply" EntityType="Self.IncubatorActivityApply" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IncubatorApply" EntityType="Self.IncubatorApply" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IncubatorApprove" EntityType="Self.IncubatorApprove" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IncubatorInformation" EntityType="Self.IncubatorInformation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IncubatorProjects" EntityType="Self.IncubatorProjects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvestorInformation" EntityType="Self.InvestorInformation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LinkList" EntityType="Self.LinkList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginLog" EntityType="Self.LoginLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OfficeApply" EntityType="Self.OfficeApply" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OfficeApplyWorkExperience" EntityType="Self.OfficeApplyWorkExperience" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RequestRecords" EntityType="Self.RequestRecords" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role_Functions" EntityType="Self.Role_Functions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServicePublish" EntityType="Self.ServicePublish" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SMSValidateCode" EntityType="Self.SMSValidateCode" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SuccessfulCase" EntityType="Self.SuccessfulCase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Roles" EntityType="Self.User_Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserExtension" EntityType="Self.UserExtension" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WeChat" EntityType="Self.WeChat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WeChatAccessToken" EntityType="Self.WeChatAccessToken" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WeChatRandom" EntityType="Self.WeChatRandom" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AboutUs_User" Association="Self.FK_AboutUs_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="AboutUs" EntitySet="AboutUs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActivityPublishApply_User" Association="Self.FK_ActivityPublishApply_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ActivityPublishApply" EntitySet="ActivityPublishApply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActivitySignUp_User" Association="Self.FK_ActivitySignUp_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ActivitySignUp" EntitySet="ActivitySignUp" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Advertisement_Advertisement" Association="Self.FK_Advertisement_Advertisement">
+            <End Role="User" EntitySet="User" />
+            <End Role="Advertisement" EntitySet="Advertisement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApproveRecord_User" Association="Self.FK_ApproveRecord_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ApproveRecord" EntitySet="ApproveRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApproveRecord_User1" Association="Self.FK_ApproveRecord_User1">
+            <End Role="User" EntitySet="User" />
+            <End Role="ApproveRecord" EntitySet="ApproveRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DemandPublish_User" Association="Self.FK_DemandPublish_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="DemandPublish" EntitySet="DemandPublish" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FinancingRequirementFollow_User" Association="Self.FK_FinancingRequirementFollow_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="FinancingRequirementFollow" EntitySet="FinancingRequirementFollow" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FinancingRequirements_User" Association="Self.FK_FinancingRequirements_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="FinancingRequirements" EntitySet="FinancingRequirements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_INCUBATO_REFERENCE_INCUBATO" Association="Self.FK_INCUBATO_REFERENCE_INCUBATO">
+            <End Role="IncubatorInformation" EntitySet="IncubatorInformation" />
+            <End Role="IncubatorApprove" EntitySet="IncubatorApprove" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncubatorActivityApply_User" Association="Self.FK_IncubatorActivityApply_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="IncubatorActivityApply" EntitySet="IncubatorActivityApply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncubatorApply_User" Association="Self.FK_IncubatorApply_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="IncubatorApply" EntitySet="IncubatorApply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncubatorApprove_IncubatorApply" Association="Self.FK_IncubatorApprove_IncubatorApply">
+            <End Role="IncubatorApply" EntitySet="IncubatorApply" />
+            <End Role="IncubatorApprove" EntitySet="IncubatorApprove" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncubatorInformation_Roles" Association="Self.FK_IncubatorInformation_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="IncubatorInformation" EntitySet="IncubatorInformation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncubatorProjects_IncubatorInformation" Association="Self.FK_IncubatorProjects_IncubatorInformation">
+            <End Role="IncubatorInformation" EntitySet="IncubatorInformation" />
+            <End Role="IncubatorProjects" EntitySet="IncubatorProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvestorInformation_User" Association="Self.FK_InvestorInformation_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="InvestorInformation" EntitySet="InvestorInformation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_User_SendFrom" Association="Self.FK_Message_User_SendFrom">
+            <End Role="User" EntitySet="User" />
+            <End Role="Message" EntitySet="Message" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_User_SendTo" Association="Self.FK_Message_User_SendTo">
+            <End Role="User" EntitySet="User" />
+            <End Role="Message" EntitySet="Message" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OFFICEAP_REFERENCE_OFFICEAP" Association="Self.FK_OFFICEAP_REFERENCE_OFFICEAP">
+            <End Role="OfficeApply" EntitySet="OfficeApply" />
+            <End Role="OfficeApplyWorkExperience" EntitySet="OfficeApplyWorkExperience" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OfficeApply_User" Association="Self.FK_OfficeApply_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="OfficeApply" EntitySet="OfficeApply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLE_FUN_REFERENCE_FUNCTION" Association="Self.FK_ROLE_FUN_REFERENCE_FUNCTION">
+            <End Role="Functions" EntitySet="Functions" />
+            <End Role="Role_Functions" EntitySet="Role_Functions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLE_FUN_REFERENCE_ROLES" Association="Self.FK_ROLE_FUN_REFERENCE_ROLES">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Role_Functions" EntitySet="Role_Functions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ServicePublish_User" Association="Self.FK_ServicePublish_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ServicePublish" EntitySet="ServicePublish" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SuccessfulCase_User" Association="Self.FK_SuccessfulCase_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="SuccessfulCase" EntitySet="SuccessfulCase" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_ROL_REFERENCE_ROLES" Association="Self.FK_USER_ROL_REFERENCE_ROLES">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="User_Roles" EntitySet="User_Roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_ROL_REFERENCE_USER" Association="Self.FK_USER_ROL_REFERENCE_USER">
+            <End Role="User" EntitySet="User" />
+            <End Role="User_Roles" EntitySet="User_Roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WeChat_User" Association="Self.FK_WeChat_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="WeChat" EntitySet="WeChat" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SISPIncubatorOnlinePlatformModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SISPIncubatorOnlinePlatformEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="AboutUs" EntityType="SISPIncubatorOnlinePlatformModel.AboutUs" />
+          <EntitySet Name="ActivityImages" EntityType="SISPIncubatorOnlinePlatformModel.ActivityImages" />
+          <EntitySet Name="ActivityPublishApply" EntityType="SISPIncubatorOnlinePlatformModel.ActivityPublishApply" />
+          <EntitySet Name="ActivitySignUp" EntityType="SISPIncubatorOnlinePlatformModel.ActivitySignUp" />
+          <EntitySet Name="Advertisement" EntityType="SISPIncubatorOnlinePlatformModel.Advertisement" />
+          <EntitySet Name="AgreementAttachment" EntityType="SISPIncubatorOnlinePlatformModel.AgreementAttachment" />
+          <EntitySet Name="AgreementTemplate" EntityType="SISPIncubatorOnlinePlatformModel.AgreementTemplate" />
+          <EntitySet Name="ApproveRecord" EntityType="SISPIncubatorOnlinePlatformModel.ApproveRecord" />
+          <EntitySet Name="BlockedIP" EntityType="SISPIncubatorOnlinePlatformModel.BlockedIP" />
+          <EntitySet Name="DemandPublish" EntityType="SISPIncubatorOnlinePlatformModel.DemandPublish" />
+          <EntitySet Name="Dictionary" EntityType="SISPIncubatorOnlinePlatformModel.Dictionary" />
+          <EntitySet Name="FinancingRequirementFollow" EntityType="SISPIncubatorOnlinePlatformModel.FinancingRequirementFollow" />
+          <EntitySet Name="FinancingRequirements" EntityType="SISPIncubatorOnlinePlatformModel.FinancingRequirements" />
+          <EntitySet Name="Function_Actions" EntityType="SISPIncubatorOnlinePlatformModel.Function_Actions" />
+          <EntitySet Name="Functions" EntityType="SISPIncubatorOnlinePlatformModel.Functions" />
+          <EntitySet Name="IncubatorActivityApply" EntityType="SISPIncubatorOnlinePlatformModel.IncubatorActivityApply" />
+          <EntitySet Name="IncubatorApply" EntityType="SISPIncubatorOnlinePlatformModel.IncubatorApply" />
+          <EntitySet Name="IncubatorApprove" EntityType="SISPIncubatorOnlinePlatformModel.IncubatorApprove" />
+          <EntitySet Name="IncubatorInformation" EntityType="SISPIncubatorOnlinePlatformModel.IncubatorInformation" />
+          <EntitySet Name="IncubatorProjects" EntityType="SISPIncubatorOnlinePlatformModel.IncubatorProjects" />
+          <EntitySet Name="InvestorInformation" EntityType="SISPIncubatorOnlinePlatformModel.InvestorInformation" />
+          <EntitySet Name="LinkList" EntityType="SISPIncubatorOnlinePlatformModel.LinkList" />
+          <EntitySet Name="LoginLog" EntityType="SISPIncubatorOnlinePlatformModel.LoginLog" />
+          <EntitySet Name="Message" EntityType="SISPIncubatorOnlinePlatformModel.Message" />
+          <EntitySet Name="OfficeApply" EntityType="SISPIncubatorOnlinePlatformModel.OfficeApply" />
+          <EntitySet Name="OfficeApplyWorkExperience" EntityType="SISPIncubatorOnlinePlatformModel.OfficeApplyWorkExperience" />
+          <EntitySet Name="RequestRecords" EntityType="SISPIncubatorOnlinePlatformModel.RequestRecords" />
+          <EntitySet Name="Role_Functions" EntityType="SISPIncubatorOnlinePlatformModel.Role_Functions" />
+          <EntitySet Name="Roles" EntityType="SISPIncubatorOnlinePlatformModel.Roles" />
+          <EntitySet Name="ServicePublish" EntityType="SISPIncubatorOnlinePlatformModel.ServicePublish" />
+          <EntitySet Name="SMSValidateCode" EntityType="SISPIncubatorOnlinePlatformModel.SMSValidateCode" />
+          <EntitySet Name="SuccessfulCase" EntityType="SISPIncubatorOnlinePlatformModel.SuccessfulCase" />
+          <EntitySet Name="sysdiagrams" EntityType="SISPIncubatorOnlinePlatformModel.sysdiagrams" />
+          <EntitySet Name="User" EntityType="SISPIncubatorOnlinePlatformModel.User" />
+          <EntitySet Name="User_Roles" EntityType="SISPIncubatorOnlinePlatformModel.User_Roles" />
+          <EntitySet Name="UserExtension" EntityType="SISPIncubatorOnlinePlatformModel.UserExtension" />
+          <EntitySet Name="WeChat" EntityType="SISPIncubatorOnlinePlatformModel.WeChat" />
+          <EntitySet Name="WeChatAccessToken" EntityType="SISPIncubatorOnlinePlatformModel.WeChatAccessToken" />
+          <EntitySet Name="WeChatRandom" EntityType="SISPIncubatorOnlinePlatformModel.WeChatRandom" />
+          <AssociationSet Name="FK_AboutUs_User" Association="SISPIncubatorOnlinePlatformModel.FK_AboutUs_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="AboutUs" EntitySet="AboutUs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActivityPublishApply_User" Association="SISPIncubatorOnlinePlatformModel.FK_ActivityPublishApply_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ActivityPublishApply" EntitySet="ActivityPublishApply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActivitySignUp_User" Association="SISPIncubatorOnlinePlatformModel.FK_ActivitySignUp_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ActivitySignUp" EntitySet="ActivitySignUp" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Advertisement_Advertisement" Association="SISPIncubatorOnlinePlatformModel.FK_Advertisement_Advertisement">
+            <End Role="User" EntitySet="User" />
+            <End Role="Advertisement" EntitySet="Advertisement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApproveRecord_User" Association="SISPIncubatorOnlinePlatformModel.FK_ApproveRecord_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ApproveRecord" EntitySet="ApproveRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApproveRecord_User1" Association="SISPIncubatorOnlinePlatformModel.FK_ApproveRecord_User1">
+            <End Role="User" EntitySet="User" />
+            <End Role="ApproveRecord" EntitySet="ApproveRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DemandPublish_User" Association="SISPIncubatorOnlinePlatformModel.FK_DemandPublish_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="DemandPublish" EntitySet="DemandPublish" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FinancingRequirementFollow_User" Association="SISPIncubatorOnlinePlatformModel.FK_FinancingRequirementFollow_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="FinancingRequirementFollow" EntitySet="FinancingRequirementFollow" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FinancingRequirements_User" Association="SISPIncubatorOnlinePlatformModel.FK_FinancingRequirements_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="FinancingRequirements" EntitySet="FinancingRequirements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLE_FUN_REFERENCE_FUNCTION" Association="SISPIncubatorOnlinePlatformModel.FK_ROLE_FUN_REFERENCE_FUNCTION">
+            <End Role="Functions" EntitySet="Functions" />
+            <End Role="Role_Functions" EntitySet="Role_Functions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncubatorActivityApply_User" Association="SISPIncubatorOnlinePlatformModel.FK_IncubatorActivityApply_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="IncubatorActivityApply" EntitySet="IncubatorActivityApply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncubatorApply_User" Association="SISPIncubatorOnlinePlatformModel.FK_IncubatorApply_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="IncubatorApply" EntitySet="IncubatorApply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncubatorApprove_IncubatorApply" Association="SISPIncubatorOnlinePlatformModel.FK_IncubatorApprove_IncubatorApply">
+            <End Role="IncubatorApply" EntitySet="IncubatorApply" />
+            <End Role="IncubatorApprove" EntitySet="IncubatorApprove" />
+          </AssociationSet>
+          <AssociationSet Name="FK_INCUBATO_REFERENCE_INCUBATO" Association="SISPIncubatorOnlinePlatformModel.FK_INCUBATO_REFERENCE_INCUBATO">
+            <End Role="IncubatorInformation" EntitySet="IncubatorInformation" />
+            <End Role="IncubatorApprove" EntitySet="IncubatorApprove" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncubatorInformation_Roles" Association="SISPIncubatorOnlinePlatformModel.FK_IncubatorInformation_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="IncubatorInformation" EntitySet="IncubatorInformation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncubatorProjects_IncubatorInformation" Association="SISPIncubatorOnlinePlatformModel.FK_IncubatorProjects_IncubatorInformation">
+            <End Role="IncubatorInformation" EntitySet="IncubatorInformation" />
+            <End Role="IncubatorProjects" EntitySet="IncubatorProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvestorInformation_User" Association="SISPIncubatorOnlinePlatformModel.FK_InvestorInformation_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="InvestorInformation" EntitySet="InvestorInformation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_User_SendFrom" Association="SISPIncubatorOnlinePlatformModel.FK_Message_User_SendFrom">
+            <End Role="User" EntitySet="User" />
+            <End Role="Message" EntitySet="Message" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_User_SendTo" Association="SISPIncubatorOnlinePlatformModel.FK_Message_User_SendTo">
+            <End Role="User" EntitySet="User" />
+            <End Role="Message" EntitySet="Message" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OFFICEAP_REFERENCE_OFFICEAP" Association="SISPIncubatorOnlinePlatformModel.FK_OFFICEAP_REFERENCE_OFFICEAP">
+            <End Role="OfficeApply" EntitySet="OfficeApply" />
+            <End Role="OfficeApplyWorkExperience" EntitySet="OfficeApplyWorkExperience" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OfficeApply_User" Association="SISPIncubatorOnlinePlatformModel.FK_OfficeApply_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="OfficeApply" EntitySet="OfficeApply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLE_FUN_REFERENCE_ROLES" Association="SISPIncubatorOnlinePlatformModel.FK_ROLE_FUN_REFERENCE_ROLES">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Role_Functions" EntitySet="Role_Functions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_ROL_REFERENCE_ROLES" Association="SISPIncubatorOnlinePlatformModel.FK_USER_ROL_REFERENCE_ROLES">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="User_Roles" EntitySet="User_Roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ServicePublish_User" Association="SISPIncubatorOnlinePlatformModel.FK_ServicePublish_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ServicePublish" EntitySet="ServicePublish" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SuccessfulCase_User" Association="SISPIncubatorOnlinePlatformModel.FK_SuccessfulCase_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="SuccessfulCase" EntitySet="SuccessfulCase" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USER_ROL_REFERENCE_USER" Association="SISPIncubatorOnlinePlatformModel.FK_USER_ROL_REFERENCE_USER">
+            <End Role="User" EntitySet="User" />
+            <End Role="User_Roles" EntitySet="User_Roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WeChat_User" Association="SISPIncubatorOnlinePlatformModel.FK_WeChat_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="WeChat" EntitySet="WeChat" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AboutUs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_AboutUs_User" FromRole="AboutUs" ToRole="User" />
+        </EntityType>
+        <EntityType Name="ActivityImages">
+          <Key>
+            <PropertyRef Name="ImgID" />
+          </Key>
+          <Property Name="ImgID" Type="Guid" Nullable="false" />
+          <Property Name="ActivityID" Type="Guid" Nullable="false" />
+          <Property Name="ImgSrc" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActivityPublishApply">
+          <Key>
+            <PropertyRef Name="ActivityID" />
+          </Key>
+          <Property Name="ActivityID" Type="Guid" Nullable="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Topic" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Sponsor" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Co_sponsor" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Industry" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TimeBucket" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="ActivityDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Origin" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_ActivityPublishApply_User" FromRole="ActivityPublishApply" ToRole="User" />
+        </EntityType>
+        <EntityType Name="ActivitySignUp">
+          <Key>
+            <PropertyRef Name="SignUpID" />
+          </Key>
+          <Property Name="SignUpID" Type="Guid" Nullable="false" />
+          <Property Name="ActivityID" Type="Guid" Nullable="false" />
+          <Property Name="SignUpName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WorkingCompany" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_ActivitySignUp_User" FromRole="ActivitySignUp" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Advertisement">
+          <Key>
+            <PropertyRef Name="AdID" />
+          </Key>
+          <Property Name="AdID" Type="Guid" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Hits" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Sort" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IsShow" Type="Boolean" Nullable="false" />
+          <Property Name="Module" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_Advertisement_Advertisement" FromRole="Advertisement" ToRole="User" />
+        </EntityType>
+        <EntityType Name="AgreementAttachment">
+          <Key>
+            <PropertyRef Name="AttachementID" />
+          </Key>
+          <Property Name="AttachementID" Type="Guid" Nullable="false" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FileUrl" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IncubatorApplyID" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" />
+        </EntityType>
+        <EntityType Name="AgreementTemplate">
+          <Key>
+            <PropertyRef Name="AttachmentID" />
+          </Key>
+          <Property Name="AttachmentID" Type="Guid" Nullable="false" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FileUrl" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IncubatorID" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" />
+        </EntityType>
+        <EntityType Name="ApproveRecord">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Guid" Nullable="false" />
+          <Property Name="ApproveRelateID" Type="Guid" Nullable="false" />
+          <Property Name="ApproveNode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ApproveResult" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Approver" Type="Guid" Nullable="false" />
+          <Property Name="ApplyType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Applicant" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_ApproveRecord_User" FromRole="ApproveRecord" ToRole="User" />
+          <NavigationProperty Name="User1" Relationship="SISPIncubatorOnlinePlatformModel.FK_ApproveRecord_User1" FromRole="ApproveRecord" ToRole="User" />
+        </EntityType>
+        <EntityType Name="BlockedIP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="BlockIP" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="DemandPublish">
+          <Key>
+            <PropertyRef Name="DemandID" />
+          </Key>
+          <Property Name="DemandID" Type="Guid" Nullable="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Contacts" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FoundedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Members" Type="Int32" Nullable="false" />
+          <Property Name="ProjectDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DemandDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IntentionPartner" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IsShow" Type="Boolean" />
+          <Property Name="ExpiryDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_DemandPublish_User" FromRole="DemandPublish" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Dictionary">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Key" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Sort" Type="Decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="FinancingRequirementFollow">
+          <Key>
+            <PropertyRef Name="FollowID" />
+          </Key>
+          <Property Name="FollowID" Type="Guid" Nullable="false" />
+          <Property Name="FRID" Type="Guid" Nullable="false" />
+          <Property Name="FollowType" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_FinancingRequirementFollow_User" FromRole="FinancingRequirementFollow" ToRole="User" />
+        </EntityType>
+        <EntityType Name="FinancingRequirements">
+          <Key>
+            <PropertyRef Name="FRID" />
+          </Key>
+          <Property Name="FRID" Type="Guid" Nullable="false" />
+          <Property Name="ProductionName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectLogo" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductionDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Industry" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FinancingAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DevelopmentalStage" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MarketAnalysis" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OtherInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CoreTeam" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsShow" Type="Boolean" />
+          <Property Name="PermissionControl" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_FinancingRequirements_User" FromRole="FinancingRequirements" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Function_Actions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FunctionID" Type="Guid" Nullable="false" />
+          <Property Name="ControllerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActionName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Functions">
+          <Key>
+            <PropertyRef Name="FunctionID" />
+          </Key>
+          <Property Name="FunctionID" Type="Guid" Nullable="false" />
+          <Property Name="FunctionName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ParentID" Type="Guid" />
+          <Property Name="Controller" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Sort" Type="Byte" />
+          <NavigationProperty Name="Role_Functions" Relationship="SISPIncubatorOnlinePlatformModel.FK_ROLE_FUN_REFERENCE_FUNCTION" FromRole="Functions" ToRole="Role_Functions" />
+        </EntityType>
+        <EntityType Name="IncubatorActivityApply">
+          <Key>
+            <PropertyRef Name="ActivityID" />
+          </Key>
+          <Property Name="ActivityID" Type="Guid" Nullable="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Topic" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Sponsor" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Co_sponsor" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Participants" Type="Int32" Nullable="false" />
+          <Property Name="Industry" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TimeBucket" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="ActivityDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DemandForSpace" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="DemandForStall" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FreeItem" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ChargeItem" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Origin" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_IncubatorActivityApply_User" FromRole="IncubatorActivityApply" ToRole="User" />
+        </EntityType>
+        <EntityType Name="IncubatorApply">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+          </Key>
+          <Property Name="ApplyID" Type="Guid" Nullable="false" />
+          <Property Name="ProjectName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectOwner" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TeamMembers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CoreStaffResume" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MarketRiskAnalysis" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FinancingSituation" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IncubatorID" Type="Guid" Nullable="false" />
+          <Property Name="ApplyStatus" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IsSign" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_IncubatorApply_User" FromRole="IncubatorApply" ToRole="User" />
+          <NavigationProperty Name="IncubatorApprove" Relationship="SISPIncubatorOnlinePlatformModel.FK_IncubatorApprove_IncubatorApply" FromRole="IncubatorApply" ToRole="IncubatorApprove" />
+        </EntityType>
+        <EntityType Name="IncubatorApprove">
+          <Key>
+            <PropertyRef Name="ApproveID" />
+          </Key>
+          <Property Name="ApproveID" Type="Guid" Nullable="false" />
+          <Property Name="ApplyID" Type="Guid" Nullable="false" />
+          <Property Name="IncubatorID" Type="Guid" Nullable="false" />
+          <Property Name="ApproveStatus" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IsSign" Type="Boolean" />
+          <NavigationProperty Name="IncubatorApply" Relationship="SISPIncubatorOnlinePlatformModel.FK_IncubatorApprove_IncubatorApply" FromRole="IncubatorApprove" ToRole="IncubatorApply" />
+          <NavigationProperty Name="IncubatorInformation" Relationship="SISPIncubatorOnlinePlatformModel.FK_INCUBATO_REFERENCE_INCUBATO" FromRole="IncubatorApprove" ToRole="IncubatorInformation" />
+        </EntityType>
+        <EntityType Name="IncubatorInformation">
+          <Key>
+            <PropertyRef Name="IncubatorID" />
+          </Key>
+          <Property Name="IncubatorID" Type="Guid" Nullable="false" />
+          <Property Name="IncubatorName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OperationAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="RegTime" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Logo" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FinancialSupport" Type="Boolean" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SiteFavorable" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OtherService" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="IndustryRequirement" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LocationRequirement" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OtherRequirement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RoleID" Type="Guid" Nullable="false" />
+          <Property Name="Sort" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IsShow" Type="Boolean" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="IncubatorApprove" Relationship="SISPIncubatorOnlinePlatformModel.FK_INCUBATO_REFERENCE_INCUBATO" FromRole="IncubatorInformation" ToRole="IncubatorApprove" />
+          <NavigationProperty Name="Roles" Relationship="SISPIncubatorOnlinePlatformModel.FK_IncubatorInformation_Roles" FromRole="IncubatorInformation" ToRole="Roles" />
+          <NavigationProperty Name="IncubatorProjects" Relationship="SISPIncubatorOnlinePlatformModel.FK_IncubatorProjects_IncubatorInformation" FromRole="IncubatorInformation" ToRole="IncubatorProjects" />
+        </EntityType>
+        <EntityType Name="IncubatorProjects">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="Guid" Nullable="false" />
+          <Property Name="IncubatorID" Type="Guid" Nullable="false" />
+          <Property Name="ProjectType" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectPicture" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IncubatorInformation" Relationship="SISPIncubatorOnlinePlatformModel.FK_IncubatorProjects_IncubatorInformation" FromRole="IncubatorProjects" ToRole="IncubatorInformation" />
+        </EntityType>
+        <EntityType Name="InvestorInformation">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyLogo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FundScale" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="InvestmentField" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="InvestorName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="InvestmentStage" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="InvestmentCase" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IsShow" Type="Boolean" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_InvestorInformation_User" FromRole="InvestorInformation" ToRole="User" />
+        </EntityType>
+        <EntityType Name="LinkList">
+          <Key>
+            <PropertyRef Name="LinkID" />
+          </Key>
+          <Property Name="LinkID" Type="Guid" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="Sort" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoginLog">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Name="LogID" Type="Guid" Nullable="false" />
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="LoginIP" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LoginTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LoginStatsus" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="MessageID" />
+          </Key>
+          <Property Name="MessageID" Type="Guid" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="MsgType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SessionID" Type="Guid" />
+          <Property Name="SendFrom" Type="Guid" Nullable="false" />
+          <Property Name="SendTo" Type="Guid" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DeleteFlagS" Type="Boolean" Nullable="false" />
+          <Property Name="DeleteFlagR" Type="Boolean" Nullable="false" />
+          <Property Name="IsPop" Type="Boolean" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_Message_User_SendFrom" FromRole="Message" ToRole="User" />
+          <NavigationProperty Name="User1" Relationship="SISPIncubatorOnlinePlatformModel.FK_Message_User_SendTo" FromRole="Message" ToRole="User" />
+        </EntityType>
+        <EntityType Name="OfficeApply">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+          </Key>
+          <Property Name="ApplyID" Type="Guid" Nullable="false" />
+          <Property Name="ProjectOwner" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Degree" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Specialty" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Diplomas" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="IntellectualProperty" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RegisteredCapital" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="DemandForSpace" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="InitialStaff" Type="Int32" Nullable="false" />
+          <Property Name="ProductDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MemberDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FinancingAndRevenue" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ApplyStatus" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="OfficeApplyWorkExperience" Relationship="SISPIncubatorOnlinePlatformModel.FK_OFFICEAP_REFERENCE_OFFICEAP" FromRole="OfficeApply" ToRole="OfficeApplyWorkExperience" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_OfficeApply_User" FromRole="OfficeApply" ToRole="User" />
+        </EntityType>
+        <EntityType Name="OfficeApplyWorkExperience">
+          <Key>
+            <PropertyRef Name="WEID" />
+          </Key>
+          <Property Name="WEID" Type="Guid" Nullable="false" />
+          <Property Name="ApplyID" Type="Guid" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="SchoolOrEmployer" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="JobTitle" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OfficeApply" Relationship="SISPIncubatorOnlinePlatformModel.FK_OFFICEAP_REFERENCE_OFFICEAP" FromRole="OfficeApplyWorkExperience" ToRole="OfficeApply" />
+        </EntityType>
+        <EntityType Name="RequestRecords">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserAgent" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserHostAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="RequestUri" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HttpMethod" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RequestTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Role_Functions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="RoleID" Type="Guid" Nullable="false" />
+          <Property Name="FunctionID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Functions" Relationship="SISPIncubatorOnlinePlatformModel.FK_ROLE_FUN_REFERENCE_FUNCTION" FromRole="Role_Functions" ToRole="Functions" />
+          <NavigationProperty Name="Roles" Relationship="SISPIncubatorOnlinePlatformModel.FK_ROLE_FUN_REFERENCE_ROLES" FromRole="Role_Functions" ToRole="Roles" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Guid" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsAdmin" Type="Boolean" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="IncubatorInformation" Relationship="SISPIncubatorOnlinePlatformModel.FK_IncubatorInformation_Roles" FromRole="Roles" ToRole="IncubatorInformation" />
+          <NavigationProperty Name="Role_Functions" Relationship="SISPIncubatorOnlinePlatformModel.FK_ROLE_FUN_REFERENCE_ROLES" FromRole="Roles" ToRole="Role_Functions" />
+          <NavigationProperty Name="User_Roles" Relationship="SISPIncubatorOnlinePlatformModel.FK_USER_ROL_REFERENCE_ROLES" FromRole="Roles" ToRole="User_Roles" />
+        </EntityType>
+        <EntityType Name="ServicePublish">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="Guid" Nullable="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Industry" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IsShow" Type="Boolean" />
+          <Property Name="ExpiryDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_ServicePublish_User" FromRole="ServicePublish" ToRole="User" />
+        </EntityType>
+        <EntityType Name="SMSValidateCode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="SuccessfulCase">
+          <Key>
+            <PropertyRef Name="CaseID" />
+          </Key>
+          <Property Name="CaseID" Type="Guid" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="Guid" Nullable="false" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_SuccessfulCase_User" FromRole="SuccessfulCase" ToRole="User" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserType" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LoginTimes" Type="Int32" />
+          <Property Name="LastLogin" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="LoginIP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Flag" Type="Boolean" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="AboutUs" Relationship="SISPIncubatorOnlinePlatformModel.FK_AboutUs_User" FromRole="User" ToRole="AboutUs" />
+          <NavigationProperty Name="ActivityPublishApply" Relationship="SISPIncubatorOnlinePlatformModel.FK_ActivityPublishApply_User" FromRole="User" ToRole="ActivityPublishApply" />
+          <NavigationProperty Name="ActivitySignUp" Relationship="SISPIncubatorOnlinePlatformModel.FK_ActivitySignUp_User" FromRole="User" ToRole="ActivitySignUp" />
+          <NavigationProperty Name="Advertisement" Relationship="SISPIncubatorOnlinePlatformModel.FK_Advertisement_Advertisement" FromRole="User" ToRole="Advertisement" />
+          <NavigationProperty Name="ApproveRecord" Relationship="SISPIncubatorOnlinePlatformModel.FK_ApproveRecord_User" FromRole="User" ToRole="ApproveRecord" />
+          <NavigationProperty Name="ApproveRecord1" Relationship="SISPIncubatorOnlinePlatformModel.FK_ApproveRecord_User1" FromRole="User" ToRole="ApproveRecord" />
+          <NavigationProperty Name="DemandPublish" Relationship="SISPIncubatorOnlinePlatformModel.FK_DemandPublish_User" FromRole="User" ToRole="DemandPublish" />
+          <NavigationProperty Name="FinancingRequirementFollow" Relationship="SISPIncubatorOnlinePlatformModel.FK_FinancingRequirementFollow_User" FromRole="User" ToRole="FinancingRequirementFollow" />
+          <NavigationProperty Name="FinancingRequirements" Relationship="SISPIncubatorOnlinePlatformModel.FK_FinancingRequirements_User" FromRole="User" ToRole="FinancingRequirements" />
+          <NavigationProperty Name="IncubatorActivityApply" Relationship="SISPIncubatorOnlinePlatformModel.FK_IncubatorActivityApply_User" FromRole="User" ToRole="IncubatorActivityApply" />
+          <NavigationProperty Name="IncubatorApply" Relationship="SISPIncubatorOnlinePlatformModel.FK_IncubatorApply_User" FromRole="User" ToRole="IncubatorApply" />
+          <NavigationProperty Name="InvestorInformation" Relationship="SISPIncubatorOnlinePlatformModel.FK_InvestorInformation_User" FromRole="User" ToRole="InvestorInformation" />
+          <NavigationProperty Name="Message" Relationship="SISPIncubatorOnlinePlatformModel.FK_Message_User_SendFrom" FromRole="User" ToRole="Message" />
+          <NavigationProperty Name="Message1" Relationship="SISPIncubatorOnlinePlatformModel.FK_Message_User_SendTo" FromRole="User" ToRole="Message" />
+          <NavigationProperty Name="OfficeApply" Relationship="SISPIncubatorOnlinePlatformModel.FK_OfficeApply_User" FromRole="User" ToRole="OfficeApply" />
+          <NavigationProperty Name="ServicePublish" Relationship="SISPIncubatorOnlinePlatformModel.FK_ServicePublish_User" FromRole="User" ToRole="ServicePublish" />
+          <NavigationProperty Name="SuccessfulCase" Relationship="SISPIncubatorOnlinePlatformModel.FK_SuccessfulCase_User" FromRole="User" ToRole="SuccessfulCase" />
+          <NavigationProperty Name="User_Roles" Relationship="SISPIncubatorOnlinePlatformModel.FK_USER_ROL_REFERENCE_USER" FromRole="User" ToRole="User_Roles" />
+          <NavigationProperty Name="WeChat" Relationship="SISPIncubatorOnlinePlatformModel.FK_WeChat_User" FromRole="User" ToRole="WeChat" />
+        </EntityType>
+        <EntityType Name="User_Roles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="RoleID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Roles" Relationship="SISPIncubatorOnlinePlatformModel.FK_USER_ROL_REFERENCE_ROLES" FromRole="User_Roles" ToRole="Roles" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_USER_ROL_REFERENCE_USER" FromRole="User_Roles" ToRole="User" />
+        </EntityType>
+        <EntityType Name="UserExtension">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BusinessLicenseImg" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IDCardImg" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsApproval" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WeChat">
+          <Key>
+            <PropertyRef Name="WeChatID" />
+          </Key>
+          <Property Name="WeChatID" Type="Guid" Nullable="false" />
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Province" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Nickname" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Language" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Headimgurl" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Subscribe" Type="Boolean" />
+          <Property Name="SubscribeTime" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="Remark" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="GroupID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OpenID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="SISPIncubatorOnlinePlatformModel.FK_WeChat_User" FromRole="WeChat" ToRole="User" />
+        </EntityType>
+        <EntityType Name="WeChatAccessToken">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Key" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="WeChatRandom">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Random" Type="Int32" Nullable="false" />
+          <Property Name="OpenID" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_AboutUs_User">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.AboutUs" Role="AboutUs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="AboutUs">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActivityPublishApply_User">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.ActivityPublishApply" Role="ActivityPublishApply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ActivityPublishApply">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActivitySignUp_User">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.ActivitySignUp" Role="ActivitySignUp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ActivitySignUp">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Advertisement_Advertisement">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.Advertisement" Role="Advertisement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Advertisement">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApproveRecord_User">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.ApproveRecord" Role="ApproveRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ApproveRecord">
+              <PropertyRef Name="Approver" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApproveRecord_User1">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.ApproveRecord" Role="ApproveRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ApproveRecord">
+              <PropertyRef Name="Applicant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DemandPublish_User">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.DemandPublish" Role="DemandPublish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="DemandPublish">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FinancingRequirementFollow_User">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.FinancingRequirementFollow" Role="FinancingRequirementFollow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="FinancingRequirementFollow">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FinancingRequirements_User">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.FinancingRequirements" Role="FinancingRequirements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="FinancingRequirements">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLE_FUN_REFERENCE_FUNCTION">
+          <End Type="SISPIncubatorOnlinePlatformModel.Functions" Role="Functions" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.Role_Functions" Role="Role_Functions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Functions">
+              <PropertyRef Name="FunctionID" />
+            </Principal>
+            <Dependent Role="Role_Functions">
+              <PropertyRef Name="FunctionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncubatorActivityApply_User">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.IncubatorActivityApply" Role="IncubatorActivityApply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="IncubatorActivityApply">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncubatorApply_User">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.IncubatorApply" Role="IncubatorApply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="IncubatorApply">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncubatorApprove_IncubatorApply">
+          <End Type="SISPIncubatorOnlinePlatformModel.IncubatorApply" Role="IncubatorApply" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.IncubatorApprove" Role="IncubatorApprove" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IncubatorApply">
+              <PropertyRef Name="ApplyID" />
+            </Principal>
+            <Dependent Role="IncubatorApprove">
+              <PropertyRef Name="ApplyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_INCUBATO_REFERENCE_INCUBATO">
+          <End Type="SISPIncubatorOnlinePlatformModel.IncubatorInformation" Role="IncubatorInformation" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.IncubatorApprove" Role="IncubatorApprove" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IncubatorInformation">
+              <PropertyRef Name="IncubatorID" />
+            </Principal>
+            <Dependent Role="IncubatorApprove">
+              <PropertyRef Name="IncubatorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncubatorInformation_Roles">
+          <End Type="SISPIncubatorOnlinePlatformModel.Roles" Role="Roles" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.IncubatorInformation" Role="IncubatorInformation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="IncubatorInformation">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncubatorProjects_IncubatorInformation">
+          <End Type="SISPIncubatorOnlinePlatformModel.IncubatorInformation" Role="IncubatorInformation" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.IncubatorProjects" Role="IncubatorProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IncubatorInformation">
+              <PropertyRef Name="IncubatorID" />
+            </Principal>
+            <Dependent Role="IncubatorProjects">
+              <PropertyRef Name="IncubatorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvestorInformation_User">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.InvestorInformation" Role="InvestorInformation" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="InvestorInformation">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_User_SendFrom">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.Message" Role="Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="SendFrom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_User_SendTo">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.Message" Role="Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="SendTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OFFICEAP_REFERENCE_OFFICEAP">
+          <End Type="SISPIncubatorOnlinePlatformModel.OfficeApply" Role="OfficeApply" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.OfficeApplyWorkExperience" Role="OfficeApplyWorkExperience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OfficeApply">
+              <PropertyRef Name="ApplyID" />
+            </Principal>
+            <Dependent Role="OfficeApplyWorkExperience">
+              <PropertyRef Name="ApplyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OfficeApply_User">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.OfficeApply" Role="OfficeApply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="OfficeApply">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLE_FUN_REFERENCE_ROLES">
+          <End Type="SISPIncubatorOnlinePlatformModel.Roles" Role="Roles" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.Role_Functions" Role="Role_Functions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Role_Functions">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_ROL_REFERENCE_ROLES">
+          <End Type="SISPIncubatorOnlinePlatformModel.Roles" Role="Roles" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.User_Roles" Role="User_Roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="User_Roles">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ServicePublish_User">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.ServicePublish" Role="ServicePublish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ServicePublish">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SuccessfulCase_User">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.SuccessfulCase" Role="SuccessfulCase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="SuccessfulCase">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USER_ROL_REFERENCE_USER">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.User_Roles" Role="User_Roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="User_Roles">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WeChat_User">
+          <End Type="SISPIncubatorOnlinePlatformModel.User" Role="User" Multiplicity="1" />
+          <End Type="SISPIncubatorOnlinePlatformModel.WeChat" Role="WeChat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="WeChat">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SISPIncubatorOnlinePlatformModelStoreContainer" CdmEntityContainer="SISPIncubatorOnlinePlatformEntities">
+          <EntitySetMapping Name="AboutUs">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.AboutUs">
+              <MappingFragment StoreEntitySet="AboutUs">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActivityImages">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.ActivityImages">
+              <MappingFragment StoreEntitySet="ActivityImages">
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="ImgSrc" ColumnName="ImgSrc" />
+                <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+                <ScalarProperty Name="ImgID" ColumnName="ImgID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActivityPublishApply">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.ActivityPublishApply">
+              <MappingFragment StoreEntitySet="ActivityPublishApply">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Origin" ColumnName="Origin" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ActivityDescription" ColumnName="ActivityDescription" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="TimeBucket" ColumnName="TimeBucket" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Co_sponsor" ColumnName="Co-sponsor" />
+                <ScalarProperty Name="Sponsor" ColumnName="Sponsor" />
+                <ScalarProperty Name="Topic" ColumnName="Topic" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActivitySignUp">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.ActivitySignUp">
+              <MappingFragment StoreEntitySet="ActivitySignUp">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="WorkingCompany" ColumnName="WorkingCompany" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SignUpName" ColumnName="SignUpName" />
+                <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+                <ScalarProperty Name="SignUpID" ColumnName="SignUpID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Advertisement">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.Advertisement">
+              <MappingFragment StoreEntitySet="Advertisement">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Module" ColumnName="Module" />
+                <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Hits" ColumnName="Hits" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AdID" ColumnName="AdID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AgreementAttachment">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.AgreementAttachment">
+              <MappingFragment StoreEntitySet="AgreementAttachment">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="IncubatorApplyID" ColumnName="IncubatorApplyID" />
+                <ScalarProperty Name="FileUrl" ColumnName="FileUrl" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="AttachementID" ColumnName="AttachementID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AgreementTemplate">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.AgreementTemplate">
+              <MappingFragment StoreEntitySet="AgreementTemplate">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="IncubatorID" ColumnName="IncubatorID" />
+                <ScalarProperty Name="FileUrl" ColumnName="FileUrl" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="AttachmentID" ColumnName="AttachmentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApproveRecord">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.ApproveRecord">
+              <MappingFragment StoreEntitySet="ApproveRecord">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Applicant" ColumnName="Applicant" />
+                <ScalarProperty Name="ApplyType" ColumnName="ApplyType" />
+                <ScalarProperty Name="Approver" ColumnName="Approver" />
+                <ScalarProperty Name="ApproveResult" ColumnName="ApproveResult" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="ApproveNode" ColumnName="ApproveNode" />
+                <ScalarProperty Name="ApproveRelateID" ColumnName="ApproveRelateID" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BlockedIP">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.BlockedIP">
+              <MappingFragment StoreEntitySet="BlockedIP">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="BlockIP" ColumnName="BlockIP" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DemandPublish">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.DemandPublish">
+              <MappingFragment StoreEntitySet="DemandPublish">
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IntentionPartner" ColumnName="IntentionPartner" />
+                <ScalarProperty Name="DemandDescription" ColumnName="DemandDescription" />
+                <ScalarProperty Name="ProjectDescription" ColumnName="ProjectDescription" />
+                <ScalarProperty Name="Members" ColumnName="Members" />
+                <ScalarProperty Name="FoundedTime" ColumnName="FoundedTime" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Contacts" ColumnName="Contacts" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="DemandID" ColumnName="DemandID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dictionary">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.Dictionary">
+              <MappingFragment StoreEntitySet="Dictionary">
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FinancingRequirementFollow">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.FinancingRequirementFollow">
+              <MappingFragment StoreEntitySet="FinancingRequirementFollow">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="FollowType" ColumnName="FollowType" />
+                <ScalarProperty Name="FRID" ColumnName="FRID" />
+                <ScalarProperty Name="FollowID" ColumnName="FollowID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FinancingRequirements">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.FinancingRequirements">
+              <MappingFragment StoreEntitySet="FinancingRequirements">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="PermissionControl" ColumnName="PermissionControl" />
+                <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+                <ScalarProperty Name="CoreTeam" ColumnName="CoreTeam" />
+                <ScalarProperty Name="OtherInfo" ColumnName="OtherInfo" />
+                <ScalarProperty Name="MarketAnalysis" ColumnName="MarketAnalysis" />
+                <ScalarProperty Name="DevelopmentalStage" ColumnName="DevelopmentalStage" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="FinancingAmount" ColumnName="FinancingAmount" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="ProductionDescription" ColumnName="ProductionDescription" />
+                <ScalarProperty Name="CompanyDescription" ColumnName="CompanyDescription" />
+                <ScalarProperty Name="ProjectLogo" ColumnName="ProjectLogo" />
+                <ScalarProperty Name="ProductionName" ColumnName="ProductionName" />
+                <ScalarProperty Name="FRID" ColumnName="FRID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Function_Actions">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.Function_Actions">
+              <MappingFragment StoreEntitySet="Function_Actions">
+                <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+                <ScalarProperty Name="ControllerName" ColumnName="ControllerName" />
+                <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Functions">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.Functions">
+              <MappingFragment StoreEntitySet="Functions">
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Controller" ColumnName="Controller" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+                <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IncubatorActivityApply">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.IncubatorActivityApply">
+              <MappingFragment StoreEntitySet="IncubatorActivityApply">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Origin" ColumnName="Origin" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ChargeItem" ColumnName="ChargeItem" />
+                <ScalarProperty Name="FreeItem" ColumnName="FreeItem" />
+                <ScalarProperty Name="DemandForStall" ColumnName="DemandForStall" />
+                <ScalarProperty Name="DemandForSpace" ColumnName="DemandForSpace" />
+                <ScalarProperty Name="ActivityDescription" ColumnName="ActivityDescription" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="TimeBucket" ColumnName="TimeBucket" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="Participants" ColumnName="Participants" />
+                <ScalarProperty Name="Co_sponsor" ColumnName="Co-sponsor" />
+                <ScalarProperty Name="Sponsor" ColumnName="Sponsor" />
+                <ScalarProperty Name="Topic" ColumnName="Topic" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IncubatorApply">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.IncubatorApply">
+              <MappingFragment StoreEntitySet="IncubatorApply">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsSign" ColumnName="IsSign" />
+                <ScalarProperty Name="ApplyStatus" ColumnName="ApplyStatus" />
+                <ScalarProperty Name="IncubatorID" ColumnName="IncubatorID" />
+                <ScalarProperty Name="FinancingSituation" ColumnName="FinancingSituation" />
+                <ScalarProperty Name="MarketRiskAnalysis" ColumnName="MarketRiskAnalysis" />
+                <ScalarProperty Name="CoreStaffResume" ColumnName="CoreStaffResume" />
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="TeamMembers" ColumnName="TeamMembers" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ContactTel" ColumnName="ContactTel" />
+                <ScalarProperty Name="ProjectOwner" ColumnName="ProjectOwner" />
+                <ScalarProperty Name="CompanyTel" ColumnName="CompanyTel" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IncubatorApprove">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.IncubatorApprove">
+              <MappingFragment StoreEntitySet="IncubatorApprove">
+                <ScalarProperty Name="IsSign" ColumnName="IsSign" />
+                <ScalarProperty Name="ApproveStatus" ColumnName="ApproveStatus" />
+                <ScalarProperty Name="IncubatorID" ColumnName="IncubatorID" />
+                <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+                <ScalarProperty Name="ApproveID" ColumnName="ApproveID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IncubatorInformation">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.IncubatorInformation">
+              <MappingFragment StoreEntitySet="IncubatorInformation">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="OtherRequirement" ColumnName="OtherRequirement" />
+                <ScalarProperty Name="LocationRequirement" ColumnName="LocationRequirement" />
+                <ScalarProperty Name="IndustryRequirement" ColumnName="IndustryRequirement" />
+                <ScalarProperty Name="OtherService" ColumnName="OtherService" />
+                <ScalarProperty Name="SiteFavorable" ColumnName="SiteFavorable" />
+                <ScalarProperty Name="Service" ColumnName="Service" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FinancialSupport" ColumnName="FinancialSupport" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+                <ScalarProperty Name="OperationAddress" ColumnName="OperationAddress" />
+                <ScalarProperty Name="IncubatorName" ColumnName="IncubatorName" />
+                <ScalarProperty Name="IncubatorID" ColumnName="IncubatorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IncubatorProjects">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.IncubatorProjects">
+              <MappingFragment StoreEntitySet="IncubatorProjects">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProjectPicture" ColumnName="ProjectPicture" />
+                <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+                <ScalarProperty Name="IncubatorID" ColumnName="IncubatorID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvestorInformation">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.InvestorInformation">
+              <MappingFragment StoreEntitySet="InvestorInformation">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="InvestmentCase" ColumnName="InvestmentCase" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="InvestmentStage" ColumnName="InvestmentStage" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="InvestorName" ColumnName="InvestorName" />
+                <ScalarProperty Name="InvestmentField" ColumnName="InvestmentField" />
+                <ScalarProperty Name="FundScale" ColumnName="FundScale" />
+                <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LinkList">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.LinkList">
+              <MappingFragment StoreEntitySet="LinkList">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="LinkID" ColumnName="LinkID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginLog">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.LoginLog">
+              <MappingFragment StoreEntitySet="LoginLog">
+                <ScalarProperty Name="LoginStatsus" ColumnName="LoginStatsus" />
+                <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+                <ScalarProperty Name="LoginIP" ColumnName="LoginIP" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="LogID" ColumnName="LogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Message">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.Message">
+              <MappingFragment StoreEntitySet="Message">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="IsPop" ColumnName="IsPop" />
+                <ScalarProperty Name="DeleteFlagR" ColumnName="DeleteFlagR" />
+                <ScalarProperty Name="DeleteFlagS" ColumnName="DeleteFlagS" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SendTo" ColumnName="SendTo" />
+                <ScalarProperty Name="SendFrom" ColumnName="SendFrom" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+                <ScalarProperty Name="MsgType" ColumnName="MsgType" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OfficeApply">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.OfficeApply">
+              <MappingFragment StoreEntitySet="OfficeApply">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ApplyStatus" ColumnName="ApplyStatus" />
+                <ScalarProperty Name="FinancingAndRevenue" ColumnName="FinancingAndRevenue" />
+                <ScalarProperty Name="MemberDescription" ColumnName="MemberDescription" />
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="InitialStaff" ColumnName="InitialStaff" />
+                <ScalarProperty Name="DemandForSpace" ColumnName="DemandForSpace" />
+                <ScalarProperty Name="RegisteredCapital" ColumnName="RegisteredCapital" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="IntellectualProperty" ColumnName="IntellectualProperty" />
+                <ScalarProperty Name="Diplomas" ColumnName="Diplomas" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Specialty" ColumnName="Specialty" />
+                <ScalarProperty Name="Degree" ColumnName="Degree" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="ProjectOwner" ColumnName="ProjectOwner" />
+                <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OfficeApplyWorkExperience">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.OfficeApplyWorkExperience">
+              <MappingFragment StoreEntitySet="OfficeApplyWorkExperience">
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="SchoolOrEmployer" ColumnName="SchoolOrEmployer" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+                <ScalarProperty Name="WEID" ColumnName="WEID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RequestRecords">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.RequestRecords">
+              <MappingFragment StoreEntitySet="RequestRecords">
+                <ScalarProperty Name="RequestTime" ColumnName="RequestTime" />
+                <ScalarProperty Name="HttpMethod" ColumnName="HttpMethod" />
+                <ScalarProperty Name="RequestUri" ColumnName="RequestUri" />
+                <ScalarProperty Name="UserHostAddress" ColumnName="UserHostAddress" />
+                <ScalarProperty Name="UserAgent" ColumnName="UserAgent" />
+                <ScalarProperty Name="ClientType" ColumnName="ClientType" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role_Functions">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.Role_Functions">
+              <MappingFragment StoreEntitySet="Role_Functions">
+                <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServicePublish">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.ServicePublish">
+              <MappingFragment StoreEntitySet="ServicePublish">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SMSValidateCode">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.SMSValidateCode">
+              <MappingFragment StoreEntitySet="SMSValidateCode">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SuccessfulCase">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.SuccessfulCase">
+              <MappingFragment StoreEntitySet="SuccessfulCase">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="CaseID" ColumnName="CaseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="LoginIP" ColumnName="LoginIP" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="LoginTimes" ColumnName="LoginTimes" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Roles">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.User_Roles">
+              <MappingFragment StoreEntitySet="User_Roles">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserExtension">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.UserExtension">
+              <MappingFragment StoreEntitySet="UserExtension">
+                <ScalarProperty Name="IsApproval" ColumnName="IsApproval" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IDCardImg" ColumnName="IDCardImg" />
+                <ScalarProperty Name="BusinessLicenseImg" ColumnName="BusinessLicenseImg" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WeChat">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.WeChat">
+              <MappingFragment StoreEntitySet="WeChat">
+                <ScalarProperty Name="OpenID" ColumnName="OpenID" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="SubscribeTime" ColumnName="SubscribeTime" />
+                <ScalarProperty Name="Subscribe" ColumnName="Subscribe" />
+                <ScalarProperty Name="Headimgurl" ColumnName="Headimgurl" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Nickname" ColumnName="Nickname" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="WeChatID" ColumnName="WeChatID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WeChatAccessToken">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.WeChatAccessToken">
+              <MappingFragment StoreEntitySet="WeChatAccessToken">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WeChatRandom">
+            <EntityTypeMapping TypeName="SISPIncubatorOnlinePlatformModel.WeChatRandom">
+              <MappingFragment StoreEntitySet="WeChatRandom">
+                <ScalarProperty Name="OpenID" ColumnName="OpenID" />
+                <ScalarProperty Name="Random" ColumnName="Random" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

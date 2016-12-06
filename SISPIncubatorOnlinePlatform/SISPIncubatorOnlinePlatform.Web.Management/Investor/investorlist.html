@@ -1,0 +1,80 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>投资机构</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/keleyidivpager.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/pc-style.css" />
+    <link href="../Content/puplic.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script language="javascript" src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" language="javascript" src="../Scripts/custom.js"></script>
+    <script language="javascript" src="../Scripts/keleyidivpager.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+
+    <script type="text/javascript">
+        $(window).scroll(function () {
+            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                // alert('鼠标已滚动到页面最下方，Append列表内容！');
+
+            }
+        });
+    </script>
+    <script src="../Scripts/Investor/investorlist.js"></script>
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/Message/chartdialog.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+</head>
+
+<body> 
+    <!-- Top Nav Started -->
+    <div class="divTopNav"></div>
+    <!-- Top Nav Ended -->
+    <!--Banner Img Content Started-->
+    <div class="In_div_bannerImg">
+        <img src="../images/pc/Invest_banner.jpg" />
+    </div>
+    <!--Banner Img Content Ended-->
+    <!--Filter Content Started-->
+    <div class="In_div_filter">
+        <div class="In_div_filter_content keywordheightstyle">
+            <div class="keywordstyle">
+                <input class="search-ipt" type="text" id="txtkeyword" maxlength="50">
+                <div class="search-btn" style="cursor: pointer" onclick=" GetInvestData(1, 0);"></div>
+            </div>
+        </div>
+    </div>
+    <!--Filter Content Ended-->
+    <!--List Invest Content Started-->
+    <div class="In_div_list">
+        <div class="In_div_list_content">
+            <ul class="In_ul_InvestDep" id="ul_InvestDep"></ul>
+            <div id='divNodata' style="display: none;">
+                <div class="no-result-img"></div>
+                <div style='text-align:center;margin-top:5px;margin-bottom: 10px'>暂无数据</div>
+            </div>
+            <div class="page-box">
+                <div id="div_pager" class="div_pager">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="divTopFlag"></div>
+    <!--List Invest Content Ended-->
+<div class="div_treeBottom"></div>
+    <div id="divFoot"></div>
+</body>
+</html>

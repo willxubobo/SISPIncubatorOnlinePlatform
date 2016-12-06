@@ -1,0 +1,115 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户详情</title>
+    <link href="../Content/base.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link href="../Content/puplic.css" rel="stylesheet" />
+
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/common.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="../Scripts/custom.js"></script>
+    <script type="text/javascript" src="../Scripts/custom-pc.js?14"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/Account/userinfo.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="divTopMenu" class="divTopMenu"></div>
+        <div class="content">
+            <div class="main">
+                <div class="breadcrumb-nav">
+                    <ul class="bn-list">
+                        <li class="onelevel">帐号管理</li>
+                        <li class="bn-spacer"></li>
+                        <li class="last-menu">用户详情</li>
+                    </ul>
+                </div>
+                <div class="module module-style">
+                    <div class="">
+                        <div class="right-result-box">
+                            <table class="tableApproveContent">
+                                <tbody>
+                                    <tr>
+                                        <td class="tdTitle" valign="top" style="vertical-align: middle;">头像：</td>
+                                        <td colspan="3">
+                                            <img id="userlogo" alt="" class="userlogo hide" onload="AutoResizeImage(200,200,this)" style="margin-top: 5px;">
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="tdTitle">联系人：</td>
+                                        <td>
+                                            <div class="showInput UserName"></div>
+                                        </td>
+                                        <td class="tdTitle">手机号：</td>
+                                        <td>
+                                            <div class="showInput" id="divphone"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdTitle">电子邮箱：</td>
+                                        <td>
+                                            <div class="showInput Email"></div>
+                                        </td>
+                                        <td class="tdTitle">用户类型：</td>
+                                        <td>
+                                            <div class="showInput UserType"></div>
+                                        </td>
+                                    </tr>
+                                <tr class="comtype hide">
+                                    <td class="tdTitle">公司名称：</td>
+                                    <td colspan="3">
+                                        <div class="showInput ComName"></div>
+                                    </td>
+
+                                </tr>
+                                    <tr class="comtype hide">
+                                        <td class="tdTitle" style="vertical-align: middle;">营业执照：</td>
+                                        <td colspan="3">
+                                            <img alt="" class="userlogo linenseimg hide" onload="AutoResizeImage(800,350,this)">
+                                        </td>
+                                    </tr>
+                                    <tr class="comtype hide">
+                                        <td class="tdTitle" style="vertical-align: middle;">身份证：</td>
+                                        <td colspan="3">
+                                            <img alt="" class="userlogo cardimg hide" onload="AutoResizeImage(500,300,this)">
+                                        </td>
+                                    </tr>
+                                    <tr class="comtype hide">
+                                        <td colspan="4" class="tdContentInfo">
+                                            <p>备注：</p>
+                                            <p class="Description">
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" class="tdContentInfo">
+                                            <p>联系地址：</p>
+                                            <p class="Address">
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="btn-box operate-btn-box">
+                                <a class="base-btn lg-btn" href="javascript:" onclick="returnmain();">关闭</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id="hiduserid" class="hiduserid" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

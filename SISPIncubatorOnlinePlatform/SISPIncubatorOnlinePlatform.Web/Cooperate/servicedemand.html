@@ -1,0 +1,118 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>服务需求</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/keleyidivpager.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/pc-style.css" />
+    <link href="../Content/custom-pc.css" rel="stylesheet" />
+    <link href="../Content/puplic.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/common.js"></script>
+    <script src="../Scripts/checkform.js"></script>
+    <script src="../Scripts/custom.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script language="javascript" src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" language="javascript" src="../Scripts/custom.js"></script>
+    <script language="javascript" src="../Scripts/keleyidivpager.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/yanue.pop.js"></script>
+    <link href="../Content/poptips.css" rel="stylesheet" />
+    <script src="../Scripts/Cooperate/servicedemand.js"></script>
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/Message/chartdialog.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+</head>
+
+<body>
+    <div class="divTopNav"></div>   
+    <!--Banner Img Content Started-->
+    <div class="In_div_bannerImg">
+      
+    </div>
+    <!--Banner Img Content Ended-->
+    <div class="Ser_div_tab">
+        <div class="Ser_div_tab_content">
+            <div class="div_left selected">服务信息</div>
+            <div class="div_right">需求信息</div>
+        </div>
+
+    </div>
+    <div class="Ser_div_content-box In_div_list_content">
+        <div>
+            <!--Filter Content Started-->
+            <div>
+                <div class="Inc_divSearch divSearchLayout">
+                    <div class="Inc_divSearch_content ser_div_searchContent" id="divService">
+                        <div class="Inc_searchInput_div">
+                            <input type="text" id="txtServiceCondition" />
+                            <input type="hidden" id="searchServiceValue">
+                            <div class="Inc_searchInput_divIcon" onclick="SearchServiceData()"></div>
+                            <input type="hidden" id="enterservicefunction" value="SearchServiceData" />
+                        </div>
+                    </div>
+                </div>
+                <!--Filter Content Ended-->
+                <!-- Service List Info Started -->
+                <div class="In_div_list">
+                    <div class="In_div_list_content">
+                        <table class="table_company table_servicedemand ser_divtable" id="servicebusiness"></table>
+                        <div class="no-result-img hide" id="serviceNoData">
+                                 <div style='text-align:center;margin-top:5px;margin-bottom: 10px'>暂无数据</div>
+                        </div>
+                        <div class="page-box">
+                            <div id="div_pager" class="div_pager">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <!--Filter Content Started-->
+            <div>
+                <div class="Inc_divSearch divSearchLayout" id="divDemand">
+                    <div class="Inc_divSearch_content ser_div_searchContent">
+                        <div class="Inc_searchInput_div">
+                            <input type="text" id="txtDemandCondition" />
+                            <input type="hidden" id="searchDemandValue">
+                            <div class="Inc_searchInput_divIcon" onclick="SearchDemandData()"></div>
+                            <input type="hidden" id="enterservicefunction" value="SearchDemandData" />
+                        </div>
+                    </div>
+                </div>
+                <!--Filter Content Ended-->
+                <!-- Service List Info Started -->
+                <div class="In_div_list">
+                    <div class="In_div_list_content">
+                        <table class="table_company table_servicedemand" style="table-layout: fixed;" id="demandbusiness"></table>
+                        <div class="no-result-img hide" id="demandNoData">
+                                 <div style='text-align:center;margin-top:5px;margin-bottom: 10px'>暂无数据</div>
+                        </div>
+                        <div class="page-box">
+                            <div id="div_pager" class="demand_pager">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service List Info Ended -->
+    <div class="divTopFlag"></div>
+    <div class="div_treeBottom extraBottom"></div>
+    <div id="divFoot"></div>
+    <input type="hidden" id="hidCallbackFunc" value="InitServiceDemandData" />
+</body>
+</html>

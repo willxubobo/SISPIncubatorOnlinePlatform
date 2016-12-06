@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>微信二维码demo</title>
+    <script src="Scripts/jquery-2.2.2.min.js?V2016051901"></script>
+    <script>
+        $(function () {
+            GetData();
+        });
+        var code = RndNum(9);
+        function RndNum(n) {
+            var rnd = "";
+            for (var i = 0; i < n; i++)
+                rnd += Math.floor(Math.random() * 10);
+            return rnd;
+        }
+
+        function GetData() {
+            var parameter = {
+                requestUri: "/api/weixin/codeurl/" + code,
+                requestParameters: {}
+            }
+            var jsonData = JSON.stringify(parameter);
+            $.ajax(
+               {
+                   type: "POST",
+                   url: "/api/proxy/post/anonymous",
+                   data: jsonData,
+                   dataType: "json",
+                   contentType: "application/json; charset=utf-8",
+                   success: function (data) {
+                       $("#imgcode").attr("src",data);
+
+                   },
+                   error: function (err) {
+                       //ErrorResponse(err);
+                       //HideLoading();
+                   }
+               });
+        }
+        //获取用户是否关注
+        function GetSubscribe() {
+            var parameter = {
+                requestUri: "/api/weixin/subscribe/" + code,
+                requestParameters: {}
+            }
+            var jsonData = JSON.stringify(parameter);
+            $.ajax(
+               {
+                   type: "POST",
+                   url: "/api/proxy/post/anonymous",
+                   data: jsonData,
+                   dataType: "json",
+                   contentType: "application/json; charset=utf-8",
+                   success: function (data) {
+                       if (data != null && data != undefined && data == "1") {
+                          window.location.href = "http://www.baidu.com";
+                       }
+                   },
+                   error: function (err) {
+                       //ErrorResponse(err);
+                       //HideLoading();
+                   }
+               });
+        }
+        setInterval('GetSubscribe()', 1500);
+    </script>
+</head>
+<body>
+    <img id="imgcode" alt="" />
+</body>
+</html>

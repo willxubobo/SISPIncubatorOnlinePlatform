@@ -1,0 +1,83 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>需求详情</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/pc-style.css" />
+    <link href="../Content/puplic.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/checkform.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/mainMenu.js"></script>
+    <script src="../Scripts/Cooperate/demanddetail.js"></script>
+    <!–[if lt IE9]>
+    <script src="../Scripts/html5.js"></script>
+    <![endif]–>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+    <script src="../Scripts/yanue.pop.js"></script>
+    <link href="../Content/poptips.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="divTopNav"></div>
+    <!--Company Title Info Started-->
+    <div class="IncD_divCompan In_div_list_contenty">
+        <div class="IncD_divCompany_Content">
+            <table class="IncD_tableTitle">
+                <tr>
+                    <td rowspan="5" class="tdImg">
+                        <img id="headImg" src="" />
+                    </td>
+                    <td colspan="2" class="tdCompanyTitle" id="companyName"></td>
+                </tr>
+                <tr>
+                    <td class="tdContent" id="contact"></td>
+                    <td class="tdContent">联系电话：<label id="phone"></label></td>
+
+                </tr>
+                <tr>
+                    <td class="tdContent" id="foundedTime"></td>
+                    <td class="tdContent" id="member"></td>
+
+                </tr>
+                <tr>
+                    <td class="tdContent" id="tdemail"></td>
+                    <td class="tdContent" id="expiryDate"></td>
+                </tr>
+                <tr>
+                    <td class="tdContent" id="category"></td>
+                    <td class="tdContent"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--Company Title Info Ended-->
+    <!--Introduction Content Started-->
+    <div class="base-info-box">
+        <div class="BIB-title BIB-icon1">基本信息</div>
+        <div class="BIB-info-title">意向合作对象</div>
+        <div class="BIB-info-txt" id="intentionPartner"></div>
+        <div class="BIB-info-title">项目简介</div>
+        <div class="BIB-info-txt" id="projectDescription"></div>
+        <div class="BIB-info-title">需求简介</div>
+        <div class="BIB-info-txt" id="demandDescription"></div>
+    </div>
+    <!--Introduction Content Ended-->
+    <div class="div_treeBottom extraBottom"></div>  
+    <div id="divFoot"></div> 
+    <input type="hidden" id="hidCallbackFunc" value="InitDemandData" />
+</body>
+</html>

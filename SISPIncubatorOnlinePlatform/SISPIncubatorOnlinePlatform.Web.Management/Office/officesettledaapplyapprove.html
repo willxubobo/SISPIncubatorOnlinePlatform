@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>办公室租赁审核</title>
+    <link href="../Content/base.css" rel="stylesheet" />
+    <link href="../Content/custom.css" rel="stylesheet" />
+    <link href="../Content/keleyidivpager.css" rel="stylesheet" />
+    <!--<link href="../Content/paging.css" rel="stylesheet" />-->
+
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/keleyidivpager.js"></script>
+
+    <!–[if lt IE9]>
+    <script src="../Scripts/html5.js"></script>
+    <![endif]–>
+
+    <script src="../Scripts/Office/officesettledaapplyapprove.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+</head>
+<body>
+    <!--List Content Started-->
+    <div class="wrap">
+        <div id="divTopMenu" class="divTopMenu"></div>
+        <div class="content">
+            <div class="main">
+                <div class="breadcrumb-nav">
+                    <ul class="bn-list">
+                        <li>办公室申请</li>
+                        <li class="bn-spacer"></li>
+                        <li class="last-menu">审核</li>
+                    </ul>
+                </div>
+                <div class="div-content">
+                    <div class="main-content">
+                        <div class="functional-area relative">
+                            <div class="right-result-box">
+                                <table class="tableApproveContent" style="width: 100%;">
+                                    <tbody>
+                                        <tr>
+                                            <td class="tdTitle">项目负责人：</td>
+                                            <td>
+                                                <div class="showInput" id="divProjectOwner">nihao</div>
+                                            </td>
+                                            <td class="tdTitle">性别：</td>
+                                            <td>
+                                                <div class="showInput" id="divSex"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdTitle">学位：</td>
+                                            <td>
+                                                <div class="showInput" id="divDegree"></div>
+                                            </td>
+                                            <td class="tdTitle">专业领域：</td>
+                                            <td>
+                                                <div class="showInput" id="divSpecialty"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdTitle">联系地址：</td>
+                                            <td>
+                                                <div class="showInput" id="divAddress"></div>
+                                            </td>
+                                            <td class="tdTitle">联系电话：</td>
+                                            <td>
+                                                <div class="showInput" id="divContactPhone"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdTitle">电子邮箱：</td>
+                                            <td>
+                                                <div class="showInput" id="divEmail"></div>
+                                            </td>
+                                            <td class="tdTitle"></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" class="tdContentInfo">
+                                                <p class='pWorkHistoryTitle'>学校或工作单位（大学起）：</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" class="tdContentInfo">
+                                                <p>取得学历（学位）和资质证书情况：</p>
+                                                <p id="divDiplomas" class="pContent">
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" class="tdContentInfo">
+                                                <p>项目负责人及创业团队拥有的知识产权情况：</p>
+                                                <p id="divIntellectualProperty" class="pContent"></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdTitle">公司名称：</td>
+                                            <td>
+                                                <div class="showInput" id="divCompanyName"></div>
+                                            </td>
+                                            <td class="tdTitle">注册资本：</td>
+                                            <td>
+                                                <div class="showInput" id="divRegisteredCapital"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tdTitle">需求面积：</td>
+                                            <td>
+                                                <div class="showInput" id="divDemandForSpace"></div>
+                                            </td>
+                                            <td class="tdTitle">初期规模：</td>
+                                            <td>
+                                                <div class="showInput" id="divInitialStaff"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" class="tdContentInfo">
+                                                <p>项目主要产品（服务）简介：</p>
+                                                <p id="divProductDescription" class="pContent"></p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" class="tdContentInfo">
+                                                <p>研发与管理团队成员情况：</p>
+                                                <p id="divMemberDescription" class="pContent"></p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" class="tdContentInfo">
+                                                <p>团队获得投融资及收入情况：</p>
+                                                <p id="divFinancingAndRevenue" class="pContent"></p>
+
+                                            </td>
+                                        </tr>
+                                        <!--<tr id="trApproveHistory">
+                                            <td colspan="4" class="tdTitle2">审批记录</td>
+                                        </tr>-->
+                                        <tr id="trApproveHistory">
+                                            <td colspan="4" class="tdTitle2">审批记录</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="4" class="tdTitle2">审批意见</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" class="tdApproveComment">
+                                                <textarea id="txtComments" maxlength="100"></textarea>
+                                                <div class="ipt-enter-tips hide">审批意见不能为空！</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" class="tdBtnAction">
+                                                <div>
+                                                    <div onclick=" UpdateApprove('1') " class="divApproveBtn">通过</div>
+                                                    <div onclick=" UpdateApprove('0') " class="divReworkBtn">退回</div>
+                                                    <div onclick=" javascript: window.close(); ">取消</div>
+                                                    <input id="hidApplyId" type="hidden" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" class="tdBtnAction">
+                                                <div>
+                                                    <!--<div>返回</div>-->
+                                                    <input id="hidApplyId" type="hidden" />
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--List Content Ended-->
+                        <!--List Invest Content Ended-->
+                        <input id="hidMessageId" type="hidden" />
+                        <input id="hidMessageType" type="hidden" />
+                        <input id="hidCallbackFunc" value="InitFormData" type="hidden" />
+                    </div>
+                </div>
+                <!--List Content Ended-->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

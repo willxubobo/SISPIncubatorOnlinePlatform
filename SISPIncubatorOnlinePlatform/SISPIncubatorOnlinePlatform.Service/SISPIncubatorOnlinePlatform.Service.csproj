@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{16353649-90FB-453E-BB08-CF9097993C5D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SISPIncubatorOnlinePlatform.Service</RootNamespace>
+    <AssemblyName>SISPIncubatorOnlinePlatform.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\packages\EPPlus.4.0.5\lib\net20\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\packages\DotNetZip.1.9.8\lib\net20\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Libraries\EntityFramework.dll" />
+    <Content Include="Libraries\EntityFramework.SqlServer.dll" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ImageHelper.cs" />
+    <Compile Include="Common\LoggerHelper.cs" />
+    <Compile Include="Common\QueryableCondition.cs" />
+    <Compile Include="Common\SISPIncubatorOnlineEnum.cs" />
+    <Compile Include="Common\SMSHelper.cs" />
+    <Compile Include="Common\UserHelper.cs" />
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="Controllers\ActivityCalendarController.cs" />
+    <Compile Include="Controllers\ActivityImagesController.cs" />
+    <Compile Include="Controllers\ActivityPublishApplyController.cs" />
+    <Compile Include="Controllers\ActivitySignUpController.cs" />
+    <Compile Include="Controllers\AdvertisementController.cs" />
+    <Compile Include="Controllers\AgreementAttachmentController.cs" />
+    <Compile Include="Controllers\ApproveRecordController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BlockedIPController.cs" />
+    <Compile Include="Controllers\DemandPublishController.cs" />
+    <Compile Include="Controllers\DictionaryController.cs" />
+    <Compile Include="Controllers\FinancingRequirementFollowController.cs" />
+    <Compile Include="Controllers\FinancingRequirementsController.cs" />
+    <Compile Include="Controllers\FunctionsController.cs" />
+    <Compile Include="Controllers\IncubatorActivityApplyController.cs" />
+    <Compile Include="Controllers\InvestorInformationController.cs" />
+    <Compile Include="Controllers\LinkController.cs" />
+    <Compile Include="Controllers\LoginLogController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\RoleFunctionsController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\SMSValidateCodeController.cs" />
+    <Compile Include="Controllers\OfficeApplyController.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ServicePublishController.cs" />
+    <Compile Include="Controllers\SuccessfulCaseController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WeiXinController.cs" />
+    <Compile Include="CustomAttributes\DeflateCompressionAttribute.cs" />
+    <Compile Include="Entities\AboutUs.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ActivityImages.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ActivityPublishApply.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ActivitySignUp.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Advertisement.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AgreementAttachment.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AgreementTemplate.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ApproveRecord.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\BlockedIP.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\DemandPublish.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Dictionary.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FinancingRequirementFollow.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FinancingRequirements.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Functions.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Function_Actions.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\IncubatorActivityApply.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\IncubatorApply.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\IncubatorApprove.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\IncubatorInformation.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\IncubatorProjects.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\InvestorInformation.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\LinkList.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\LoginLog.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Message.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\OfficeApply.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\OfficeApplyWorkExperience.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\RequestRecords.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Roles.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Role_Functions.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ServicePublish.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SISPIncubatorOnlinePlatform.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SISPIncubatorOnlinePlatform.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SISPIncubatorOnlinePlatform.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SISPIncubatorOnlinePlatform.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SISPIncubatorOnlinePlatform.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SMSValidateCode.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SuccessfulCase.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\sysdiagrams.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\User.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\UserExtension.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\User_Roles.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\WeChat.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\WeChatAccessToken.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\WeChatRandom.cs">
+      <DependentUpon>SISPIncubatorOnlinePlatform.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Exceptions\ConflictException.cs" />
+    <Compile Include="CustomAttributes\ExceptionHandlerAttribute.cs" />
+    <Compile Include="Exceptions\BadRequestException.cs" />
+    <Compile Include="Exceptions\ForbiddenException.cs" />
+    <Compile Include="Exceptions\NotFoundException.cs" />
+    <Compile Include="Exceptions\ResponseError.cs" />
+    <Compile Include="Exceptions\ServerErrorException.cs" />
+    <Compile Include="Exceptions\UnauthorizedException.cs" />
+    <Compile Include="Interfaces\IActivityCalendar.cs" />
+    <Compile Include="Interfaces\IActivityImages.cs" />
+    <Compile Include="Interfaces\IActivityPublishApply.cs" />
+    <Compile Include="Interfaces\IActivitySignUp.cs" />
+    <Compile Include="Interfaces\IAdvertisement.cs" />
+    <Compile Include="Interfaces\IDictionary.cs" />
+    <Compile Include="Interfaces\IFinancingRequirementFollow.cs" />
+    <Compile Include="Interfaces\IFinancingRequirements.cs" />
+    <Compile Include="Interfaces\IFunctions.cs" />
+    <Compile Include="Interfaces\IInvestorInformation.cs" />
+    <Compile Include="Interfaces\IMyActivity.cs" />
+    <Compile Include="Interfaces\IncubatorActivityApply.cs" />
+    <Compile Include="Interfaces\IOfficeApply.cs" />
+    <Compile Include="Interfaces\IServicePublish.cs" />
+    <Compile Include="Interfaces\ISMSValidateCode.cs" />
+    <Compile Include="Interfaces\ISuccessfulCase.cs" />
+    <Compile Include="Interfaces\IUser.cs" />
+    <Compile Include="Interfaces\IWeiXin.cs" />
+    <Compile Include="Managers\ActivitycalendarManager.cs" />
+    <Compile Include="Managers\ActivityImagesManager.cs" />
+    <Compile Include="Managers\ActivityPublishApplyManager.cs" />
+    <Compile Include="Managers\ActivitySignUpManager.cs" />
+    <Compile Include="Managers\AdvertisementManager.cs" />
+    <Compile Include="Managers\AgreementAttachmentManagement.cs" />
+    <Compile Include="Managers\ApproveRecordManager.cs" />
+    <Compile Include="Managers\BaseManager.cs" />
+    <Compile Include="Managers\BlockedIpManager.cs" />
+    <Compile Include="Managers\DemandPublishManager.cs" />
+    <Compile Include="Managers\DictionaryManager.cs" />
+    <Compile Include="Managers\FinancingRequirementFollowManager.cs" />
+    <Compile Include="Managers\FinancingRequirementsManager.cs" />
+    <Compile Include="Managers\FunctionsManager.cs" />
+    <Compile Include="Managers\GlobalSearchManager.cs" />
+    <Compile Include="Managers\IncubatorActivityApplyManager.cs" />
+    <Compile Include="Managers\IncubatorApplyManager.cs" />
+    <Compile Include="Managers\IncubatorManager.cs" />
+    <Compile Include="Managers\InvestorInformationManager.cs" />
+    <Compile Include="Managers\LinkManager.cs" />
+    <Compile Include="Managers\LoginLogManager.cs" />
+    <Compile Include="Managers\MessageManager.cs" />
+    <Compile Include="Managers\RequestRecordsManager.cs" />
+    <Compile Include="Managers\RoleFunctionsManager.cs" />
+    <Compile Include="Managers\RolesManager.cs" />
+    <Compile Include="Managers\SMSValidateCodeManager.cs" />
+    <Compile Include="Managers\OfficeApplyManager.cs" />
+    <Compile Include="Managers\ServicePublishManager.cs" />
+    <Compile Include="Managers\SuccessfulCaseManager.cs" />
+    <Compile Include="Managers\UserManager.cs" />
+    <Compile Include="Managers\WeiXinManager.cs" />
+    <Compile Include="Models\ActivityCalendarRequest.cs" />
+    <Compile Include="Models\ActivityCalendarResponse.cs" />
+    <Compile Include="Models\ActivityDetailRequest.cs" />
+    <Compile Include="Models\ActivityDetailResponse.cs" />
+    <Compile Include="Models\ActivityImagesRequest.cs" />
+    <Compile Include="Models\ActivityImagesResponse.cs" />
+    <Compile Include="Models\ActivityManageResponse.cs" />
+    <Compile Include="Models\ActivityPublishApplyRequest.cs" />
+    <Compile Include="Models\ActivityPublishApplyResponse.cs" />
+    <Compile Include="Models\ActivitySignUpRequest.cs" />
+    <Compile Include="Models\ActivitySignUpResponse.cs" />
+    <Compile Include="Models\AdvertisementRequest.cs" />
+    <Compile Include="Models\AdvertisementResponse.cs" />
+    <Compile Include="Models\AgreementAttachmentRequest.cs" />
+    <Compile Include="Models\ApproveRecordRequest.cs" />
+    <Compile Include="Models\ApproveRecordResponse.cs" />
+    <Compile Include="Models\BiddingResponse.cs" />
+    <Compile Include="Models\BusinessRequest.cs" />
+    <Compile Include="Models\BusinessResponse.cs" />
+    <Compile Include="Models\DemandPublishResponse.cs" />
+    <Compile Include="Models\DictionaryActivityRequest.cs" />
+    <Compile Include="Models\DictionaryActivityResponse.cs" />
+    <Compile Include="Models\DictionaryRequest.cs" />
+    <Compile Include="Models\DictionaryResponse.cs" />
+    <Compile Include="Models\DTO\ActivityCalendarDTO.cs" />
+    <Compile Include="Models\DTO\ActivityCalendarResponseDTO.cs" />
+    <Compile Include="Models\DTO\ActivityDetailResponseDTO.cs" />
+    <Compile Include="Models\DTO\ActivityImagesDTO.cs" />
+    <Compile Include="Models\DTO\ActivityManageResponseDTO.cs" />
+    <Compile Include="Models\DTO\ActivityPublishApplyDTO.cs" />
+    <Compile Include="Models\DTO\ActivitySignUpDTO.cs" />
+    <Compile Include="Models\DTO\AdvertisementDTO.cs" />
+    <Compile Include="Models\DTO\AgreementAttachmentDTO.cs" />
+    <Compile Include="Models\DTO\AgreementTemplateDTO.cs" />
+    <Compile Include="Models\DTO\ApproveRecordDTO.cs" />
+    <Compile Include="Models\DTO\BiddingDTO.cs" />
+    <Compile Include="Models\DTO\DemandPublishDTO.cs" />
+    <Compile Include="Models\DTO\DictionaryDTO.cs" />
+    <Compile Include="Models\DTO\FinancingRequirementFollowDTO.cs" />
+    <Compile Include="Models\DTO\FinancingRequirementsDTO.cs" />
+    <Compile Include="Models\DTO\FunctionsDTO.cs" />
+    <Compile Include="Models\DTO\IncubatorActivityApplyDTO.cs" />
+    <Compile Include="Models\DTO\IncubatorApplyDTO.cs" />
+    <Compile Include="Models\DTO\IncubatorDTO.cs" />
+    <Compile Include="Models\DTO\IncubatorProjectReportDTO.cs" />
+    <Compile Include="Models\DTO\IncubatorProjectsDTO.cs" />
+    <Compile Include="Models\DTO\InvestorInformationDTO.cs" />
+    <Compile Include="Models\DTO\LinkListDTO.cs" />
+    <Compile Include="Models\DTO\MessageChartDTO.cs" />
+    <Compile Include="Models\DTO\MessageDTO.cs" />
+    <Compile Include="Models\DTO\MyActivityDTO.cs" />
+    <Compile Include="Models\DTO\OfficeApplyDTO.cs" />
+    <Compile Include="Models\DTO\OfficeApplyWorkExperienceDTO.cs" />
+    <Compile Include="Models\DTO\RoleFunctionsDTO.cs" />
+    <Compile Include="Models\DTO\RolesDTO.cs" />
+    <Compile Include="Models\DTO\ServicePublishDTO.cs" />
+    <Compile Include="Models\DTO\SMSValidateCodeDTO.cs" />
+    <Compile Include="Models\DTO\SuccessfulCaseDTO.cs" />
+    <Compile Include="Models\DTO\UploadFileDTO.cs" />
+    <Compile Include="Models\DTO\UserDTO.cs" />
+    <Compile Include="Models\DTO\WeChatDTO.cs" />
+    <Compile Include="Models\ExportResponse.cs" />
+    <Compile Include="Models\FinancingRequirementFollowRequest.cs" />
+    <Compile Include="Models\FinancingRequirementFollowResponse.cs" />
+    <Compile Include="Models\FinancingRequirementsRequest.cs" />
+    <Compile Include="Models\FinancingRequirementsResponse.cs" />
+    <Compile Include="Models\FunctionsRequest.cs" />
+    <Compile Include="Models\FunctionsResponse.cs" />
+    <Compile Include="Models\GlobalSearchRequest.cs" />
+    <Compile Include="Models\IncubatorActivityApplyRequest.cs" />
+    <Compile Include="Models\IncubatorActivityApplyResponse.cs" />
+    <Compile Include="Models\IncubatorApplyResponse.cs" />
+    <Compile Include="Models\IncubatorApplyRequest.cs" />
+    <Compile Include="Models\IncubatorResponse.cs" />
+    <Compile Include="Models\InvestorInformationRequest.cs" />
+    <Compile Include="Models\InvestorInformationResponse.cs" />
+    <Compile Include="Models\LinkListRequest.cs" />
+    <Compile Include="Models\LinkListResponse.cs" />
+    <Compile Include="Models\MessageRequest.cs" />
+    <Compile Include="Models\MessageResponse.cs" />
+    <Compile Include="Models\MyActivityRequest.cs" />
+    <Compile Include="Models\MyActivityResponse.cs" />
+    <Compile Include="Models\OfficeApplyRequest.cs" />
+    <Compile Include="Models\OfficeApplyResponse.cs" />
+    <Compile Include="Models\RoleFunctionsRequest.cs" />
+    <Compile Include="Models\RoleFunctionsResponse.cs" />
+    <Compile Include="Models\RolesRequest.cs" />
+    <Compile Include="Models\RolesResponse.cs" />
+    <Compile Include="Models\SearchRequest.cs" />
+    <Compile Include="Controllers\IncubatorApplyController.cs" />
+    <Compile Include="Interfaces\IApproveRecord.cs" />
+    <Compile Include="Interfaces\IDemandPublish.cs" />
+    <Compile Include="Interfaces\IMessage.cs" />
+    <Compile Include="Models\DemandPublishRequest.cs" />
+    <Compile Include="Controllers\IncubatorController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IIncubator.cs" />
+    <Compile Include="Interfaces\IIncubatorApply.cs" />
+    <Compile Include="Models\ServicePublishResponse.cs" />
+    <Compile Include="Models\SMSValidateCodeRequest.cs" />
+    <Compile Include="Models\SMSValidateCodeResponse.cs" />
+    <Compile Include="Models\SuccessfulCaseRequest.cs" />
+    <Compile Include="Models\SuccessfulCaseResponse.cs" />
+    <Compile Include="Models\UserRequest.cs" />
+    <Compile Include="Models\UserResponse.cs" />
+    <Compile Include="Models\WeiXinRequest.cs" />
+    <Compile Include="OAuth\OAuthGrantResourceOwnerProvider.cs" />
+    <Compile Include="OAuth\SSIPActionFilterAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\IncubatorRequest.cs" />
+    <Compile Include="Models\ServicePublishRequest.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <EntityDeploy Include="Entities\SISPIncubatorOnlinePlatform.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SISPIncubatorOnlinePlatform.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Entities\SISPIncubatorOnlinePlatform.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SISPIncubatorOnlinePlatform.edmx</DependentUpon>
+      <LastGenOutput>SISPIncubatorOnlinePlatform.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\SISPIncubatorOnlinePlatform.edmx.diagram">
+      <DependentUpon>SISPIncubatorOnlinePlatform.edmx</DependentUpon>
+    </Content>
+    <Content Include="Entities\SISPIncubatorOnlinePlatform.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SISPIncubatorOnlinePlatform.edmx</DependentUpon>
+      <LastGenOutput>SISPIncubatorOnlinePlatform.cs</LastGenOutput>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2338</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61838/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

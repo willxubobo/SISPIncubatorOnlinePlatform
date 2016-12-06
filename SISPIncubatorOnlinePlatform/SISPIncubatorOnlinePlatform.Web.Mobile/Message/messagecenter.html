@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>消息中心</title>
+    <style type="text/css">
+        .mbsc-lv-ic-text {
+            padding: 0 20px !important;
+            font-family: Microsoft YaHei,微软雅黑,Arial,Helvetica,sans-serif !important;
+        }
+
+        .mbsc-lv-mobiscroll .mbsc-lv {
+            background-color: #fff;
+        }
+
+        .mbsc-lv-stage-c {
+            background-color: red !important;
+        }
+    </style>
+    <link href="../Content/base.css?V2016062701" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css?V2016062701" />
+    <script src="../Scripts/jquery-2.2.2.min.js?V2016062701"></script>
+    <script src="../Scripts/jquery-ui.min.js?V2016062701"></script>
+    <script src="../Scripts/jquery.touchSwipe.js?V2016062701"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js?V2016062701"></script>
+    <script src="../Scripts/base.js?V2016062701"></script>
+    <script src="../Scripts/checkform.js?V2016062701"></script>
+    <script src="../Scripts/publicjs.js?V2016062701"></script>
+    <script src="../Scripts/jquery.alert.js?V2016062701"></script>
+    <script src="../Scripts/Message/messagecenter.js?V2016062701"></script>
+    <script src="../Scripts/mainMenu.js?V2016062701"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js?V2016062701"></script>
+    <script type="text/javascript" src="../Scripts/WeChat/initweixinsdk.js?V2016062701"></script>
+    <script src="../Scripts/baidu.js?V2016062701"></script>  
+</head>
+<body style="background-color: #f1f4f9;">
+    <div class="wrap">
+        <div class="content">
+            <div class="businessInfoTitle newsInfoTitle">
+                <div class="lineBg"></div>
+                <div class="infoTitleLinkBox newsTitleBox">
+                    <div class="infoLineBg"></div>
+                    <div class="infoTitle infoTitleOne curTitle">
+                        <div>系统消息</div>
+                    </div>
+                    <div class="infoTitle infoTitleThree">
+                        <div>我的会话</div>
+                    </div>
+                </div>
+            </div>
+            <div class="businessTxtBox">
+                <div class="businessTxtContent">
+                    <div class="newsScrollList">
+                        <ul class="newsListBox systemMsg"></ul>
+                        <div id="divSysMsg" style="display: none;padding-left: 15px;">
+                            <div class="noRuseltOImg"></div>
+                            <p class="noRuseltTxt">暂无数据</p>
+                        </div>
+                        <div id="scroller-pullUp" class='divLoadMore' onclick=' ClickLoadMore(); ' style="background-color: #f1f4f9; border: none; line-height: 30px; text-align: center; display: none;">
+                            <span id="up-icon" class="icon-double-angle-up pull-up-icon"></span>
+                            <span id="pullUp-msg" class="pull-up-msg" style="color: #b3b3b3; font-weight: normal; line-height: 30px;">点击加载更多</span>
+                        </div>
+                    </div>
+                    <div class="newsOperateBox">
+                        <div class="indexMenuLink">
+                            <a class="IMLink readBtn" onclick=" UpdateAllMsgRead(); " href="#">全部标记已读</a>
+                        </div>
+                        <div class="indexMenuLink">
+                            <a class="IMLink clearBtn" onclick="ShowConfirm('0')" href="#">清空</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="businessTxtContent">
+                    <div class="newsScrollList">
+                        <div class="newsChat">
+                            <div class="projectInfoTabs newsProject">
+                                <a class="projectTabs half sendto" href="javascript:;">我接收的</a>
+                                <a class="projectTabs half sendfrom" href="javascript:;">我发送的</a>
+                            </div>
+                            <div class="projectBox">
+                                <div class="projectBoxContent">
+                                    <ul class="chatList chartListSendTo"></ul>
+                                    <div id="divSendto"  style="display: none; padding-left: 15px;">
+                                        <div class="noRuseltOImg"></div>
+                                        <p class="noRuseltTxt">暂无数据</p>
+                                    </div>
+                                    <div id="scroller-pullUp" class='divChartSendtoLoadMore' onclick=' ClickLoadMoreChartSendTo(); ' style="background-color: #f1f4f9; border: none; line-height: 30px; text-align: center; display: none;">
+                                        <span id="up-icon" class="icon-double-angle-up pull-up-icon"></span>
+                                        <span id="pullUp-msg" class="pull-up-msg" style="color: #b3b3b3; font-weight: normal; line-height: 30px;">点击加载更多</span>
+                                    </div>
+                                </div>
+                                <div class="projectBoxContent">
+                                    <ul class="chatList chartListSendfrom"></ul>
+                                    <div id="divSendfrom"  style="display: none; padding-left: 15px;">
+                                        <div class="noRuseltOImg"></div>
+                                        <p class="noRuseltTxt">暂无数据</p>
+                                    </div>
+                                    <div id="scroller-pullUp" class='divChartSendfromLoadMore' onclick=' ClickLoadMoreChartSendFrom(); ' style="background-color: #f1f4f9; border: none; line-height: 30px; text-align: center; display: none;">
+                                        <span id="up-icon" class="icon-double-angle-up pull-up-icon"></span>
+                                        <span id="pullUp-msg" class="pull-up-msg" style="color: #b3b3b3; font-weight: normal; line-height: 30px;">点击加载更多</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newsOperateBox divSendToOperator">
+                        <div class="indexMenuLink">
+                            <a class="IMLink readBtn" onclick=" UpdateChartMsgRead(); " href="#">全部标记已读</a>
+                        </div>
+                        <div class="indexMenuLink">
+                            <a class="IMLink clearBtn" onclick=" ShowConfirm('1') " href="#">清空</a>
+                        </div>
+                    </div>
+                    <div class="newsOperateBox divSendFromOperator" style="background: none; display: none;">
+                        <div class="indexMenuLink" style="width: 100%;">
+                            <a class="IMLink clearBtn aClear" onclick="ShowConfirm('1')" href="#">清空</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popupDiv hide divConfirm">
+            <div class="center" style="width: 270px; height: 268px; position: absolute; top: 234px; left: 72px;">
+                <div class="popupBox padding45">
+                    <div class="quitTips">您确定要清空吗？</div>
+                    <div class="quitBtnBox">
+                        <input class="baseBtn registerBtn blueBtn left" style="display: none;" type="button" id="btnOkDeleteSys" onclick=" DeleteAllMsg(); " value="确认">
+                        <input class="baseBtn registerBtn blueBtn left" style="display: none;" type="button" id="btnOkDelete" onclick=" DeleteChartMsg(); " value="确认">
+                        <input class="baseBtn registerBtn darkBlueBtn right" type="button" onclick=" HideConfirm() " id="btnCancel" value="取消">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>孵化器详情</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link href="../Content/pc-style.css" rel="stylesheet"/>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script language="javascript" src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" language="javascript" src="../Scripts/custom.js"></script>
+    <script src="../Scripts/custom-pc.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+   
+
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+
+    <script src="../Scripts/Incubator/incubatorinfo.js"></script>
+
+    <link href="../Content/poptips.css" rel="stylesheet" />
+    <script src="../Scripts/yanue.pop.js"></script>
+</head>
+<body>
+    <div class="divTopNav"></div>
+    <!-- Top Info Content Started-->
+    <div class="Info_divTop">
+        <div class="Info_divTopContent" style="height: auto; margin-bottom: 25px;">
+            <div class="Info_DivScroll" style="width: 450px; height: 450px;">
+                <img style="width: 450px; height: 450px;" id="imgIncubatorLogo">
+            </div>
+            <div class="Info_divIntro" style="width: 460px;">
+                <div id="divIncubatorName">公共孵化器</div>
+                <div><span>资金支持：</span><span id="spanfinancialSupport"></span></div>
+                <div><span>场地优惠：</span><span id="spanSiteFavorable"></span></div>
+                <div><span>成立时间：</span><span id="spanregTime"></span></div>
+                <div><span>孵化服务：</span><span id="spanService"></span></div>
+                <div><span>其他服务：</span><span id="spanOtherService"></span></div>
+                <div><span>运营地址：</span><span id="spanOperationAddress"></span></div>
+                <div class="Info_divApplybtn" onclick="SetIncubatorApply()">入驻申请</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!-- Top Info Content Ended-->
+    <!--Description Content Started-->
+    <div class="Info_divDes">
+        <div class="Info_divDes_Content">
+            <div class="Info_div_Intro">
+                <div></div>
+                <div class="Info_div_Intro_Content">
+                    <p class="p1">孵化器简介</p>
+                    <p class="p2" id="pIncubatorDes"></p>
+                </div>
+            </div>
+            <div class="Info_div_Recruit">
+                <div></div>
+                <div class="Info_div_Recruit_Content">
+                    <p class="">项目行业要求</p>
+                    <p class="" id="pIndustryRequirement"></p>
+                    <p class="">项目所在地要求</p>
+                    <p class="" id="pLocationRequirement"></p>
+                    <p class="">其他要求</p>
+                    <p id="pOtherRequirement"></p>
+                </div>
+            </div>
+            <div class="Info_div_Project">
+                <div></div>
+                <div class="Info_div_Project_Content">
+                    <div>
+                        <div class="tabs-title-box">
+                            <a class="tab-title-Incubator base-btn sm-btn space25 tab-cur" href="javascript:;">已注册</a>
+                            <a class="tab-title-Incubator base-btn sm-btn space25" href="javascript:;">孵化中</a>
+                            <a class="tab-title-Incubator base-btn sm-btn space25" href="javascript:;">孵化完成</a>
+                            <a class="tab-title-Incubator base-btn sm-btn space25" href="javascript:;">寻求融资</a>
+                        </div>
+                        <div class="tabs-content-box tabs-layout">
+                            <div class="tabs-content divRegistered">
+                            </div>
+                            <div class="tabs-content divHatching" style=" display: none;">
+                            </div>
+                            <div class="tabs-content divIncubatored" style="display: none;">
+                            </div>
+                            <div class="tabs-content divSeekFinancing" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-box" style="margin-top: 20px;">
+                <a class="base-btn sm-btn  space25" href="javascript:window.close();;">取消</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="divTopFlag"></div>
+    <!--Description Content Ended-->
+    <div id="divFoot"></div>
+
+    <div style="display: none">
+        <input type="text" id="incubatorId" />
+        <input type="text" id="incubatorName" />
+        <input type="text" id="incubatorLogo"/>
+        <input id="hidCallbackFunc" type="hidden" />
+    </div>
+    <!--Description Content Ended-->
+</body>
+</html>

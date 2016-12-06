@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>品牌孵化器审核列表</title>
+    <link href="../Content/base.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css"/>
+    <link href="../Content/pc-style.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../Content/keleyidivpager.css"/>
+    <link href="../Content/puplic.css" rel="stylesheet"/>
+    <link href="../Content/select2.css" rel="stylesheet" />
+
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="../Scripts/custom.js"></script>
+    <script type="text/javascript" src="../Scripts/custom-pc.js?14"></script>
+    <script src="../Scripts/keleyidivpager.js"></script>
+
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/select2.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+
+    <script src="../Scripts/Incubator/incubatorapproveandlist.js"></script>
+
+    <link href="../Content/poptips.css" rel="stylesheet" />
+    <script src="../Scripts/yanue.pop.js"></script>
+    <style>
+        .select2-container .select2-selection--single {
+            padding: 7px 20px 8px 10px !important;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: block;
+            height: 35px !important;
+            user-select: none;
+            outline: none;
+            -webkit-user-select: none;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 35px !important;
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            width: 20px;
+        }
+    </style>
+
+</head>
+<body >
+   <!--List Content Started-->
+    <div class="divTopNav"></div>
+<div class="div-content">
+    <div class="main-content">
+        <div class="functional-area relative">
+            <div id="divLeftNav">
+            </div>
+            <div class="right-result-box">
+                <div class="activities-box">
+                    <div class="tab-content-box">
+                        <div class="tab-content">
+                            <div class="base-table-box tableStyle">
+                                <div style="width: 200px; float: right; padding-top: 4px; margin-left: 10px;">
+                                    <select style="width: 200px;" class="base-ipt sm-ipt selectIpt left selectStatus">
+                                        <option selected="selected" value=''>全部</option>
+                                        <option value='2'>品牌孵化器审核中</option>
+                                        <option value='4'>审核通过</option>
+                                    </select>
+                                </div>
+                                <div class="search-box tab-search-style right" style="margin-bottom: 5px;">
+                                    <input class="search-ipt" type="text" id="txtkeyword" placeholder="关键字">
+                                    <div class="search-btn" onclick=" SearchKey() "></div>
+                                </div>
+                                <table class="base-table" id="tabApprovelist">
+                                    <thead>
+                                    <tr>
+                                        <th style="width: 10%;" id="ppTitle">申请人</th>
+                                        <th style="width: 15%;">项目名称</th>
+                                        <th style="width: 15%;">项目负责人</th>
+                                        <th style="width: 15%;">孵化器名称</th>
+                                        <th style="width: 15%;">申请日期</th>
+                                        <th style="width: 15%;">审核状态</th>
+                                        <th style="width: 15%;">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tbBodyContent"></tbody>
+                                </table>
+                                <div id='divNodata' style="display: none;">
+                                    <div class="no-result-img"></div>
+                                    <div style='text-align: center; margin-top: 5px; margin-bottom: 10px;'>暂无数据</div>
+                                </div>
+                            </div>
+                            <div class="page-box">
+                                <div id="div_pager" class="divpager">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--List Content Ended-->
+        <!--List Invest Content Ended-->
+
+        <input id="hidMessageId" type="hidden"/>
+        <input id="hidMessageType" type="hidden"/>
+        <input id="hidCallbackFunc" value="GetIncubatorApplyData" type="hidden"/>
+    </div>
+</div>
+    <div class="divTopFlag"></div>
+    <!--List Content Ended-->
+     <div id="divFoot"></div>
+</body>
+
+</html>

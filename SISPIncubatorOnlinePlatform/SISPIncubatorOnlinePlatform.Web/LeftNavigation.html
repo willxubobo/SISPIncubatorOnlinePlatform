@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title> 
+    <script type="text/javascript">
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+        }
+
+        $(function () {
+            initNav();
+            $("#divMyProfile").click(function () {
+                window.location.href = "/Account/myprofile.html";//我的信息
+            });
+            $("#divMyIncubatorList").click(function () {
+                window.location.href = "/Incubator/myincubatorapply.html";//孵化器入驻
+            });
+            $("#divMyOfficeList").click(function () {
+                window.location.href = "/Office/myofficesettledaapply.html";//办公司租赁
+            });
+            $("#divMyProject").click(function () {
+                window.location.href = "/Investment/financingprojectmanagement.html";//我的项目
+            });
+            $("#divBusiness").click(function () {
+                window.location.href = "/Cooperate/mycooperate.html";//业务合作
+            }); 
+            $("#divMyFollow").click(function () {
+                window.location.href = "/Account/myfollow.html";//关注与粉丝
+            });
+            $("#divMyActivity").click(function () {
+                window.location.href = "/Activity/myactivity.html";//活动参与
+            });
+            $("#divInvestor").click(function () {
+                window.location.href = "/Investor/investormanagement.html";//投资人
+            });
+            $("#divMessageCenter").click(function () {
+                window.location.href = "/MessageCenter/messagecenter.html";//消息中心
+            });
+            $("#divTodo").click(function () {
+                window.location.href = "/Incubator/incubatorapproveandlist.html";//待审核
+            });
+            $("#divMyIncubator").click(function () {
+                window.location.href = "/Incubator/myincubatorlist.html";//我的孵化器
+            });
+           
+            var arUrl = window.location.href;
+            var type;
+            type = getUrlParam("src");
+            if (arUrl) {
+                if (arUrl.toLowerCase().indexOf("/myprofile.html") >= 0 || arUrl.toLowerCase().indexOf("/improveuserinfo.html") >= 0) {
+                    $(".left-nav-div").removeClass("active");                   
+                    $("#divMyProfile").addClass("active");                   
+                    setIndex(0);
+                }
+                if (arUrl.toLowerCase().indexOf("/financingprojectmanagement.html") >= 0 || arUrl.toLowerCase().indexOf("/financingprojectpublish.html") >= 0 || arUrl.toLowerCase().indexOf("/financingprojectdetail.html") >= 0) {//我的项目
+                    $(".left-nav-div").removeClass("active");
+                    $("#divMyProject").addClass("active");
+                    setIndex(3);
+                }
+                if (arUrl.toLowerCase().indexOf("/investormanagement.html") >= 0 || arUrl.toLowerCase().indexOf("/investorauth.html") >= 0) {//投资人
+                    $(".left-nav-div").removeClass("active");
+                    $("#divInvestor").addClass("active");
+                    setIndex(7);
+                }
+                if ((arUrl.toLowerCase().indexOf("/incubatorapplydetail.html") >= 0 && type=='mylist') || arUrl.toLowerCase().indexOf("/incubatorapproveandlist.html") >= 0 || arUrl.toLowerCase().indexOf("/myincubatorapply.html") >= 0) {
+                    $(".left-nav-div").removeClass("active");
+                    $("#divMyIncubatorList").addClass("active");
+                    setIndex(1);
+                }
+                if ((arUrl.toLowerCase().indexOf("/incubatorapplydetail.html") >= 0 && type == 'todo') || arUrl.toLowerCase().indexOf("/incubatorapproveandlist.html") >= 0 || arUrl.toLowerCase().indexOf("/incubatorupload.html") >= 0 || arUrl.toLowerCase().indexOf("/incubatorapprove.html") >= 0) {
+                    $(".left-nav-div").removeClass("active");
+                    $("#divTodo").addClass("active");
+                    setIndex(9);
+                }
+                if (arUrl.toLowerCase().indexOf("/modifyincubator.html") >= 0 || arUrl.toLowerCase().indexOf("/myincubatorlist.html") >= 0) {
+                    $(".left-nav-div").removeClass("active");
+                    $("#divMyIncubator").addClass("active");
+                    setIndex(10);
+                }
+                if (arUrl.toLowerCase().indexOf("/messagecenter.html") >= 0) {
+                    $(".left-nav-div").removeClass("active");
+                    $("#divMessageCenter").addClass("active");
+                    setIndex(8);
+                }
+                if (arUrl.toLowerCase().indexOf("/myofficesettledaapply.html") >= 0 || arUrl.toLowerCase().indexOf("/officesettledaapplydetail.html") >= 0) {
+                    $(".left-nav-div").removeClass("active");
+                    $("#divMyOfficeList").addClass("active");
+                    setIndex(2);
+                }
+                if (arUrl.toLowerCase().indexOf("/myfollow.html") >= 0) {
+                    $(".left-nav-div").removeClass("active");
+                    $("#divMyFollow").addClass("active");
+                    setIndex(5);
+                }
+                if (arUrl.toLowerCase().indexOf("/myactivity.html") >= 0) {
+                    $(".left-nav-div").removeClass("active");
+                    $("#divMyActivity").addClass("active");
+                    setIndex(6);
+                }
+                if (arUrl.toLowerCase().indexOf("/mycooperate.html") >= 0) {
+                    $(".left-nav-div").removeClass("active");
+                    $("#divBusiness").addClass("active");
+                    setIndex(4);
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="left-nav-box">
+        <ul class="left-nav-list">
+            <li>
+                <div class="left-nav-div" id="divMyProfile">
+                    <div class="nav-icon icon1">我的信息</div>
+                    <div class="active-icon">
+                        <div></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left-nav-div"  id="divMyIncubatorList">
+                    <div class="nav-icon icon2">孵化器入驻</div>
+                    <div class="active-icon">
+                        <div></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left-nav-div" id="divMyOfficeList">
+                    <div class="nav-icon icon3">办公司租赁</div>
+                    <div class="active-icon">
+                        <div></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left-nav-div" id="divMyProject">
+                    <div class="nav-icon icon4">我的项目</div>
+                    <div class="active-icon">
+                        <div></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left-nav-div" id="divBusiness">
+                    <div class="nav-icon icon5">业务合作</div>
+                    <div class="active-icon">
+                        <div></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left-nav-div" id="divMyFollow">
+                    <div class="nav-icon icon6">关注与粉丝</div>
+                    <div class="active-icon">
+                        <div></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left-nav-div" id="divMyActivity">
+                    <div class="nav-icon icon7">活动参与</div>
+                    <div class="active-icon">
+                        <div></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left-nav-div" id="divInvestor">
+                    <div class="nav-icon icon8">投资人</div>
+                    <div class="active-icon">
+                        <div></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left-nav-div" id="divMessageCenter">
+                    <div class="nav-icon icon9">消息中心</div>
+                    <div class="active-icon">
+                        <div></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left-nav-div" id="divTodo">
+                    <div class="nav-icon icon10">待审核</div>
+                    <div class="active-icon">
+                        <div></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="left-nav-div" id="divMyIncubator">
+                    <div class="nav-icon icon11">我的孵化器</div>
+                    <div class="active-icon">
+                        <div></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

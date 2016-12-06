@@ -1,0 +1,139 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>投资人</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/pc-style.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/select2.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/pc-style.css" />
+    <link href="../Content/Jcrop.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/puplic.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/common.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../Scripts/select2.js"></script>
+    <script type="text/javascript" src="../Scripts/custom.js"></script>
+    <script type="text/javascript" src="../Scripts/custom-pc.js?14"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/Account/myprofile.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+    <script src="../Scripts/JqueryCrop/Jcrop.min.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+    <script src="../Scripts/Investor/investormanagement.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+    <script src="../Scripts/yanue.pop.js"></script>
+    <link href="../Content/poptips.css" rel="stylesheet" />
+
+</head>
+<body>
+    <!-- Top Nav Started -->
+<div class="divTopNav"></div>
+    <input type="hidden" id="userId" />
+    <!-- Top Nav Ended -->
+    <!--List Invest Content Started-->
+    <div class="div-content">
+        <div class="main-content">
+            <div class="functional-area relative">
+                <div id="divLeftNav"></div>
+                <div class="right-result-box">
+                    <div class="result-box authlogin hide">
+                        <div class="investor-img">
+                            <img src="../images/pc/section1.jpg" alt="">
+                        </div>
+                        <div class="investor-tips">您还未认证为投资人身份！</div>
+                        <div class="investor-btn-box">
+                            <a class="filtrate-btn" href="javascript:void(0)" onclick="goauthpage()">前往身份认证</a>
+                        </div>
+                    </div>
+                    <div class="result-box authinfo hide">
+                        <div class="padding20-30">
+                            <table class="layout-table">
+                                <tr>
+                                    <td width="85">
+                                        <label class="ipt-txt">公司名称</label>
+                                    </td>
+                                    <td id="CompanyName"></td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-top">
+                                        <label class="ipt-txt">公司Logo</label>
+                                    </td>
+                                    <td>
+                                        <img id="imglogo" alt="" class="investorcomlogo vimgborder hide" onload="AutoResizeImage(200, 200, this)">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="ipt-txt">基金规模</label>
+                                    </td>
+                                    <td id="FundScale"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="ipt-txt">投资领域</label>
+                                    </td>
+                                    <td id="InvestmentField"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="ipt-txt">投资人姓名</label>
+                                    </td>
+                                    <td id="InvestorName"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="ipt-txt">邮箱</label>
+                                    </td>
+                                    <td id="Email"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="ipt-txt">投资阶段</label>
+                                    </td>
+                                    <td id="InvestmentStage"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="ipt-txt">公司地址</label>
+                                    </td>
+                                    <td id="Address"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="ipt-txt">投资案例</label>
+                                    </td>
+                                    <td id="InvestmentCase"></td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="hidimgname" />
+    <div class="divTopFlag"></div>
+
+    <div id="divFoot"></div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".selectIpt").select2({
+                minimumResultsForSearch: Infinity
+            });
+        });
+    </script>
+</body>
+</html>

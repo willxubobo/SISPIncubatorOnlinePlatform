@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>消息中心</title>
+    <link href="../Content/base.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link href="../Content/pc-style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../Content/keleyidivpager.css" />
+
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script language="javascript" src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../Scripts/resize.js"></script>
+
+
+    <script type="text/javascript" language="javascript" src="../Scripts/custom.js"></script>
+    <script src="../Scripts/custom-pc.js"></script>
+
+    <script language="javascript" src="../Scripts/keleyidivpager.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+
+    <script src="../Scripts/Message/messagecenter.js"></script>
+    <script src="../Scripts/Message/chartdialog.js"></script>
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+    <script src="../Scripts/yanue.pop.js"></script>
+    <link href="../Content/poptips.css" rel="stylesheet" />
+</head>
+<body>
+    <!--List Content Started-->
+    <div class="divTopNav"></div>
+    <div class="div-content">
+        <div class="main-content">
+            <div class="functional-area relative">
+                <div id="divLeftNav">
+                </div>
+                <div class="right-result-box">
+                    <div class="activities-box">
+                        <div class="tab-title-box tabsStyle">
+                            <div class="tab-title on" style="margin-left: -1px;" onclick=" SwitchTab(this) " id="st">我接收的</div>
+                            <div class="tab-title" style="margin-left: -1px;" onclick=" SwitchTab(this) " id="sf">我发送的</div>
+                            <div class="tab-title" style="margin-left: -1px;" onclick=" SwitchTab(this) " id="sys">系统消息</div>
+                        </div>
+                        <div class="tab-content-box">
+                            <div class="tab-content">
+                                <div class="tab-filtrate-box">
+                                    <a class="filtrate-btn right" style="margin-left: 5px;" id="allDelete" onclick=" ShowDeleteConfirm(); " href="#"><span class="right-btn-icon">批量删除</span></a>
+                                    <a class="filtrate-btn right" id="allRead" onclick=" UpdateMsgReadStatus(); " href="#"><span class="right-btn-icon">批量设置已读</span></a>
+                                </div>
+                                <div class="base-table-box tableStyle divDialogmsg">
+                                    <table class="base-table">
+                                        <thead>
+                                        <tr>
+                                            <th style="width: 20%;" id="ppTitle">发送人</th>
+                                            <th style="width: 40%;">内容</th>
+                                            <th style="width: 20%;">创建日期</th>
+                                            <th style="width: 20%;">操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="tbBodyContent"></tbody>
+                                    </table>
+                                    <div id='divNodata' style="display: none;">
+                                        <div class="no-result-img"></div>
+                                        <div style='text-align: center; margin-top: 5px; margin-bottom: 10px;'>暂无数据</div>
+                                    </div>
+                                </div>
+                                <div class="base-table-box tableStyle divSysmsg" style="display: none;">
+                                    <table class="base-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 60%;">内容</th>
+                                                <th style="width: 20%;">创建日期</th>
+                                                <th style="width: 20%;">操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbBodyContentSys"></tbody>
+                                    </table>
+                                    <div id='divNodataSys' style="display: none;">
+                                        <div class="no-result-img"></div>
+                                        <div style='text-align: center; margin-top: 5px; margin-bottom: 10px;'>暂无数据</div>
+                                    </div>
+                                </div>
+                                <div class="page-box">
+                                    <div id="div_pager" class="div_pager">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--List Content Ended-->
+            <!--List Invest Content Ended-->
+            <input id="hidMessageId" type="hidden"/>
+            <input id="hidMessageType" type="hidden"/>
+            <input id="hidCallbackFunc" value="GetChartSendToMsg" type="hidden"/>
+        </div>
+        <div class="divTopFlag"></div>
+    </div>
+    <div class="popupDiv  divConfirm" style="display: none;">
+        <div class="center" style="width: 270px; height: 268px; position: absolute; top: 234px; left: 72px;">
+            <div class="popupBox padding45">
+                <div class="quitTips">您确定要删除吗？</div>
+                <div class="quitBtnBox">
+                    <input class="baseBtn registerBtn blueBtn left" type="button" id="btnOkDeleteSys" onclick=" DeleteMsg(); " value="确认">
+                    <input class="baseBtn registerBtn darkBlueBtn right" type="button" onclick=" HideDeleteConfirm() " id="btnCancel" value="取消">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-div divMessageDetail" style="display: none;">
+        <div class="popup-bg"></div>
+        <div class="popup-content center" style="width: 625px; position: fixed; z-index: 101; top: 306px; left: 232.5px;">
+            <div class="popup-main-content padding20 white-bg">
+                <div class="edit-activity-box">
+                    <table style="width: 100%;" class="agreementContent"></table>
+                </div>
+                <div class="btn-box padding45">
+                    <a class="base-btn sm-btn space25" onclick=" CancelMessageDetail(); " href="javascript:;">取消</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popupDiv  divDeleteItemConfirm" style="display: none;">
+        <div class="center" style="width: 270px; height: 268px; position: absolute; top: 234px; left: 72px;">
+            <div class="popupBox padding45">
+                <div class="quitTips">您确定要删除吗？</div>
+                <div class="quitBtnBox">
+                    <input class="baseBtn registerBtn blueBtn left" type="button" id="btnOkDeleteItem" onclick=" DeleteSystemMsg(); " value="确认">
+                    <input class="baseBtn registerBtn darkBlueBtn right" type="button" onclick=" HideDeleteItemConfirm() " id="btnDeleteItemCancel" value="取消">
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="hidDeletemId" type="hidden" />
+</body>
+
+</html>

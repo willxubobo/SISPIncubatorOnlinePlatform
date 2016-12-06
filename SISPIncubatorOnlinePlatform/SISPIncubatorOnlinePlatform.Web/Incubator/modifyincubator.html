@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>孵化器修改</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link href="../Content/Jcrop.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="../Content/pc-style.css" rel="stylesheet" />
+    <link href="../Content/select2.css" rel="stylesheet" />
+    <link href="../Content/puplic.css" rel="stylesheet" />
+
+
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script language="javascript" src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../Scripts/select2.js"></script>
+    <script src="../Scripts/laydate/laydate.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script type="text/javascript" language="javascript" src="../Scripts/custom.js"></script>
+    <script src="../Scripts/custom-pc.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+
+    <script src="../Scripts/JqueryCrop/Jcrop.min.js" type="text/javascript"></script>
+
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/Incubator/modifyincubator.js"></script>
+
+    <link href="../Content/poptips.css" rel="stylesheet" />
+    <script src="../Scripts/yanue.pop.js"></script>
+
+</head>
+<body>
+    <!--List Invest Content Started-->
+    <div class="divTopNav"></div>
+    <div class="div-content">
+        <div class="main-content">
+            <div class="functional-area relative">
+                <div id="divLeftNav">
+                </div>
+                <div class="right-result-box divContent">
+                    <div class="add-info-box">
+                        <div class="add-box">
+                            <div class="add-title-box">基本信息</div>
+                            <div class="add-info-content info-module">
+                                <table class="layout-table add-info-table tableTextTop">
+                                    <tr>
+                                        <td>
+                                            <div class="left">
+                                                <label class="ipt-txt">孵化器名称</label>
+                                                <div class="left">
+                                                    <input class="ipt-enter add-info-ipt " id="txtIncubatorName" maxlength="100" isrequired="true" type="text">
+                                                    <div class="ipt-enter-tips hide">孵化器名称不能为空！</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="right">
+                                                <label class="ipt-txt">资金支持</label>
+                                                <div class="left add-info-ipt">
+                                                    <div class="check-box left">
+                                                        <div class="checkbox-ipt checkboxfinancial ffYes on left"></div>
+                                                        <div class="checkbox-txt left">有</div>
+                                                    </div>
+                                                    <div class="check-box left">
+                                                        <div class="checkbox-ipt checkboxfinancial left"></div>
+                                                        <div class="checkbox-txt left">无</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="left">
+                                                <label class="ipt-txt">成立时间</label>
+                                                <div class="left">
+                                                    <input class="ipt-enter add-info-ipt " id="txtRegTime" maxlength="100" isrequired="true" type="text">
+                                                    <div class="ipt-enter-tips hide">成立时间不能为空！</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="right">
+                                                <label class="ipt-txt">运营地址</label>
+                                                <div class="left">
+                                                    <input class="ipt-enter add-info-ipt " id="txtOperationAddress" maxlength="100" isrequired="true" type="text">
+                                                    <div class="ipt-enter-tips hide">运营地址不能为空！</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="left">
+                                                <label class="ipt-txt">公司Logo</label>
+                                                <div class="left">
+                                                    <div class="incubatorPic divProjectImage left" style="height: 70px;">
+                                                        <img alt="" id="imgCompanylogo" style="display: none;">
+                                                    </div>
+                                                    <div class="add-module-img-btn left" onclick=" OpenUoloadFileDialog('company') "></div>
+                                                </div>
+                                                <div class="ipt-enter-tips left hide" style="margin-top: 40px;" id="divIncubator">公司Logo不能为空！</div>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="ipt-Title">孵化器简介</div>
+                                            <textarea class="textarea-enter" id="txtDescription" maxlength="2000" isrequired="true" placeholder="描述项目所属领域、产品(或服务主要客户，项目关键技术的特点、水平和优势，主导产品相对于市场同类竞争产品在质量、性能、功能等方面的特点。"></textarea>
+                                            <div class="ipt-enter-tips hide">孵化器简介不能为空！</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="ipt-Title">孵化器服务</div>
+                                            <textarea class="textarea-enter" id="txtService" isrequired="true" maxlength="2000" style="height: 100px;" placeholder="介绍目标市场定位，商业模式、目前的市场竞争表现，可能存在的风险等。"></textarea>
+                                            <div class="ipt-enter-tips hide">孵化器服务不能为空！</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="ipt-Title">场地优惠</div>
+                                            <textarea class="textarea-enter" id="txtSiteFavorable" maxlength="2000" isrequired="true" style="height: 100px;" placeholder="介绍目标市场定位，商业模式、目前的市场竞争表现，可能存在的风险等。"></textarea>
+                                            <div class="ipt-enter-tips hide">场地优惠不能为空！</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="ipt-Title">其他服务</div>
+                                            <ul class="checkBtnBox ulOtherServices"></ul>
+                                            <div class="ipt-enter-tips left hide" id="divOtherServices">其他服务不能为空！</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="add-box">
+                            <div class="add-title-box">招孵信息</div>
+                            <div class="add-info-content info-module">
+                                <table class="layout-table add-info-table">
+                                    <tr>
+                                        <td width="138">要求项目所属行业</td>
+                                        <td>
+                                            <input class="ipt-enter ipt-lg" id="txtIndustryRequirement" isrequired="true" type="text">
+                                            <div class="ipt-enter-tips hide">要求项目所属行业不能为空！</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="138">要求项目所属地</td>
+                                        <td>
+                                            <input class="ipt-enter ipt-lg" id="txtLocationRequirement" isrequired="true" type="text">
+                                            <div class="ipt-enter-tips hide">要求项目所属地不能为空！</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="138">其他要求</td>
+                                        <td>
+                                            <input class="ipt-enter ipt-lg" isrequired="true" id="txtOtherRequirement" type="text">
+                                            <div class="ipt-enter-tips hide">其他要求不能为空！</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="add-box">
+                            <div class="add-title-box">项目信息</div>
+                            <div class="add-info-content">
+                                <div class="add-module divProjectContainer">
+
+                                </div>
+                                <div class="ipt-enter-tips hide" id="divProjectListTips">项目信息不能为空！</div>
+                                <div class="add-module divAddContent" style="display: none;">
+                                    <table class="layout-table add-info-table">
+                                        <tr>
+                                            <td>
+                                                项目阶段
+                                            </td>
+                                            <td>
+                                                <div class="check-box left">
+                                                    <div class="checkbox-ipt checkBoxType on left " id="0"></div>
+                                                    <div class="checkbox-txt left">已注册</div>
+                                                </div>
+                                                <div class="check-box left">
+                                                    <div class="checkbox-ipt checkBoxType left" id="1"></div>
+                                                    <div class="checkbox-txt left">孵化中</div>
+                                                </div>
+                                                <div class="check-box left">
+                                                    <div class="checkbox-ipt checkBoxType left" id="2"></div>
+                                                    <div class="checkbox-txt left">孵化完成</div>
+                                                </div>
+                                                <div class="check-box left">
+                                                    <div class="checkbox-ipt checkBoxType left" id="3"></div>
+                                                    <div class="checkbox-txt left">寻求新一轮融资</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-top">
+                                                <label class="ipt-txt">项目图片</label>
+                                            </td>
+                                            <td>
+                                                <div class="incubatorPic divProjectImage left" style="margin-top: 7px;">
+                                                    <img alt="" id="imgProjectlogo" style="display: none;">
+                                                </div>
+                                                <div class="add-module-img-btn left" onclick=" OpenUoloadFileDialog('project') "></div>
+                                                <div class="ipt-enter-tips left hide" id="divProjectLogoTips">项目图片不能为空！</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="txt-top">项目简介</td>
+                                            <td>
+                                                <textarea class="textarea-enter" id="txtProjectDes"></textarea>
+                                                <div class="ipt-enter-tips hide" id="divProjectDes">项目简介不能为空！</div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div class="btn-box add-module-btn">
+                                        <a class="base-btn sm-btn bule-btn space25" onclick=" SaveProjectInfoOk(); " href="javascript:;">保存</a>
+                                        <a class="base-btn sm-btn space25" onclick=" HideProjectModule() " href="javascript:;">取消</a>
+                                    </div>
+                                </div>
+
+                                <div class="add-module-btn-box divAdd">
+                                    <div class="add-module-btn-div" onclick=" ShowProjectModule() ">
+                                        <div class="add-txt-icon">新增</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-box add-info-btn-box">
+                            <a class="base-btn sm-btn bule-btn space25" onclick=" SubmitAndSaveForm() " href="javascript:;">提交</a>
+                            <a class="base-btn sm-btn space25" href="javascript: window.close();">取消</a>
+                            <input type="hidden" id="XX" />
+                            <input type="hidden" id="YY" />
+                            <input type="hidden" id="WW" />
+                            <input type="hidden" id="HH" />
+                            <input type="hidden" id="hidlogourlIncubator" />
+                            <input type="hidden" id="hidProjectlogourl" />
+                            <input type="hidden" id="hidxyIncubaor" />
+                            <input type="hidden" id="hidimgnameIncubator" />
+
+                            <input type="hidden" id="hidLogType" value="company" />
+                            <input type="hidden" id="hidId" />
+                            <input id="hidOperdator" value="add" type="hidden" />
+                            <input id="hidItemId" type="hidden" />
+                            <input type="hidden" id="hidRoleID" />
+
+                            <input id="hidCallbackFunc" value="InitFormData" type="hidden" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divTopFlag"></div>
+    </div>
+    <div class="popup-div divlogoPop" style="display: none;">
+        <div class="popup-bg"></div>
+        <div class="popup-content center uploaddivsize">
+            <div class="popup-main-content relative white-bg">
+                <div class="img-change-box">
+                    <div class="apply-settled-title">上传图片</div>
+                    <div class="change-img">
+                        <div class="left-file-area">
+                            <div class="view-file-box">
+                                <a class="viewImgBtn left" href="javascript:;">浏览本地文件</a>
+                                <input class="view-file-btn" id="fileLogo" type="file" name="fileLogo" onchange="AjaxFileUpload();" />
+                                <span class="add-tips-txt left">（*上传图片不超过1M）</span>
+                            </div>
+                        </div>
+                        <div class="right-img-area imgreviewIncubaor"></div>
+                    </div>
+                    <div class="change-img-btn-box">
+                        <a class="change-operate-btn right" href="javascript:" onclick="CloseUoloadFileDialog();">取消</a>
+                        <a class="change-operate-btn bule-btn right" href="javascript:" onclick="CropImage();">确定</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

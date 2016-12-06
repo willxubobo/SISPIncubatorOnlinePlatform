@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6ea2bd7e835f41cfb2940041ab9b64d2" Name="Diagram1">
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.AboutUs" Width="1.5" PointX="3" PointY="63.125" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.ActivityImages" Width="1.5" PointX="0.75" PointY="2.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.ActivityPublishApply" Width="1.5" PointX="3" PointY="54.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.ActivitySignUp" Width="1.5" PointX="3" PointY="51.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.Advertisement" Width="1.5" PointX="3" PointY="35.125" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.AgreementAttachment" Width="1.5" PointX="5.75" PointY="7.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.AgreementTemplate" Width="1.5" PointX="7.75" PointY="7.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.ApproveRecord" Width="1.5" PointX="3" PointY="9.75" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.BlockedIP" Width="1.5" PointX="8.75" PointY="2.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.DemandPublish" Width="1.5" PointX="3" PointY="26.5" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.Dictionary" Width="1.5" PointX="5.75" PointY="10.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.FinancingRequirementFollow" Width="1.5" PointX="3" PointY="7" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.FinancingRequirements" Width="1.5" PointX="3" PointY="22" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.Function_Actions" Width="1.5" PointX="7.75" PointY="10.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.Functions" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.IncubatorActivityApply" Width="1.5" PointX="3" PointY="16.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.IncubatorApply" Width="1.5" PointX="3" PointY="41.25" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.IncubatorApprove" Width="1.5" PointX="5.25" PointY="42.25" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.IncubatorInformation" Width="1.5" PointX="3" PointY="74" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.IncubatorProjects" Width="1.5" PointX="5.25" PointY="75.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.InvestorInformation" Width="1.5" PointX="3" PointY="66" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.LinkList" Width="1.5" PointX="9.75" PointY="5.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.LoginLog" Width="1.5" PointX="9.75" PointY="8.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.Message" Width="1.5" PointX="3" PointY="70" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.OfficeApply" Width="1.5" PointX="3" PointY="46.125" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.OfficeApplyWorkExperience" Width="1.5" PointX="5.25" PointY="47.25" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.RequestRecords" Width="1.5" PointX="9.75" PointY="11.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.Role_Functions" Width="1.5" PointX="6" PointY="4" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.Roles" Width="1.5" PointX="3.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.ServicePublish" Width="1.5" PointX="3" PointY="59.125" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.SMSValidateCode" Width="1.5" PointX="10.75" PointY="2.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.SuccessfulCase" Width="1.5" PointX="3" PointY="13.25" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.sysdiagrams" Width="1.5" PointX="11.75" PointY="5.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.User" Width="1.5" PointX="0.75" PointY="35.75" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.User_Roles" Width="1.5" PointX="6" PointY="38" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.UserExtension" Width="1.5" PointX="5.75" PointY="13.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.WeChat" Width="1.5" PointX="3" PointY="31" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.WeChatAccessToken" Width="1.5" PointX="11.75" PointY="8.375" />
+        <EntityTypeShape EntityType="SISPIncubatorOnlinePlatformModel.WeChatRandom" Width="1.5" PointX="11.75" PointY="11.375" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_AboutUs_User" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_ActivityPublishApply_User" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_ActivitySignUp_User" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_Advertisement_Advertisement" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_ApproveRecord_User" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_ApproveRecord_User1" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_DemandPublish_User" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_FinancingRequirementFollow_User" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_FinancingRequirements_User" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_ROLE_FUN_REFERENCE_FUNCTION" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_IncubatorActivityApply_User" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_IncubatorApply_User" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_IncubatorApprove_IncubatorApply" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_INCUBATO_REFERENCE_INCUBATO" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_IncubatorInformation_Roles" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_IncubatorProjects_IncubatorInformation" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_InvestorInformation_User" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_Message_User_SendFrom" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_Message_User_SendTo" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_OFFICEAP_REFERENCE_OFFICEAP" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_OfficeApply_User" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_ROLE_FUN_REFERENCE_ROLES" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_USER_ROL_REFERENCE_ROLES" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_ServicePublish_User" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_SuccessfulCase_User" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_USER_ROL_REFERENCE_USER" />
+        <AssociationConnector Association="SISPIncubatorOnlinePlatformModel.FK_WeChat_User" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>关注与粉丝</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/pc-style.css" />
+    <link href="../Content/keleyidivpager.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/checkform.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/custom-pc.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../Scripts/mainMenu.js"></script>
+    <script src="../Scripts/Account/myfollow.js"></script>
+    <script src="../Scripts/keleyidivpager.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+    <script src="../Scripts/yanue.pop.js"></script>
+    <link href="../Content/poptips.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="divTopNav"></div>
+    <div class="div-content">
+        <div class="main-content">
+            <div class="functional-area relative">
+                <div id="divLeftNav">
+                </div>
+                <div class="right-result-box">
+                    <div class="activities-box">
+                        <div class="tab-title-box tabsStyle">
+                            <div class="tab-title on">关注的项目</div>
+                            <div class="tab-title">关注的机构</div>
+                            <div class="tab-title">粉丝</div>
+                        </div>
+                        <div class="tab-content-box" id="divProjecr">
+                            <div class="tab-content">
+                                <div class="tab-filtrate-box">
+                                    <div class="search-box tab-search-style right">
+                                        <input class="search-ipt" type="text" id="txtSearchProject" placeholder="关键字">
+                                        <input type="hidden" id="searchProjectValue">
+                                        <div class="search-btn" onclick="SearchProjectData()"></div>
+                                        <input type="hidden" id="enterprojectfunction" value="SearchProjectData" />
+                                    </div>
+                                </div>
+                                <div class="base-table-box tableStyle">
+                                    <table class="base-table">
+                                        <thead>
+                                            <tr>
+                                                <th>产品名称</th>
+                                                <th>所属行业</th>
+                                                <th>融资金额</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="financingfollowsBody"></tbody>
+                                    </table>
+                                    <div class="no-result-img hide" id="followProjectNoData">
+                                             <div style='text-align:center;margin-top:5px;margin-bottom: 10px'>暂无数据</div>
+                                    </div>
+                                </div>
+                                <div class="page-box">
+                                    <div id="div_pager" class="div_pager">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-filtrate-box" id="divFollow">
+                                    <div class="search-box tab-search-style right">
+                                        <input class="search-ipt" id="txtSearchFollow" type="text" placeholder="关键字">
+                                        <input type="hidden" id="searchFollowValue">
+                                        <div class="search-btn" onclick="SearchFollowData()"></div>
+                                        <input type="hidden" id="enterfollowfunction" value="SearchFollowData" />
+                                    </div>
+                                </div>
+                                <div class="base-table-box tableStyle">
+                                    <table class="base-table">
+                                        <thead>
+                                            <tr>
+                                                <th>公司名称</th>
+                                                <th>投资领域</th>
+                                                <th>基金规模</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="investorBody"></tbody>
+                                    </table>
+                                    <div class="no-result-img hide" id="followOrganizationNoData">
+                                             <div style='text-align:center;margin-top:5px;margin-bottom: 10px'>暂无数据</div>
+                                    </div>
+                                </div>
+                                <div class="page-box">
+                                    <div id="div_pager" class="div_secondpager">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-filtrate-box" id="divFans">
+                                    <div class="search-box tab-search-style right">
+                                        <input class="search-ipt" id="txtFansFollow" type="text" placeholder="关键字">
+                                        <input type="hidden" id="searchFansValue">
+                                        <div class="search-btn" onclick="SearchFansData()"></div>
+                                        <input type="hidden" id="enterfansfunction" value="SearchFansData" />
+                                    </div>
+                                </div>
+                                <div class="base-table-box tableStyle">
+                                    <table class="base-table">
+                                        <thead>
+                                            <tr>
+                                                <th>姓名</th>
+                                                <th>身份</th>
+                                                <th>Email</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="fansBody"></tbody>
+                                    </table>
+                                    <div class="no-result-img hide" id="fansNoData">
+                                             <div style='text-align:center;margin-top:5px;margin-bottom: 10px'>暂无数据</div>
+                                    </div>
+                                </div>
+                                <div class="page-box">
+                                    <div id="div_pager" class="div_demandpager">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divTopFlag"></div>
+    <!--List Invest Content Ended-->
+    <div id="divFoot"></div>
+    <input type="hidden" id="hidCallbackFunc" value="InitMyFollowData" />
+</body>
+</html>

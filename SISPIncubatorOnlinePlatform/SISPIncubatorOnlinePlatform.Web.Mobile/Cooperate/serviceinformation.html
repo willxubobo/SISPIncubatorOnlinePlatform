@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>需求服务列表</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css?V2016062701" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.2.13.2.css?V2016062701" />
+    <script src="../Scripts/jquery-2.2.2.min.js?V2016062701"></script>
+    <script src="../Scripts/jquery-ui.min.js?V2016062701"></script>
+    <script src="../Scripts/jquery.touchSwipe.js?V2016062701"></script>
+    <script src="../Scripts/resize.js?V2016062701"></script>
+    <script src="../Scripts/base.js?V2016062701"></script>
+    <script src="../Scripts/mobiscroll.2.13.2.js?V2016062701"></script>
+    <script src="../Scripts/publicjs.js?V2016062701"></script>
+    <script src="../Scripts/jquery.alert.js?V2016062701"></script>
+    <script src="../Scripts/mainMenu.js?V2016062701"></script>
+    <script src="../Scripts/Cooperate/serviceinformation.js?V2016062701"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js?V2016062701"></script>
+    <script type="text/javascript" src="../Scripts/WeChat/initweixinsdk.js?V2016062701"></script>
+    <script src="../Scripts/baidu.js?V2016062701"></script>  
+</head>
+<body>
+    <div class="wrap">
+        <div class="content">
+            <div class="maxWidth topFixed white">
+                <div class="businessInfoTitle">
+                    <div class="lineBg"></div>
+                    <div class="infoTitleLinkBox newsTitleBox">
+                        <div class="infoLineBg white"></div>
+                        <div class="infoTitle infoTitleOne curTitle"><div>服务信息</div></div>
+                        <div class="infoTitle infoTitleThree"><div>需求信息</div></div>
+                    </div>
+                </div>
+                <div class="incubatorSearchBox PFSearch">
+                    <div class="searchBox">
+                        <div class="incubatorSearchIptBg Txtcenter">
+                            <div class="searchIptBg"><span>搜索</span></div>
+                        </div>
+                        <input class="incubatorSearchIpt" onblur="ClearSearchValue()" maxlength="50" type="search" />
+                    </div>
+                    <input class="searchBtn" type="button" onclick="GetData(); return false;" />
+                    <input type="hidden" id="searchValue">
+                </div>
+            </div>
+
+            <div class="businessTxtBox SIBox">
+                <div class="businessTxtContent">
+                    <div class="warpSpace bottom60">
+                        <ul class="projectList" id="serviceInformation"></ul>
+                        <div class="noRuseltCenter hide" id="serviceNoDataDiv" style="width: 100%;height: auto;">
+                            <div class="noRuseltOImg"></div>
+                            <p class="noRuseltTxt">暂无数据</p>
+                        </div>
+                        <div class='divLoadMore' onclick="ClickLoadServiceMore();" style="background-color: #f1f4f9; border: none; line-height: 30px; text-align: center; display: none;">
+                            <span class="icon-double-angle-up pull-up-icon"></span>
+                            <span class="pull-up-msg" style="color: #b3b3b3; font-weight: normal; line-height: 30px;">点击加载更多</span>
+                        </div>
+                    </div>
+                    <div class="agreenBtnBox">
+                        <input class="baseBtn agreenBtn blueBtn" type="button" value="提交申请" onclick="location.href = 'servicepublish.html'" />
+                    </div>
+                </div>
+                <div class="businessTxtContent">
+                    <div class="warpSpace bottom60">
+                        <ul class="projectList" id="demandInformation"></ul>
+                        <div class="noRuseltCenter hide" id="demandNoDataDiv" style="width: 100%;height: auto;">
+                            <div class="noRuseltOImg"></div>
+                            <p class="noRuseltTxt">暂无数据</p>
+                        </div>
+                        <div class='divLoadMore' onclick="ClickLoadDemandMore();" style="background-color: #f1f4f9; border: none; line-height: 30px; text-align: center; display: none;">
+                            <span class="icon-double-angle-up pull-up-icon"></span>
+                            <span class="pull-up-msg" style="color: #b3b3b3; font-weight: normal; line-height: 30px;">点击加载更多</span>
+                        </div>
+                    </div>
+                    <div class="agreenBtnBox">
+                        <input class="baseBtn agreenBtn blueBtn" type="button" value="提交申请" onclick="location.href = 'demandpublish.html'" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <!-- <link rel="stylesheet" type="text/css" href="Content/base.css"/>
+    <link rel="stylesheet" type="text/css" href="Content/custom.css"/>-->
+    <script type="text/javascript">
+        //加载角色
+        function GetlinkData() {
+            var searchObj = {
+                PageSize: "50",
+                PageNumber: 0,
+                KeyWord: ""
+            }
+            var parameter = {
+                requestUri: "/api/linklists",
+                requestParameters: searchObj
+            }
+            var jsonData = JSON.stringify(parameter);
+            $.ajax(
+               {
+                   type: "POST",
+                   url: "/api/proxy/post/anonymous",
+                   data: jsonData,
+                   dataType: "json",
+                   contentType: "application/json; charset=utf-8",
+                   success: function (data) {
+                       var results = data.results;
+                       totalRecords = data.totalCount;
+                       if (results != null && results != undefined && results.length > 0) {
+                           GetlinkHtml(results);
+                       } else {
+                           $('#linkBody').empty();
+                       }
+                       HideLoading();
+                   },
+                   error: function (err) {
+                       ErrorResponse(err);
+                       HideLoading();
+                   }
+               });
+        }
+        function GetlinkHtml(data) {
+            var htmlItem = "<li>友情链接：</li>";
+
+            for (i = 0; i < data.length; i++) {
+                htmlItem += "<li><a href=\"" + data[i].url + "\" target=\"_blank\">" + data[i].title + "</a></li>";
+            }
+            $('#linkBody').empty();
+            $('#linkBody').append(htmlItem);
+        }
+
+        $(function() {
+            GetlinkData();
+        });
+    </script>
+</head>
+<body>
+    <div class="bottom_div">
+        <div class="bottom_div_content">
+            <ul id="linkBody">
+                
+            </ul>
+            <div class="bottom_div_copyRight">
+                <span>版权所有：</span>
+                苏州工业园区科技发展有限公司 苏ICP备08101237号-2
+            </div>
+            <div class="bottom_div_TelDiv">
+                <span>传真：+86-512-62529777</span>
+                <span>邮箱：zsb@sispark.com.cn</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

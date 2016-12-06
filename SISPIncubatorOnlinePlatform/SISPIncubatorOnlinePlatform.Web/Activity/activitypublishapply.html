@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>活动发布申请</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/pc-style.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom-pc.css" />
+    <link href="../Content/select2.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/checkform.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/custom-pc.js"></script>
+    <script src="../Scripts/Activity/activitypublishapply.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../Scripts/mainMenu.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/laydate/laydate.js"></script>
+    <!-- 配置文件 -->
+    <script src="../Scripts/UEditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script src="../Scripts/UEditor/ueditor.all.js"></script>
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+    <script src="../Scripts/yanue.pop.js"></script>
+    <link href="../Content/poptips.css" rel="stylesheet" />
+    <script src="../Scripts/agreement.js"></script>
+
+</head>
+<body>
+    <div class="divTopNav"></div>
+    <!--List Invest Content Started-->
+    <div class="div-content In_div_list_content">
+        <div class="main-content">
+            <div class="content-div">
+                <div class="base-title">活动发布申请</div>
+                <table class="layout-table">
+                    <tr>
+                        <td>
+                            <div class="left">
+                                <label class="ipt-txt">公司名称</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" isrequired="true" maxlength="50" id="companyName" type="text" />
+                                    <div class="ipt-enter-tips hide">公司名称不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="right">
+                                <label class="ipt-txt">地址</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" isrequired="true" maxlength="100" id="address" type="text" />
+                                    <div class="ipt-enter-tips hide">地址不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="left">
+                                <label class="ipt-txt">邮箱</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" isrequired="true" ctype="Email" maxlength="50" id="email" type="text" />
+                                    <div class="ipt-enter-tips hide">邮箱不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="right">
+                                <label class="ipt-txt">联系电话</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" isrequired="true" id="phone" maxlength="16" type="text" ctype="Phone" />
+                                    <div class="ipt-enter-tips hide">联系电话不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="left">
+                                <label class="ipt-txt">活动主题</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" isrequired="true" id="topic" maxlength="50" type="text" />
+                                    <div class="ipt-enter-tips hide">活动主题不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="left">
+                                <label class="ipt-txt">主办方</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" isrequired="true" id="sponsor" maxlength="50" type="text" />
+                                    <div class="ipt-enter-tips hide">主办方不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="right">
+                                <label class="ipt-txt">协办方</label>
+                                <input class="ipt-enter ipt-sm left" id="cosponsor" maxlength="50" type="text" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="left">
+                                <label class="ipt-txt">开始日期</label>
+                                <div class="left">
+                                    <input id="startTime" class="ipt-enter ipt-sm date-ipt" readonly="readonly" isrequired="true" type="text" />
+                                    <div class="ipt-enter-tips hide" id="startTimefailInfo">开始日期不能为空！</div>
+                                </div>
+                                <input id="hiddenStartTime" type="hidden">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="right">
+                                <label class="ipt-txt">结束日期</label>
+                                <div class="left">
+                                    <input id="endTime" class="ipt-enter ipt-sm date-ipt" readonly="readonly" isrequired="true" type="text" />
+                                    <div class="ipt-enter-tips hide" id="endTimefailInfo">结束日期不能为空！</div>
+                                </div>
+                                <input id="hiddenEndTime" type="hidden">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="left">
+                                <label class="ipt-txt">时间段</label>
+                                <div class="left">
+                                    <input class="ipt-enter ipt-sm" id="timeBucket" isrequired="true" maxlength="50" type="text" />
+                                    <div class="ipt-enter-tips hide">时间段不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="left">
+                                <label class="ipt-txt">所属行业</label>
+                                <div>
+                                    <div id="industry"></div>
+                                    <div class="ipt-enter-tips hide" style="margin-left:85px" id="industryfailInfo">所属行业不能为空！</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="ipt-Title">备注</div>
+                            <textarea class="textarea-enter" id="remark"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <!-- 加载编辑器的容器 -->
+                            <div class="ipt-Title">活动内容简介</div>
+                            <script id="container" name="content" type="text/plain" style="position: relative;z-index: 1;">
+
+                            </script>
+                        </td>
+                    </tr>
+                </table>
+                <div class="tipsTxt">
+                    <div class="tipsTitle">注：</div>
+                    <table class="tipsTable"></table>
+                </div>
+                <div class="agreement-box">
+                    <input class="check-ipt" onclick=" ClickAgree(this) " type="checkbox" checked="checked">
+                    <label class="check-txt" onclick="OpenAgreement()" style="cursor: pointer">已阅读并同意协议</label>
+                    <div style="font-weight: bold;color: red;text-align: left">特别提醒：注册用户或使用、接受本网站提供的一切服务时，请您仔细阅读本条款。如用户勾选“已阅读并同意协议”，即表示您与苏州工业园区科技发展有限公司已达成协议，除非违反国家强制性法律，否则始终有效，这其中包括苏州工业园区科技发展有限公司对服务条款适时做的任何修改。 </div>
+                </div>
+                <div class="btn-box" style="margin-top: 20px;">
+                    <input id="hidApplyId" type="hidden" />
+                    <button class="base-btn sm-btn bule-btn space25" id="aSubmit" onclick="SubmitForm(); ">提交</button>
+
+                    <button class="base-btn sm-btn space25" onclick="ActivityCancel();">取消</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="divTopFlag"></div>
+    <!--List Invest Content Ended-->
+    <div class="div_treeBottom"></div>
+    <div id="divFoot"></div>
+    <input type="hidden" id="hidCallbackFunc" value="InitMyActivityData" />
+</body>
+</html>

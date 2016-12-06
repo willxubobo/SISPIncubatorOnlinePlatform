@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>成功案例</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/pc-style.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom-pc.css" />
+    <link href="../Content/select2.css" rel="stylesheet" />
+    <link href="../Content/Jcrop.min.css" rel="stylesheet" type="text/css" />
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/checkform.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/custom-pc.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/laydate/laydate.js"></script>
+    <script src="../Scripts/select2.js"></script>
+    <!-- 配置文件 -->
+    <script src="../Scripts/UEditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script src="../Scripts/UEditor/ueditor.all.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/JqueryCrop/Jcrop.min.js" type="text/javascript"></script>
+    <script src="../Scripts/SuccessCase/successfulcase.js"></script>
+
+</head>
+    <body style="background-color: #f2f4f5;">
+        <div class="divTopNav"></div>
+        <input type="hidden" id="userId" />
+        <input type="hidden" id="X" />
+        <input type="hidden" id="Y" />
+        <input type="hidden" id="W" />
+        <input type="hidden" id="H" />
+        <input type="hidden" id="hidlogourl" />
+        <input type="hidden" id="hidxy" />
+        <input type="hidden" id="hidradio" />
+        <div class="wrap">
+            <div id="divTopMenu" class="divTopMenu"></div>
+            <div class="content">
+                <div class="main">
+                    <div>
+                        <div class="breadcrumb-nav">
+                            <ul class="bn-list">
+                                <li>成功案例管理</li>
+                                <li class="bn-spacer"></li>
+                                <li class="last-menu">成功案例发布</li>
+                            </ul>
+                        </div>
+                        <div class="main-content">
+                            <div class="content-div">
+                                <div class="base-title">成功案例</div>
+                                <table class="layout-table">
+                                    <tr>
+                                        <td style="width: 420px">
+                                            <div class="left">
+                                                <label class="ipt-txt">标题</label>
+                                                <div class="left">
+                                                    <input class="ipt-enter ipt-sm" isrequired="true" maxlength="50" id="title" type="text" />
+                                                    <div class="ipt-enter-tips hide">标题不能为空！</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="right">
+                                                <label class="ipt-txt">类别</label>
+                                                <div class="news-select-box right">
+                                                    <select id="statusSelectIpt" class="news-select selectIpt" style="width:325px"></select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 420px">
+                                            <div class='checkDiv hide'>
+                                                <label class='ipt-txt'>首页显示</label>
+                                                <div class="left">
+                                                    <input class='baseCheckBox' id="isShow" style="margin-top:18px" type='checkbox' />
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 420px">
+                                            <div class="left">
+                                                <label class="ipt-txt">图片</label>
+                                                <div class="left">
+                                                    <div class="add-img-btn croplogo" onclick="showUploadPropg();"></div>
+                                                    <div class="ipt-enter-tips hide logotip" style="clear: both;">图片不能为空!</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <!-- 加载编辑器的容器 -->
+                                            <div class="ipt-Title">内容</div>
+                                            <script id="container" name="content" type="text/plain" style="position: relative;z-index: 1;">
+
+                                            </script>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="agreement-box">
+                                    <input class="check-ipt" onclick=" ClickAgree(this) " type="checkbox" checked="checked">
+                                    <label class="check-txt" onclick="OpenAgreement()" style="cursor: pointer">已阅读并同意协议</label>
+                                </div>
+                                <div class="btn-box" style="margin-top: 20px;">
+                                    <input id="hidApplyId" type="hidden" />
+                                    <button class="base-btn sm-btn bule-btn space25" id="aSubmit" onclick="PostSuccessFulCase(); ">提交</button>
+
+                                    <button class="base-btn sm-btn space25" onclick="CaseCancel();">取消</button>
+                                </div> 
+                            </div>
+                            <div class="popup-div prologodiv hide">
+                                <div class="popup-bg"></div>
+                                <div class="popup-content center uploaddivsize">
+                                    <div class="popup-main-content relative white-bg">
+                                        <div class="img-change-box">
+                                            <div class="apply-settled-title">上传图片</div>
+                                            <div class="change-img">
+                                                <div class="left-file-area">
+                                                    <div class="view-file-box">
+                                                        <a class="viewImgBtn left" href="javascript:;">浏览本地文件</a>
+                                                        <input class="view-file-btn" id="fileprologo" type="file" name="fileprologo" onchange="UploadPropg();" />
+                                                        <span class="add-tips-txt left">（*上传图片不超过1M）</span>
+                                                    </div>
+                                                </div>
+                                                <div class="right-img-area imgprologoreviewdd"></div>
+                                            </div>
+                                            <div class="change-img-btn-box">
+                                                <a class="change-operate-btn right" href="javascript:" onclick="hideuploadpropg();">取消</a>
+                                                <a class="change-operate-btn bule-btn right" href="javascript:" onclick="cropprologofile();">确定</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="hidimgname" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

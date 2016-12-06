@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>活动报名统计</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/pc-style.css" />
+    <link href="../Content/keleyidivpager.css" rel="stylesheet" />
+    <link href="../Content/select2.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/checkform.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/custom-pc.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../Scripts/keleyidivpager.js"></script>
+    <script src="../Scripts/Activity/activitystats.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+</head>
+<body style="background-color: #f2f4f5;">
+    <div class="wrap">
+        <div id="divTopMenu" class="divTopMenu"></div>
+        <div class="content">
+            <div class="main">
+                <div class="divLeftNav"></div>
+                <div class="right-area">
+                    <div class="breadcrumb-nav">
+                        <ul class="bn-list">
+                            <li>活动管理</li>
+                            <li class="bn-spacer"></li>
+                            <li class="last-menu">活动发布审核</li>
+                        </ul>
+                    </div>
+                    <div class="activities-box">
+                        <div class="tab-content-box">
+                            <div class="tab-content">
+                                <div class="tab-filtrate-box">
+                                    <div class="search-box tab-search-style right" id="divActivity">
+                                        <input class="search-ipt" type="text" id="txtkeyword" placeholder="关键字">
+                                        <input type="hidden" id="searchActivityValue">
+                                        <div class="search-btn" onclick="SearchActivityData();"></div>
+                                        <input type="hidden" id="enteractivityfunction" value="SearchActivityData" />
+                                    </div>
+                                </div>
+                                <div class="base-table-box tableStyle">
+                                    <table class="base-table">
+                                        <thead>
+                                            <tr>
+                                                <th>活动主题</th>
+                                                <th>活动日期</th>
+                                                <th>报名人数</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="activityBody"></tbody>
+                                    </table>
+                                    <div id='divNodata' style="display: none;">
+                                        <div class="no-result-img"></div>
+                                        <div style='text-align: center; margin-top: 5px; margin-bottom: 10px'>暂无数据</div>
+                                    </div>
+                                </div>
+                                <div class="page-box">
+                                    <div id="div_pager" class="div_pager">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

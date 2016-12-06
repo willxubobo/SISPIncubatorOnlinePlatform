@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>孵化器详情</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css?V2016062701"/>
+    <script src="../Scripts/jquery-2.2.2.min.js?V2016062701"></script>
+    <script src="../Scripts/base.js?V2016062701"></script>
+    <script src="../Scripts/jquery-ui.min.js?V2016062701"></script>
+    <script src="../Scripts/jquery.touchSwipe.js?V2016062701"></script>
+    <script src="../Scripts/resize.js?V2016062701"></script>
+    <script src="../Scripts/checkform.js?V2016062701"></script>
+    <script src="../Scripts/jquery.alert.js?V2016062701"></script>
+    <script src="../Scripts/publicjs.js?V2016062701"></script>
+    <script src="../Scripts/Incubator/incubatorinfo.js?V2016062701"></script>
+    <script src="../Scripts/mainMenu.js?V2016062701"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js?V2016062701"></script>
+    <script type="text/javascript" src="../Scripts/WeChat/initweixinsdk.js?V2016062701"></script>
+    <script src="../Scripts/baidu.js?V2016062701"></script>  
+</head>
+<body style="background-color: #f1f4f9;">
+    <div class="wrap">
+        <div class="content">
+            <div class="businessInfo minHeight">
+                <div class="clear"></div>
+                <div class="businessHeadPic">
+                    <img src="" class="imgIncubatorLogo" alt="" />
+                </div>
+                <a href="#" onclick="SetIncubatorApply();" class="entryBtn"><span>入驻申请</span></a>
+                <div class="businessInfoBox">
+                    <p class="businessInfoTxt pAddress"></p>
+                    <p class="businessInfoTxt pFoundDate"></p>
+                    <p class="businessInfoTxt pFinancialSupport"></p>
+                    <p class="businessInfoTxt pOtherServices"></p>
+                </div>
+                <div class="businessInfoTitle">
+                    <div class="lineBg"></div>
+                    <div class="infoTitleLinkBox">
+                        <div class="infoLineBg"></div>
+                        <div class="infoTitle infoTitleOne curTitle"><div>信息介绍</div></div>
+                        <div class="infoTitle infoTitleTwo"><div>招孵信息</div></div>
+                        <div class="infoTitle infoTitleThree"><div>项目信息</div></div>
+                    </div>
+                </div>
+                <div class="businessTxtBox">
+                    <div class="businessTxtContent">
+                        <p class="pIncubatorInfo businessTxt"></p>
+                    </div>
+                    <div class="businessTxtContent divIncubatorInformation">
+
+                    </div>
+                    <div class="businessTxtContent">
+                        <div class="project">
+                            <div class="projectInfoTabs">
+                                <a class="projectTabs quarter on" href="javascript:;">已注册</a>
+                                <a class="projectTabs quarter" href="javascript:;">孵化中</a>
+                                <a class="projectTabs quarter" href="javascript:;">孵化完成</a>
+                                <a class="projectTabs quarter" href="javascript:;">寻求融资</a>
+                            </div>
+                            <div class="projectBox">
+                                <div class="projectBoxContent divRegistered">
+                                  
+                                </div>
+                                <div class="projectBoxContent divHatching">
+                                    
+                                </div>
+                                <div class="projectBoxContent divIncubatored">
+                                    
+                                </div>
+                                <div class="projectBoxContent divSeekFinancing">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: none">
+                <input type="text" id="incubatorId" />
+                <input type="text" id="incubatorName" />
+                <input type="text" id="incubatorLogo" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿.divSearchLayout .Inc_searchInput_div{
+    margin: 10px auto 0px auto !important;
+}
+.divSearchLayout{
+    height:100px !important;
+}
+.divSearchLayout .Inc_divSearch_content{
+   height:100px !important;
+}
+.divSearchLayout .Inc_searchInput_divIcon{
+    height:40px !important;
+}
+.ser_divtable {
+    width: 100%;
+}
+ .ser_divtable td {
+      width: 18%;
+}
+
+.ser_div_searchContent {
+border-bottom: 1px solid #dcdcdc;
+}
+#industry{
+    width: 100%;
+    padding-left: 85px;
+    padding-top: 13px;
+}
+.checkDiv{
+    margin-bottom: 8px;
+}
+.baseCheckBox{
+    vertical-align: middle;
+}
+.checkBoxTxt{
+        font-size: 14px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.tab-title-Incubator {
+    width: 148px;
+    height: 42px;
+    float: left;
+    /* border: 1px solid #01abf4; */
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    /* color: #01abf4; */
+    cursor: pointer;
+    /* margin-left: -1px; */
+}
+.table_servicedemand td{
+    vertical-align:top;
+    padding:10px 0;
+}

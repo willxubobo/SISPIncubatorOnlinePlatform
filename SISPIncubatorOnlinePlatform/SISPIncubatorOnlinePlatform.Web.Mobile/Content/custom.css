@@ -1,0 +1,181 @@
+﻿.myfollowlist {
+    width: 100%;
+    background-color: #fff;
+}
+
+.investorcomlogo {
+    width: 90px;
+    height: 90px;
+}
+
+.comlogo {
+    width: 270px;
+    height: 202px;
+}
+
+.mobillineheight {
+    line-height: 38px;
+}
+
+.mobileheight {
+    height: 38px;
+}
+
+.comlogoheight {
+    height: 54px;
+}
+
+#btncode {
+    font-family: Arial;
+    font-style: italic;
+    font-weight: bold;
+    border: 0;
+    letter-spacing: 2px;
+    color: blue;
+    cursor: pointer;
+}
+
+.baseCheckBox {
+    width: 14px;
+    height: 14px;
+    float: left;
+    vertical-align: middle;
+    margin: 12px;
+}
+
+.checkDiv {
+    height: 38px;
+}
+
+.checkBoxTxt {
+    vertical-align: middle;
+    line-height: 38px;
+    color: #2c4e7b;
+}
+
+.startDateIpt, .endDateIpt {
+    width: 45%;
+}
+
+.dateTimeBox {
+    position: relative;
+    width: 100%;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    color: #2c4e7b;
+}
+
+.startDateIpt {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.endDateIpt {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.tipsTitle {
+    font-size: 14px;
+    line-height: 25px;
+    color: #e90000;
+}
+
+.tipsTable {
+    width: 100%;
+}
+
+    .tipsTable td {
+        padding: 5px 0;
+        line-height: 22px;
+        color: #2c4e7b;
+    }
+
+.verifycodefailInfo {
+    padding: 8px 0 0;
+    line-height: 20px;
+    color: #e90000;
+    font-size: 14px;
+    width: 195px;
+}
+
+.expired {
+    color: #9dacc1;
+}
+
+.activityBtn {
+    width: 78px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+}
+
+.radioBtnBox {
+    width: 100%;
+    overflow: hidden;
+}
+
+    .radioBtnBox li {
+        float: left;
+        width: 70%;
+        padding: 5px;
+    }
+
+.registerIcon06 {
+    background: url(../images/05.png) no-repeat left center;
+    background-size: 20px 20px;
+}
+
+.registerIcon34 {
+    background: url(../images/34.png) no-repeat left center;
+    background-size: 20px 20px;
+}
+
+.registerIcon35 {
+    background: url(../images/35.png) no-repeat left center;
+    background-size: 20px 20px;
+}
+
+.companyFailInfo {
+    padding: 3px 0 0;
+    line-height: 20px;
+    color: #e90000;
+    font-size: 14px;
+}
+
+.customQuitBtnBox {
+    width: 180px;
+    margin: 40px auto 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.demandDescription {
+    background: #1d9ee9;
+}
+
+.demandTxtBox {
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.moneyUnit {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    width: 85px;
+    border-radius: 3px;
+    height: 38px;
+    top: 0;
+    padding-left: 15px;
+    line-height: 38px;
+    color: #506e94;
+    font-size: 13px;
+}
+
+.mbsc-lv-mobiscroll .mbsc-lv-item {
+    margin-top: 0px !important;
+}

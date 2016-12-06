@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>举办孵化器活动申请</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css?V2016062701" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.2.13.2.css?V2016062701"/>
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css?V2016062701" />
+    <script src="../Scripts/jquery-2.2.2.min.js?V2016062701"></script>
+    <script src="../Scripts/jquery-ui.min.js?V2016062701"></script>
+    <script src="../Scripts/jquery.touchSwipe.js?V2016062701"></script>
+    <script src="../Scripts/resize.js?V2016062701"></script>
+    <script src="../Scripts/base.js?V2016062701"></script>
+    <script src="../Scripts/mobiscroll.2.13.2.js?V2016062701"></script>
+    <script src="../Scripts/jquery.alert.js?V2016062701"></script>
+    <script src="../Scripts/publicjs.js?V2016062701"></script>
+    <script src="../Scripts/checkform.js?V2016062701"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js?V2016062701"></script>
+    <script type="text/javascript" src="../Scripts/WeChat/initweixinsdk.js?V2016062701"></script>
+    <script src="../Scripts/Activity/incubatoractivityapply.js?V2016062701"></script>
+    <script src="../Scripts/mainMenu.js?V2016062701"></script>
+    <script src="../Scripts/baidu.js?V2016062701"></script>  
+</head>
+<body style="background-color: #f1f4f9;">
+    <div class="wrap">
+        <div class="content">
+            <div class="registerBox">
+                <div class="registerList">
+                    <div class="infoBox registerIcon05">公司名称</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt" type="text" maxlength="50" id="companyName" isrequired="true" />
+                        <div class="failInfo hide">公司名称不能为空！</div>
+                    </div>
+                </div>
+                <div class="registerList">
+                    <div class="infoBox registerIcon06">地址</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt" type="text" maxlength="200" id="address" isrequired="true" />
+                        <div class="failInfo hide">地址不能为空！</div>
+                    </div>
+                </div>
+                <div class="registerList">
+                    <div class="infoBox registerIcon04">邮箱</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt" type="text" id="email" maxlength="50" isrequired="true" ctype="Email" />
+                        <div class="failInfo hide">邮箱不能为空！</div>
+                    </div>
+                </div>
+                <div class="registerList">
+                    <div class="infoBox registerIcon02">联系电话</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt" type="text" id="phone" pattern="[0-9]*" maxlength="11" isrequired="true" ctype="Phone" />
+                        <div class="failInfo hide">联系电话不能为空！</div>
+                    </div>
+                </div>
+                <div class="registerList">
+                    <div class="infoBox registerIcon27">活动主题</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt" type="text" id="topic" maxlength="50" isrequired="true" />
+                        <div class="failInfo hide">活动主题不能为空！</div>
+                    </div>
+                </div>
+                <div class="registerList">
+                    <div class="infoBox registerIcon29">主办方</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt" type="text" id="sponsor" maxlength="200" isrequired="true" />
+                        <div class="failInfo hide">主办方不能为空！</div>
+                    </div>
+                </div>
+                <div class="registerList">
+                    <div class="infoBox registerIcon01">协办方</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt" type="text" id="cosponsor" maxlength="200" placeholder="选填" />
+                    </div>
+                </div>
+                <div class="registerList">
+                    <div class="infoBox registerIcon19">参会人数</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt" type="number" pattern="[0-9]*" onkeyup="clearNoNum(this)" id="member" isrequired="true" />
+                        <div class="failInfo hide">参会人数不能为空！</div>
+                    </div>
+                </div>
+                <div class="registerList">
+                    <div class="infoBox registerIcon17">所属行业</div>
+                    <div class="registerIptBox" id="industry">
+                    </div>
+                    <div class="failInfo hide" style="padding-left: 105px" id="industryfailInfo">所属行业没有选择！</div>
+                </div>
+                <div class="registerList">
+                    <div class="infoBox registerIcon21">开始日期</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt birthdayIpt" type="text" id="startTime" isrequired="true" />
+                        <div class="failInfo hide">开始日期不能为空！</div>
+                    </div>
+                    <input id="hiddenStartTime" type="hidden">
+                </div>
+                <div class="registerList">
+                    <div class="infoBox registerIcon21">结束日期</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt birthdayIpt" type="text" id="endTime" isrequired="true" />
+                        <div class="failInfo hide">结束日期不能为空！</div>
+                    </div>
+                    <input id="hiddenEndTime" type="hidden">
+                </div>
+                <div class="registerList">
+                    <div class="infoBox registerIcon21">时间段</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt" type="text" id="timeBucket" maxlength="50" isrequired="true" value="全天" />
+                        <div class="failInfo hide">时间段不能为空！</div>
+                    </div>
+                </div>
+                <div class="registerList">
+                    <div class="infoMaxBox registerIcon09">活动内容简介</div>
+                    <div class="baseIptBox">
+                        <textarea class="baseTA" style="height: 100px;" id="activitydescription" isrequired="true"></textarea>
+                        <div class="failInfo hide">活动内容简介不能为空！</div>
+                    </div>
+                </div>
+                <div class="registerList">
+                    <div class="infoBox FHQ">场地需求</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt" type="text" id="demandforspace" isrequired="true" />
+                        <div class="failInfo hide">场地需求不能为空！</div>
+                    </div>
+                </div>
+                <div class="registerList">
+                    <div class="infoBox registerIcon28">所需车位</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt" type="text" id="demandforstall" isrequired="true" />
+                        <div class="failInfo hide">所需车位不能为空！</div>
+                    </div>
+                </div>
+                <div class="registerList">
+                    <div class="infoBox registerIcon26">免费物品</div>
+                    <div class="registerIptBox" id="freeItem">
+                    </div>
+                </div>
+                <div class="registerList">
+                    <div class="infoBox registerIcon22">收费物品</div>
+                    <div class="registerIptBox" id="chargeItem">
+                    </div>
+                </div>
+                <div class="registerList incubatorAddBox">
+                    <div class="infoMaxBox registerIcon13">活动图片</div>
+                    <div class="baseIptBox">
+                        <ul class="incubatorList">
+                            <li>
+                                <a class="addIncubatorBtn" href="javascript:;" onclick="GetImagePics();"></a>
+                            </li>
+                        </ul>
+                        <input type="hidden" id="delImgs">
+                        <div class="failInfo hide" id="imgfailInfo">活动图片不能为空！</div>
+                    </div>
+                </div>
+                <div class="tipsTxt">
+                    <div class="tipsTitle">注：</div>
+                    <table class="tipsTable">
+
+                    </table>
+                </div>
+                <div class="registerRules">
+                    <a class="agreeBtn on" href="javascript:;"></a>
+                    <label class="rulesTxt" onclick="protocalpage();">已阅读并同意协议</label>
+                    <div style="font-weight: bold;color: red;text-align: left">特别提醒：注册用户或使用、接受本网站提供的一切服务时，请您仔细阅读本条款。如用户勾选“已阅读并同意协议”，即表示您与苏州工业园区科技发展有限公司已达成协议，除非违反国家强制性法律，否则始终有效，这其中包括苏州工业园区科技发展有限公司对服务条款适时做的任何修改。 </div>
+                </div>
+
+                <div class="registerBtnBox">
+                    <button class="baseBtn registerBtn blueBtn left" type="button" onclick="PostActivity()">提交申请</button>
+                    <button class="baseBtn registerBtn darkBlueBtn right" type="button" onclick="location.href = 'calendar.html'">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

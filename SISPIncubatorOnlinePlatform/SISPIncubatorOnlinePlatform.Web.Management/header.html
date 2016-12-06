@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/resize.js"></script>
+    <link rel="stylesheet" type="text/css" href="Content/base.css" />
+    <link href="Content/custom.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.2.2.min.js"></script>
+    <script src="Scripts/jquery-ui.min.js"></script>
+    <script src="Scripts/resize.js"></script>
+    <script src="Scripts/base.js"></script>
+    <script src="Scripts/jquery.alert.js"></script>
+    <script src="Scripts/publicjs.js"></script>
+
+</head>
+<body>
+    <div id="divHeader" class="header">
+        <div class="user">
+            <div class="main relative">
+                <div class="logo"></div>
+                <div class="user-login">
+                    <div class="user-box left">
+                        <p class="user-name left">Hello!<span id="uname"></span></p>
+                        <a class="logout left" href="javascript:">退出</a>
+                    </div>
+                    <div class="user-img left">
+                        <div class="user-shade"></div>
+                        <img id="imgadminlogo" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="main">
+                <ul class="nav-list topmenu"></ul>
+            </div>
+        </div>
+        <div class="popupDiv divlogOutConfirm" style="display: none;">
+            <div class="center" style="width: 290px; height: 268px;">
+                <div class="popupBox padding45">
+                    <div class="quitTips">您确定要退出吗？</div>
+                    <div class="quitBtnBox">
+                        <input class="baseBtn registerBtn blueBtn left" type="button" id="btnOk" onclick=" LogOut() " value="确定" />
+                        <input class="baseBtn registerBtn darkBlueBtn right" onclick=" CloselogOutConfirm(); " type="button" id="btnCancel" value="取消">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

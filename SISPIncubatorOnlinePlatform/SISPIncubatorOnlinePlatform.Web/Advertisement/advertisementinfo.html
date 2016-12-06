@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>广告详情</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link href="../Content/pc-style.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/base.js"></script>
+
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script language="javascript" src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" language="javascript" src="../Scripts/custom.js"></script>
+    <script src="../Scripts/custom-pc.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+
+
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+    <script src="../Scripts/yanue.pop.js"></script>
+    <link href="../Content/poptips.css" rel="stylesheet" />
+
+    <!–[if lt IE9]>
+    <script src="../Scripts/html5.js"></script>
+    <![endif]–>
+
+    <script src="../Scripts/Advertisement/advertisementinfo.js"></script>
+</head>
+<body>
+    <div class="divTopNav"></div>
+    <div class="div-content">
+        <div class="main-content">
+            <div class="functional-area relative">
+                <div class="right-result-box" style="margin-left: 0px;">
+                    <table class="tableApproveContent" style="width: 100%;">
+                        <tr id="trShowImg" style="display: none;">
+                            <td colspan="4">
+                                <img id="imgShow" style="max-width: 100%; max-height: 400px;" />
+                            </td>
+                        </tr>
+                    </table>
+                    <input id="hidId" type="hidden" />
+                    <table class="tableApproveContent" style="width: 100%; min-height: 250px;">
+                        <tr>
+                            <td width="100" class="tdTitle">网络地址</td>
+                            <td colspan="3">
+                                <div class="max-ipt showInput" id="txtInternatImageUrl" maxlength="200" type="text"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tdTitle vertical-top">描述</td>
+                            <td colspan="3">
+                                <div class="max-ipt showInput" isrequired="true" id="txtDescription" maxlength="2000"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100" class="tdTitle">排序</td>
+                            <td>
+                                <div class="sm-ipt showInput" value="0" id="txtSort" isrequired="true" type="text"></div>
+                            </td>
+                            <td class="tdTitle">是否显示</td>
+                            <td><ul class="checkBtnBox ulCheckIsShow"><li><a class="agreeBtn on" href="javascript:;"></a><label class="rulesTxt lblotherServices"></label></li></ul></td>
+                        </tr>
+                        <tr>
+                            <td width="100" class="tdTitle">是否有效</td>
+                            <td><ul class="checkBtnBox ulIsEffective"><li><a class="agreeBtn btnEffective on" href="javascript:;"></a><label class="rulesTxt lblotherServices"></label></li></ul></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="tdTitle" style="vertical-align: top;">展示模块</td>
+                            <td colspan="3"><ul class="checkBtnBox ulShowModule"></ul></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divFoot"></div>
+</body>
+</html>

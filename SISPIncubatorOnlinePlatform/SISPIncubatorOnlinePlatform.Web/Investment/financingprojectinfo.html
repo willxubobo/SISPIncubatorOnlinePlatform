@@ -1,0 +1,100 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>融资项目详情</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/keleyidivpager.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/pc-style.css" />
+    <link href="../Content/puplic.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/common.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script language="javascript" src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" language="javascript" src="../Scripts/custom.js"></script>
+    <script language="javascript" src="../Scripts/keleyidivpager.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <!–[if lt IE9]>
+    <script src="../Scripts/html5.js"></script>
+    <![endif]–>
+    <script type="text/javascript">
+        $(window).scroll(function () {
+            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                //alert('鼠标已滚动到页面最下方，Append列表内容！');
+
+            }
+        });
+    </script>
+    <script src="../Scripts/Investment/financingprojectinfo.js"></script>
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+    <script src="../Scripts/Message/chartdialog.js"></script>
+    <script src="../Scripts/yanue.pop.js"></script>
+    <link href="../Content/poptips.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Top Nav Started -->
+    <div class="divTopNav"></div>
+    <!-- Top Nav Ended -->
+    <input type="hidden" id="hidfrid" class="hidfrid" />
+    <div class="In_div_list_content">
+        <div class="Info_divTop">
+            <div class="Info_divTopContent">
+                <div class="Info_DivScroll" style="text-align: center;border:1px solid #ccc;">
+                    <img id="fprojectlogo" alt="" class="fprojectlogo hide" onload="AutoResizeImage(595,379,this)" style="padding: 4px;">
+                </div>
+                <div class="Info_divIntro">
+                    <div id="ProductionName"></div>
+                    <div><span>所属行业：</span><span id="Industry"></span></div>
+                    <div><span>融资金额：</span><span id="FinancingAmount"></span>(万元)</div>
+                    <div class="webman">
+                        <div class="attentiondiv Info_divApplybtn attentionBtn left">关注</div>
+                        <div class="sessiondiv Info_divApplybtn sessionBtn right">站内信</div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!-- Top Info Content Ended-->
+        <div class="base-info-box">
+            <div class="BIB-title BIB-icon4">公司简介</div>
+            <div class="BIB-info-txt" id="CompanyDescription"></div>
+        </div>
+        <div class="base-info-box">
+            <div class="BIB-title BIB-icon1">产品简介</div>
+            <div class="BIB-info-txt" id="ProductionDescription"></div>
+        </div>
+        <div class="base-info-box">
+            <div class="BIB-title BIB-icon3">发展阶段</div>
+            <div class="BIB-info-txt" id="DevelopmentalStage"></div>
+        </div>
+        <div class="base-info-box">
+            <div class="BIB-title BIB-icon7">市场分析</div>
+            <div class="BIB-info-txt" id="MarketAnalysis"></div>
+        </div>
+        <div class="base-info-box">
+            <div class="BIB-title BIB-icon5">核心团队</div>
+            <div class="BIB-info-txt" id="CoreTeam"></div>
+        </div>
+        <div class="base-info-box">
+            <div class="BIB-title BIB-icon6">其他</div>
+            <div class="BIB-info-txt" id="OtherInfo"></div>
+        </div>
+    </div>
+    <div class="divTopFlag"></div>
+    <!--List Invest Content Ended-->
+    <div class="div_treeBottom"></div>
+    <div id="divFoot"></div>
+</body>
+</html>

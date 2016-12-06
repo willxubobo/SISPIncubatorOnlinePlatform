@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>办公室租赁审核列表</title>
+    <link href="../Content/base.css" rel="stylesheet" />
+    <link href="../Content/custom.css" rel="stylesheet" />
+    <link href="../Content/keleyidivpager.css" rel="stylesheet" />
+    <!--<link href="../Content/paging.css" rel="stylesheet" />-->
+    <link href="../Content/select2.css" rel="stylesheet"/>
+
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/select2.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/keleyidivpager.js"></script>
+
+    <!–[if lt IE9]>
+    <script src="../Scripts/html5.js"></script>
+    <![endif]–>
+    <script src="../Scripts/Office/officeapprovelist.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <style>
+        .select2-container .select2-selection--single {
+            padding: 7px 20px 8px 10px !important;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: block;
+            height: 35px !important;
+            user-select: none;
+            outline: none;
+            -webkit-user-select: none;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 35px !important;
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            width: 20px;
+        }
+    </style>
+
+</head>
+<body style="background-color: #f2f4f5;">
+    <div class="wrap">
+        <div id="divTopMenu" class="divTopMenu"></div>
+        <div class="content">
+            <div class="main">
+                <div class="divLeftNav"></div>
+                <div class="right-area">
+                    <div class="breadcrumb-nav">
+                        <ul class="bn-list">
+                            <li>办公室租赁</li>
+                            <li class="bn-spacer"></li>
+                            <li class="last-menu">审核管理</li>
+                        </ul>
+                       
+                    </div>
+                    <div class="module module-style">
+                        <div style="width: 200px; float: right;padding-top: 4px; margin-left: 10px;">
+                            <select style="width: 200px;" class="base-ipt sm-ipt selectIpt left selectStatus">
+                                <option selected="selected" value='1'>待审核</option>
+                                <option value='2'>审核通过</option>
+                                <option value='3'>审核驳回</option>
+                                <option value='4'>撤销</option>
+                            </select>
+                        </div>
+                        <div class="search-box tab-search-style right" style="margin-bottom: 5px;">
+                            <input class="search-ipt" type="text" id="txtkeyword" placeholder="关键字">
+                            <div class="search-btn" onclick=" Search() "></div>
+                        </div>
+                        <table class="base-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10%;">申请人</th>
+                                    <th style="width: 20%;">项目负责人</th>
+                                    <th style="width: 20%;">公司名称</th>
+                                    <th style="width: 15%;">申请日期</th>
+                                    <th style="width: 15%;">审核状态</th>
+                                    <th style="width: 20%;">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbBodyContent"></tbody>
+                        </table>
+                        <div id='divNodata' style="display: none;">
+                            <div class="no-result-img"></div>
+                            <div style='text-align: center; margin-top: 5px; margin-bottom: 10px'>暂无数据</div>
+                        </div>
+                        <div class="page-box">
+                            <div id="div_pager" class="divpager">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

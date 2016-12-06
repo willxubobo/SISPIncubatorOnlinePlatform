@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>完善资料</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css?V2016062701"/>
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css?V2016062701" />
+    <script src="../Scripts/jquery-2.2.2.min.js?V2016062701"></script>
+    <script src="../Scripts/jquery-ui.min.js?V2016062701"></script>
+    <script src="../Scripts/jquery.touchSwipe.js?V2016062701"></script>
+    <script src="../Scripts/resize.js?V2016062701"></script>
+    <script src="../Scripts/base.js?V2016062701"></script>
+    <script src="../Scripts/checkform.js?V2016062701"></script>
+    <script src="../Scripts/publicjs.js?V2016062701"></script>
+    <script src="../Scripts/Account/improveuserinfo.js?V2016062701"></script>
+    <script src="../Scripts/jquery.alert.js?V2016062701"></script>
+    <script src="../Scripts/mainMenu.js?V2016062701"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js?V2016062701"></script>
+    <script type="text/javascript" src="../Scripts/WeChat/initweixinsdk.js?V2016062701"></script>
+    <script src="../Scripts/baidu.js?V2016062701"></script>  
+</head>
+<body style="background-color: #f1f4f9;">
+    <input id="hidphone" type="hidden" class="hidphone" />
+    <div class="wrap">
+        <div class="content">
+            <div class="registerBox">
+                <input type="hidden" id="hiduserid" class="hiduserid" />
+                <input type="hidden" id="hidlocalid" class="hidlocalid" />
+                <input type="hidden" id="hidmedid" class="hidmedid" />
+                <div class="registerList comlogoheight">
+                    <div class="infoBox registerIcon05">头像</div>
+                    <div class="registerIptBox">
+                        <div class="baseIptBox">
+                            <div class="incubatorPic">
+                                <img alt="" id="imglogo"/>
+                            </div>
+                            <a class="addIncubatorBtn" href="javascript:;" onclick="GetPic();"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="registerList">
+                    <div class="infoBox registerIcon01">联系人</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt UserName" type="text" colname="UserName" maxlength="200" placeholder="请输入联系人" isrequired="true"/>
+                        <div class="failInfo hide">联系人不能为空！</div>
+                    </div>
+                </div>
+
+                <div class="registerList mobileheight">
+                    <div class="infoBox registerIcon02">手机号</div>
+                    <div class="registerIptBox mobillineheight" id="divphone">
+
+                    </div>
+                </div>
+
+                <div class="registerList codediv" style="display: none;">
+                    <div class="infoBox registerIcon03">验证码</div>
+                    <div class="registerIptBox">
+                        <div class="authCodeBox">
+                            <input class="registerIpt Code" maxlength="6" type="number" pattern="[0-9]*" placeholder="请输入验证码"/>
+                        </div>
+                        <input id="btnSendCode" class="authCodeBtn" style="cursor: pointer;" type="button" value="发送验证码" onclick="SendValidateCode(); return false;"/>
+
+                    </div>
+                </div>
+
+                <div class="registerList">
+                    <div class="infoBox registerIcon04">电子邮箱</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt Email" type="email" maxlength="150" colname="Email" placeholder="请输入电子邮件" isrequired="true" ctype="Email"/>
+                        <div class="failInfo hide">电子邮箱不能为空！</div>
+                    </div>
+                </div>
+
+                <div class="registerList">
+                    <div class="infoBox registerIcon05">个人/企业</div>
+                    <div class="registerIptBox cptype">
+                        <!--<button class="registerRadio person" onclick="settype('个人'); return false;">个人</button>
+        <button class="registerRadio bussiness" onclick="settype('企业'); return false;">企业</button>-->
+                    </div>
+                    <input type="hidden" id="hidutype" class="hidutype" value="个人"/>
+                </div>
+                <div class="registerList mobileheight hide companyuser">
+                    <div class="infoBox registerIcon05">公司名称</div>
+                    <div class="registerIptBox mobillineheight CompanyName">
+
+                    </div>
+                </div>
+                <div class="registerList comlogoheight hide companyuser">
+                    <div class="infoBox registerIcon05">营业执照</div>
+                    <div class="registerIptBox">
+                        <div class="baseIptBox">
+                            <div class="incubatorPic">
+                                <img alt="" class="linenseimg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="registerList comlogoheight hide companyuser">
+                    <div class="infoBox registerIcon05">身份证</div>
+                    <div class="registerIptBox">
+                        <div class="baseIptBox">
+                            <div class="incubatorPic">
+                                <img alt="" class="cardimg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="registerList mobileheight hide companyuser">
+                    <div class="infoBox registerIcon05">备注</div>
+                    <div class="registerIptBox mobillineheight Description">
+
+                    </div>
+                </div>
+                
+                <div class="registerList">
+                    <div class="infoBox registerIcon06">联系地址</div>
+                    <div class="registerIptBox">
+                        <textarea class="registerTA Address" colname="Address" maxlength="500" placeholder="请输入联系地址" isrequired="true"></textarea>
+                        <div class="failInfo hide">联系地址不能为空！</div>
+                    </div>
+                </div>
+
+                <div class="registerBtnBox">
+                    <button class="baseBtn registerBtn blueBtn left" type="button" onclick="saveform(); return false;">保存</button>
+                    <button class="baseBtn registerBtn darkBlueBtn right" type="button" onclick="location.href = 'myprofile.html'; return false;">取消</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

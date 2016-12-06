@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>融资项目详情</title>
+    <link href="../Content/base.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link href="../Content/pc-style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../Content/keleyidivpager.css" />
+    <link href="../Content/puplic.css" rel="stylesheet" />
+
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="../Scripts/custom.js"></script>
+    <script type="text/javascript" src="../Scripts/custom-pc.js?14"></script>
+    <script src="../Scripts/keleyidivpager.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+
+    <script src="../Scripts/Investment/financingprojectdetail.js"></script>
+    <script src="../Scripts/yanue.pop.js"></script>
+    <link href="../Content/poptips.css" rel="stylesheet" />
+</head>
+<body>
+
+<!--List Content Started-->
+<div class="divTopNav"></div>
+<div class="div-content">
+    <div class="main-content">
+        <div class="functional-area relative">
+            <div id="divLeftNav">
+            </div>
+            <div class="right-result-box">
+                <table class="tableApproveContent">
+                    <tbody>
+                    <tr>
+                        <td class="tdTitle" valign="top" style="vertical-align: middle;">公司Logo：</td>
+                        <td colspan="3">
+                            <img id="financingdetailcomlogo" alt="" class="financingdetailcomlogo vimgborder hide" onload="AutoResizeImage(200, 200, this)" style="margin-top: 5px;">
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="tdTitle">产品名称：</td>
+                            <td colspan="3">
+                                <div class="showInput" id="ProductionName"></div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="tdTitle">所属行业：</td>
+                        <td>
+                            <div class="showInput" id="Industry"></div></td>
+                        <td class="tdTitle">融资金额：</td>
+                        <td>
+                            <div class="showInput" id="FinancingAmount"></div></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="tdContentInfo">
+                            <p>公司简介：</p>
+                            <p id="CompanyDescription">
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="tdContentInfo">
+                            <p>产品简介：</p>
+                            <p id="ProductionDescription"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="tdContentInfo">
+                            <p>发展阶段：</p>
+                            <p id="DevelopmentalStage"></p>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="tdContentInfo">
+                            <p>市场分析:</p>
+                            <p id="MarketAnalysis"></p>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="tdContentInfo">
+                            <p>核心团队:</p>
+                            <p id="CoreTeam"></p>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="tdContentInfo">
+                            <p>其他:</p>
+                            <p id="OtherInfo"></p>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4" class="tdBtnAction">
+                            <div>
+                                <!--<div>返回</div>-->
+                                <input type="hidden" id="hidfrid" class="hidfrid"/>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--List Content Ended-->
+        <!--List Invest Content Ended-->
+        <input id="hidCallbackFunc" value="initfinancingprojectdetail" type="hidden" />
+    </div>
+</div>
+<!--List Content Ended-->
+<div id="divFoot"></div>
+</body>
+
+</html>

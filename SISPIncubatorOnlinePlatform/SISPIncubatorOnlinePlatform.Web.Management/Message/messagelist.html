@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>孵化器管理列表</title>
+    <link href="../Content/base.css" rel="stylesheet" />
+    <link href="../Content/custom.css" rel="stylesheet" />
+    <link href="../Content/keleyidivpager.css" rel="stylesheet" />
+    <!--<link href="../Content/paging.css" rel="stylesheet"/>-->
+
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/keleyidivpager.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+    <script src="../Scripts/uploadfile.js"></script>
+
+    <!–[if lt IE9]>
+    <script src="../Scripts/html5.js"></script>
+    <![endif]–>
+    <script src="../Scripts/Message/messgaelist.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+</head>
+<body style="background-color: #f2f4f5;">
+    <form>
+
+        <div class="wrap">
+            <div id="divTopMenu" class="divTopMenu"></div>
+            <div class="content">
+                <div class="main">
+                    <div class="divLeftNav"></div>
+
+                    <div class="right-area">
+                        <div class="breadcrumb-nav">
+                            <ul class="bn-list">
+                                <li>消息管理</li>
+                                <li class="bn-spacer"></li>
+                                <li class="last-menu">消息管理</li>
+                            </ul>
+                            <div class="btn-box bn-btn">
+                                <a class="base-btn blue-btn  sm-btn" style="margin-left: 5px;" onclick=" DeleteMsgSelect() " href="#">删除</a>
+                            </div>
+                        </div>
+                        <div class="module module-style">
+                            <table class="base-table">
+                                <thead>
+                                    <tr>
+                                        <th><input class="base-checkbox chkAll" onclick=" ChkAll(this) " type="checkbox"></th>
+                                        <th style="width: 40%;">内容</th>
+                                        <th style="width: 20%;">发送人</th>
+                                        <th style="width: 15%;">创建日期</th>
+                                        <th style="width: 15%;">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbBodyContent"></tbody>
+                            </table>
+                            <div id='divNodata' style="display: none;">
+                                <div class="no-result-img"></div>
+                                <div style='text-align: center; margin-top: 5px; margin-bottom: 10px'>暂无数据</div>
+                            </div>
+                            <div class="page-box">
+                                <div id="div_pager" class="divpager">
+                                </div>
+                            </div>
+                            <input id="hidIds" type="hidden" />
+                        </div>
+                        <div class="popupDiv divConfirm" style="display: none;">
+                            <div class="center" style="width: 290px; height: 268px;">
+                                <div class="popupBox padding45">
+                                    <div class="quitTips">您确定要执行【删除】操作吗？</div>
+                                    <div class="quitBtnBox">
+                                        <input class="baseBtn registerBtn blueBtn left" style="cursor: pointer" type="button" id="btnOk" onclick=" DeleteMsg() " value="确定" />
+                                        <input class="baseBtn registerBtn darkBlueBtn right" style="cursor: pointer" onclick=" CloseConfirm(); " type="button" id="btnCancel" value="取消">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popup-div divMessageDetail" style="display: none;">
+                            <div class="popup-bg"></div>
+                            <div class="popup-content center" style="width: 625px; position: fixed; z-index: 101; top: 306px; left: 232.5px;">
+                                <div class="popup-main-content padding20 white-bg">
+                                    <div class="edit-activity-box" style="padding: 20px">
+                                        <table style="width: 100%;" class="agreementContent"></table>
+                                    </div>
+                                    <div class="btn-box padding45">
+                                        <a class="base-btn sm-btn space25" onclick=" CancelMessageDetail(); " href="javascript:;">取消</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css?V2016062701" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css?V2016062701" />
+    <script src="../Scripts/jquery-2.2.2.min.js?V2016062701"></script>
+    <script src="../Scripts/jquery-ui.min.js?V2016062701"></script>
+    <script src="../Scripts/jquery.touchSwipe.js?V2016062701"></script>
+    <script src="../Scripts/resize.js?V2016062701"></script>
+    <script src="../Scripts/base.js?V2016062701"></script>
+    <script src="../Scripts/checkform.js?V2016062701"></script>
+    <script src="../Scripts/checkcode.js?V2016062701"></script>
+    <script src="../Scripts/jquery.cookie.js?V2016062701"></script>
+    <script src="../Scripts/publicjs.js?V2016062701"></script>
+    <script src="../Scripts/Account/register.js?V2016062701"></script>
+    <script src="../Scripts/jquery.alert.js?V2016062701"></script>
+    <script src="../Scripts/mainMenu.js?V2016062701"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js?V2016062701"></script>
+    <script type="text/javascript" src="../Scripts/WeChat/initweixinsdk.js?V2016062701"></script>
+    <script src="../Scripts/baidu.js?V2016062701"></script>  
+</head>
+<body style="background-color: #f1f4f9;">
+    <div class="wrap">
+        <div class="content">
+            <div class="registerBox">
+
+                <div class="registerList">
+                    <div class="infoBox registerIcon01">微信昵称</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt nickname" type="text" maxlength="200" readonly="readonly" />
+                    </div>
+                </div>
+
+                <div class="registerList">
+                    <div class="infoBox registerIcon01">联系人</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt UserName" type="text" colname="UserName" maxlength="200" isrequired="true" />
+                        <div class="failInfo hide">联系人不能为空！</div>
+                    </div>
+                </div>
+
+                <div class="registerList">
+                    <div class="infoBox registerIcon02">手机号</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt Mobile"  maxlength="11" colname="Mobile" isrequired="true" ctype="RegisterMobile" />
+                        <div class="failInfo hide">手机号不能为空！</div>
+                    </div>
+                </div>
+
+                <div class="registerList">
+                    <div class="infoBox registerIcon03">短信验证码</div>
+                    <div class="registerIptBox">
+                        <div class="authCodeBox">
+                            <input class="registerIpt Code" maxlength="6" type="number" pattern="[0-9]*" isrequired="true" />
+                            <div class="failInfo hide">验证码不能为空！</div>
+                        </div>
+                        <input id="btnSendCode" class="authCodeBtn" style="cursor: pointer;" type="button" value="发送验证码" onclick="SendValidateCode(); return false;" />
+                        <input id="hiddenSendCode" type="hidden">
+                    </div>
+                </div>
+
+                <div class="registerList">
+                    <div class="infoBox registerIcon04">电子邮箱</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt Email" type="email" maxlength="150" colname="Email" isrequired="true" ctype="Email" />
+                        <div class="failInfo hide">电子邮箱不能为空！</div>
+                    </div>
+                </div>
+
+                <div class="registerList">
+                    <div class="infoBox registerIcon05">个人/企业</div>
+                    <div class="registerIptBox">
+                        <button class="registerRadio person on" onclick="settype('个人'); return false;">个人</button>
+                        <button class="registerRadio bussiness" onclick="settype('企业'); return false;">企业</button>
+                    </div>
+                    <input type="hidden" id="hidutype" class="hidutype" value="个人" />
+                </div>
+
+                <div class="registerList companyuser hide">
+                    <div class="infoBox registerIcon05">公司名称</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt CompanyName" type="text" colname="CompanyName" maxlength="500" onblur="checkcomname()" />
+                        <div class="failInfo hide CompanyNameTip">公司名称不能为空！</div>
+                    </div>
+                </div>
+
+                <input type="hidden" id="hidlocalid" class="hidlocalid" />
+                <input type="hidden" id="hidmedid" class="hidmedid" />
+                <div class="registerList companyuser hide">
+                    <div class="infoBox registerIcon05">营业执照</div>
+                    <div class="registerIptBox">
+                        <div class="baseIptBox">
+                            <div class="incubatorPic">
+                                <img alt="" id="imglogo" class="imglogo hide">
+                            </div>
+                            <a class="addIncubatorBtn" href="javascript:;" onclick="GetLicensePic();"></a>
+                        </div>
+                        <div class="failInfo hide comLicenselogo">营业执照不能为空！</div>
+                    </div>
+                </div>
+
+                <input type="hidden" id="hidcardlocalid" class="hidcardlocalid" />
+                <input type="hidden" id="hidcardmedid" class="hidcardmedid" />
+                <div class="registerList companyuser hide">
+                    <div class="infoBox registerIcon05">身份证</div>
+                    <div class="registerIptBox">
+                        <div class="baseIptBox">
+                            <div class="incubatorPic">
+                                <img alt="" id="imgcardlogo" class="imgcardlogo hide">
+                            </div>
+                            <a class="addIncubatorBtn" href="javascript:;" onclick="GetCardPic();"></a>
+                        </div>
+                        <div class="failInfo hide comcardlogo">身份证不能为空！</div>
+                    </div>
+                </div>
+
+                <div class="registerList companyuser hide">
+                    <div class="infoBox registerIcon25">备注</div>
+                    <div class="registerIptBox">
+                        <textarea class="registerTA Description" colname="Description" maxlength="500"></textarea>
+                    </div>
+                </div>
+
+                <div class="registerList">
+                    <div class="infoBox registerIcon06">联系地址</div>
+                    <div class="registerIptBox">
+                        <textarea class="registerTA Address" colname="Address" maxlength="500" isrequired="true"></textarea>
+                        <div class="failInfo hide">联系地址不能为空！</div>
+                    </div>
+                </div>
+
+                <div class="registerList">
+                    <div class="infoBox registerIcon07">登录密码</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt Password" maxlength="20" type="password" colname="Password" isrequired="true" ctype="loginpwd" />
+                        <div class="failInfo hide">登录密码不能为空！</div>
+                    </div>
+                </div>
+
+                <div class="registerList">
+                    <div class="infoBox registerIcon07">确认密码</div>
+                    <div class="registerIptBox">
+                        <input class="registerIpt SurePwd" type="password" maxlength="20" isrequired="true" ctype="surepwd" />
+                        <div class="failInfo hide">确认密码不能为空！</div>
+                    </div>
+                </div>
+
+                <div class="registerList randomcode hide">
+                    <div class="infoBox registerIcon03">验证码</div>
+                    <div class="registerIptBox">
+                        <div class="infoEnterIptBox">
+                            <input class="registerIpt rdmcode" type="text" id="txtcode" maxlength="5" />
+                            <div class="failInfo hide">验证码不能为空！</div>
+                        </div>
+                        <span class="unitTxt"><input type="button" id="btncode" onclick="createCode()" /></span>
+                    </div>
+                </div>
+                <div class="registerRules">
+                    <a class="agreeBtn on" href="javascript:;"></a>
+                    <label class="rulesTxt" onclick="protocalpage();">已阅读并同意协议</label>
+                    <div style="font-weight: bold;color: red;text-align: left">特别提醒：注册用户或使用、接受本网站提供的一切服务时，请您仔细阅读本条款。如用户勾选“已阅读并同意协议”，即表示您与苏州工业园区科技发展有限公司已达成协议，除非违反国家强制性法律，否则始终有效，这其中包括苏州工业园区科技发展有限公司对服务条款适时做的任何修改。 </div>
+                </div>
+                <div class="registerBtnBox">
+                    <button class="baseBtn registerBtn blueBtn left" type="button" onclick="PostRegister(); return false;">注册</button>
+                    <button class="baseBtn registerBtn darkBlueBtn right" type="button" onclick="backlogin(); return false;">取消</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

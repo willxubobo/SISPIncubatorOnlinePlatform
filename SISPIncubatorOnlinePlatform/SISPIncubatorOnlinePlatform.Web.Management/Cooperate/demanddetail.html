@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>需求详情</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/pc-style.css" />
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/checkform.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/custom-pc.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../Scripts/Cooperate/demanddetail.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+</head>
+<body style="background-color: #f2f4f5;">
+    <div class="wrap">
+        <div id="divTopMenu" class="divTopMenu"></div>
+        <div class="content">
+            <div class="main">
+                <div>
+                    <div class="breadcrumb-nav">
+                        <ul class="bn-list">
+                            <li>需求管理</li>
+                            <li class="bn-spacer"></li>
+                            <li class="last-menu">需求详情</li>
+                        </ul>
+                    </div>
+                    <div class="main-content">
+                        <div class="IncD_divCompany">
+                            <div class="IncD_divCompany_Content">
+                                <table class="IncD_tableTitle">
+                                    <tr>
+                                        <td rowspan="5" class="tdImg">
+                                            <img id="headImg" src="" />
+                                        </td>
+                                        <td colspan="2" class="tdCompanyTitle" id="companyName"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdContent" id="contact"></td>
+                                        <td class="tdContent">联系电话：<label id="phone"></label></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="tdContent" id="foundedTime"></td>
+                                        <td class="tdContent" id="member"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="tdContent">邮箱：<span id="email"></span></td>
+                                        <td class="tdContent" id="expiryDate"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdContent" id="category"></td>
+                                        <td class="tdContent"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <!--Company Title Info Ended-->
+                        <!--Introduction Content Started-->
+                        <div class="base-info-box">
+                            <div class="BIB-title BIB-icon1">基本信息</div>
+                            <div class="BIB-info-title">意向合作对象</div>
+                            <div class="BIB-info-txt" id="intentionPartner"></div>
+                            <div class="BIB-info-title">项目简介</div>
+                            <div class="BIB-info-txt" id="projectDescription"></div>
+                            <div class="BIB-info-title">需求简介</div>
+                            <div class="BIB-info-txt" id="demandDescription"></div>
+                        </div>
+                        <table class="tableApproveContent">
+                            <tr id="trApproveRecord">
+                                <td colspan="4" class="tdTitle2">审批记录</td>
+                            </tr>
+                            <tr id="trApproveCommment">
+                                <td colspan="4" class="tdTitle2">审批意见</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="tdApproveComment">
+                                    <textarea id="txtComments" maxlength="100"></textarea>
+                                    <div class="ipt-enter-tips hide">审批意见不能为空！</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="tdBtnAction">
+                                    <div>
+                                        <div class="divApproveBtn" onclick="UpdateApprove('2')">通过</div>
+                                        <div class="divReworkBtn" onclick="UpdateApprove('3')">退回</div>
+                                        <div onclick=" window.close();">返回</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

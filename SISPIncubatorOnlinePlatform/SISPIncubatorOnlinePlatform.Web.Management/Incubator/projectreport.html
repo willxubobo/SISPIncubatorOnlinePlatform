@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>项目统计</title>
+    <link href="../Content/base.css" rel="stylesheet" />
+    <link href="../Content/custom.css" rel="stylesheet" />
+    <link href="../Content/keleyidivpager.css" rel="stylesheet" />
+    <!--<link href="../Content/paging.css" rel="stylesheet"/>-->
+
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/keleyidivpager.js"></script>
+    <script src="../Scripts/JqueryCrop/ajaxfileupload.js"></script>
+
+
+    <!–[if lt IE9]>
+    <script src="../Scripts/html5.js"></script>
+    <![endif]–>
+    <script src="../Scripts/Incubator/projectreport.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+</head>
+<body style="background-color: #f2f4f5;">
+    <form>
+        <div class="wrap">
+            <div id="divTopMenu" class="divTopMenu"></div>
+            <div class="content">
+                <div class="main">
+                    <div class="divLeftNav"></div>
+                    <div class="right-area">
+                        <div class="breadcrumb-nav">
+                            <ul class="bn-list">
+                                <li>孵化器</li>
+                                <li class="bn-spacer"></li>
+                                <li class="last-menu">项目统计</li>
+                            </ul>
+                            <div class="btn-box bn-btn">
+
+                            </div>
+                        </div>
+                        <div class="module module-style">
+                            <div class="btn-box right" style="margin-top: 5px; margin-right: 10px; margin-bottom: 5px;">
+                                <a class="base-btn blue-btn sm-btn" onclick="ExportExcel()" href="#">导出</a>
+                            </div>
+                            <table class="base-table">
+                                <thead>
+                                <tr>
+                                    <!--<th><input class="base-checkbox chkAll" onclick=" ChkAll(this) " type="checkbox"></th>-->
+                                    <th style="width: 15%;">名称</th>
+                                    <th style="width: 15%;">描述</th>
+                                    <th style="width: 15%;">已注册</th>
+                                    <th style="width: 15%;">孵化中</th>
+                                    <th style="width: 15%;">孵化完成</th>
+                                    <th style="width: 15%;">寻求融资</th>
+                                    <th style="width: 10%;">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbBodyContent"></tbody>
+                            </table>
+                            <div id='divNodata' style="display: none;">
+                                <div class="no-result-img"></div>
+                                <div style='text-align: center; margin-top: 5px; margin-bottom: 10px'>暂无数据</div>
+                            </div>
+                            <div class="page-box">
+                                <div id="div_pager" class="divpager">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>孵化器详情</title>
+    <link href="../Content/base.css" rel="stylesheet" />
+    <link href="../Content/custom.css" rel="stylesheet" />
+    <link href="../Content/keleyidivpager.css" rel="stylesheet" />
+    <!--<link href="../Content/paging.css" rel="stylesheet" />-->
+
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/keleyidivpager.js"></script>
+
+    <!–[if lt IE9]>
+    <script src="../Scripts/html5.js"></script>
+    <![endif]–>
+    <script src="../Scripts/Incubator/incubatorinfo.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div id="divTopMenu" class="divTopMenu"></div>
+        <div class="content">
+            <div class="main">
+
+                <div class="breadcrumb-nav">
+                    <ul class="bn-list">
+                        <li>孵化器管理</li>
+                        <li class="bn-spacer"></li>
+                        <li class="last-menu">详情</li>
+                    </ul>
+                </div>
+                <div class="module module-style">
+                    <!-- Top Info Content Started-->
+                    <div class="Info_divTop">
+                        <div class="Info_divTopContent" style="height: auto; margin-bottom: 25px;">
+                            <div class="Info_DivScroll" style="width: 450px; height: 450px;">
+                                <img style="width: 450px; height: 450px;" id="imgIncubatorLogo">
+                            </div>
+                            <div class="Info_divIntro" style="width: 460px;">
+                                <div id="divIncubatorName">公共孵化器</div>
+                                <div><span>资金支持：</span><span id="spanfinancialSupport"></span></div>
+                                <div><span>场地优惠：</span><span id="spanSiteFavorable"></span></div>
+                                <div><span>成立时间：</span><span id="spanregTime"></span></div>
+                                <div><span>孵化服务：</span><span id="spanService"></span></div>
+                                <div><span>其他服务：</span><span id="spanOtherService"></span></div>
+                                <div><span>运营地址：</span><span id="spanOperationAddress"></span></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <!-- Top Info Content Ended-->
+                    <!--Description Content Started-->
+                    <div class="Info_divDes">
+                        <div class="Info_divDes_Content">
+                            <div class="Info_div_Intro">
+                                <div></div>
+                                <div class="Info_div_Intro_Content">
+                                    <p class="p1">孵化器简介</p>
+                                    <p class="p2" id="pIncubatorDes"></p>
+                                </div>
+                            </div>
+                            <div class="Info_div_Recruit">
+                                <div></div>
+                                <div class="Info_div_Recruit_Content">
+                                    <p class="">项目行业要求</p>
+                                    <p class="" id="pIndustryRequirement"></p>
+                                    <p class="">项目所在地要求</p>
+                                    <p class="" id="pLocationRequirement"></p>
+                                    <p class="">其他要求</p>
+                                    <p id="pOtherRequirement"></p>
+                                </div>
+                            </div>
+                            <div class="Info_div_Project">
+                                <div></div>
+                                <div class="Info_div_Project_Content">
+                                    <div>
+                                        <div class="tabs-title-box">
+                                            <a class="tab-title-admin base-btn sm-btn space25 tab-cur" style="width: 128px;height: 42px;line-height: 40px;" >已注册</a>
+                                            <a class="tab-title-admin base-btn sm-btn space25" style="width: 128px;height: 42px;line-height: 40px;" >孵化中</a>
+                                            <a class="tab-title-admin base-btn sm-btn space25" style="width: 128px;height: 42px;line-height: 40px;" >孵化完成</a>
+                                            <a class="tab-title-admin base-btn sm-btn space25" style="width: 128px;height: 42px;line-height: 40px;" >寻求融资</a>
+                                        </div>
+                                        <div class="tabs-content-box tabs-layout">
+                                            <div class="tabs-content divRegistered" style="padding: 0 30px">
+                                            </div>
+                                            <div class="tabs-content divHatching" style="padding: 0 30px; display: none;">
+                                            </div>
+                                            <div class="tabs-content divIncubatored" style="padding: 0 30px; display: none;">
+                                            </div>
+                                            <div class="tabs-content divSeekFinancing" style="padding: 0 30px; display: none;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-box operate-btn-box" style="margin-top: 20px;">
+                    <a class="base-btn lg-btn space15" href="javascript:window.close();">关闭</a>
+                </div>
+                <div style="display: none">
+                    <input type="text" id="incubatorId" />
+                    <input type="text" id="incubatorName" />
+                    <input type="text" id="incubatorLogo" />
+                    <input id="hidCallbackFunc" type="hidden" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

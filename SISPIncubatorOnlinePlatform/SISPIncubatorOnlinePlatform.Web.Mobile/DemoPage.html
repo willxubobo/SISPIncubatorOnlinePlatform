@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.2.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function PostTest() {
+            var parameter = {
+                "requestUri": "/api/officeapply",
+                "requestParameters": {
+                    "$id": "1",
+                    "OfficeApply": {
+                        "$id": "2",
+                        "ProjectOwner": "",
+                        "Gender": "男的",
+                        "Degree": null,
+                        "Specialty": null,
+                        "Address": "江苏省苏州市工业园区",
+                        "PhoneNumber": null,
+                        "Email": "sisp@163.com",
+                        "Diplomas": null,
+                        "IntellectualProperty": null,
+                        "CompanyName": "SISP",
+                        "RegisteredCapital": null,
+                        "DemandForSpace": null,
+                        "InitialStaff": null,
+                        "ApproveRecord": [],
+                        "OfficeApplyWorkExperience": [
+                            {
+                                "$id": "3",
+                                "SchoolOrEmployer": "wewewew",
+                                "JobTitle": null,
+                                "OfficeApply": null
+                            },
+                            {
+                                "$id": "4",
+                                "SchoolOrEmployer": "hhhhkhkh",
+                                "JobTitle": null,
+                                "OfficeApply": null
+                            }
+                        ],
+                        "User": null
+                    }
+                }
+            };
+
+            var parameterJson = JSON.stringify(parameter);
+
+            $.ajax({
+                type: "post",
+                dataType: 'json',
+                contentType: "application/json; charset=utf-8",
+                url: "/api/proxy/post",
+                data: parameterJson,
+                success: function (result) {
+                    if (result.returnCode == 0) {
+                        alert("新增成功！");
+                    }
+                },
+                error: function (result) {
+                    if (result.status == "401") {
+                        alert("请先登录本系统！");
+                    }
+                }
+            });
+        }
+
+        function LoginTest() {
+            var authInfo = {
+                "mobile": $("#txtMobile").val(),
+                "password": $("#txtPassword").val()
+            };
+
+            var parameterJson = JSON.stringify(authInfo);
+            $.ajax({
+                type: "post",
+                dataType: 'json',
+                contentType: "application/json; charset=utf-8",
+                url: "/api/proxy/auth",
+                data: parameterJson,
+                success: function (result) {
+
+                },
+                error: function (result) {
+                    if (result) {
+                        alert(result.statusText);
+                    }
+                }
+            });
+        }
+    </script>
+    <style type="text/css">
+        .auto-style1 {
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <table class="auto-style1">
+        <tr>
+            <td style="width: 100px">手机号码：</td>
+            <td>
+                <input type="text" id="txtMobile" /></td>
+        </tr>
+        <tr>
+            <td>密码：</td>
+            <td>
+                <input type="text" id="txtPassword" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" id="btnLogin" value="Login" onclick="LoginTest();" /></td>
+        </tr>
+    </table>
+
+    <input type="button" id="btnTest" value="Test" onclick="PostTest();" />
+</body>
+</html>

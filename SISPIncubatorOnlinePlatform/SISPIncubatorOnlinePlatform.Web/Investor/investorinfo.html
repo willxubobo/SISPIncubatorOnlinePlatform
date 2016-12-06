@@ -1,0 +1,84 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>投资机构详情</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/pc-style.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/mobiscroll.custom-2.17.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link href="../Content/puplic.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/common.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/mobiscroll.custom-2.17.0.min.js"></script>
+    <script language="javascript" src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" language="javascript" src="../Scripts/custom.js"></script>
+    <script type="text/javascript" language="javascript" src="../Scripts/checkform.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/yanue.pop.js"></script>
+    <link href="../Content/poptips.css" rel="stylesheet" />
+    <!–[if lt IE9]>
+    <script src="../Scripts/html5.js"></script>
+    <![endif]–>
+    <script type="text/javascript">
+        $(window).scroll(function () {
+            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                // alert('鼠标已滚动到页面最下方，Append列表内容！');
+
+            }
+        });
+    </script>
+    <script src="../Scripts/Investor/investorinfo.js"></script>
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/Account/login.js"></script>
+    <script src="../Scripts/Account/register.js"></script>
+    <script src="../Scripts/Account/retrievepassword.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+    <script src="../Scripts/Message/chartdialog.js"></script>
+    <script src="../Scripts/WeChat/qrcode.js"></script>
+</head>
+
+<body><input type="hidden" id="hidCallbackFunc" class="hidCallbackFunc" value="initinvestorinfodata" />
+    <!-- Top Nav Started -->
+    <div class="divTopNav"></div>
+    <!-- Top Nav Ended -->
+    <input type="hidden" id="hidfrid" class="hidfrid" />
+    <!-- Top Info Content Started-->
+    <div class="Info_divTop">
+        <div class="Info_divTopContent In_div_list_content">
+            <div class="Info_DivScroll" style="text-align: center;border:1px solid #ccc;">
+                <img id="investorcomlogo" alt="" class="investorcomlogo hide" onload="AutoResizeImage(595,379,this)" style="padding: 4px;">
+            </div>
+            <div class="Info_divIntro">
+                <div id="CompanyName"></div>
+                <div><span>投资领域：</span><span id="InvestmentField"></span></div>
+                <div><span>基金规模：</span><span id="FundScale"></span></div>
+                <div><span>投资阶段：</span><span id="InvestmentStage"></span></div>
+                <div><span>投资人姓名：</span><span id="InvestorName"></span></div>
+                <div class="showemail"><span>邮箱：</span><span id="Email"></span></div>
+                <div><span>公司地址：</span><span id="Address"></span></div>
+                <div class="webman">
+                    <div class="attentiondiv Info_divApplybtn attentionBtn left">关注</div>
+                    <div class="sessiondiv Info_divApplybtn sessionBtn right">站内信</div>
+                </div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!-- Top Info Content Ended-->
+
+    <div class="base-info-box">
+        <div class="BIB-title BIB-icon2">投资案例</div>
+        <div class="BIB-info-txt" id="InvestmentCase"></div>
+    </div>
+    <div class="divTopFlag"></div>
+    <!--List Invest Content Ended-->
+    <div class="div_treeBottom"></div>
+    <div id="divFoot"></div>
+</body>
+</html>

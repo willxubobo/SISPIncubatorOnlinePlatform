@@ -1,0 +1,89 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>友情链接管理</title>
+    <link rel="stylesheet" type="text/css" href="../Content/base.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/superSlide.css" />
+    <link href="../Content/paging.css" rel="stylesheet" />
+    <link href="../Content/keleyidivpager.css" rel="stylesheet" />
+    <link href="../Content/select2.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-2.2.2.min.js"></script>
+    <script src="../Scripts/jquery-ui.min.js"></script>
+    <script src="../Scripts/resize.js"></script>
+    <script src="../Scripts/base.js"></script>
+    <script src="../Scripts/checkform.js"></script>
+    <script src="../Scripts/jquery.alert.js"></script>
+    <script src="../Scripts/publicjs.js"></script>
+    <script src="../Scripts/custom-pc.js"></script>
+    <script src="../Scripts/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../Scripts/select2.js"></script>
+    <script src="../Scripts/keleyidivpager.js"></script>
+    <script src="../Scripts/paging.js"></script>
+    <script src="../Scripts/Link/linkmanagement.js"></script>
+    <script src="../Scripts/loadHeaderFooter.js"></script>
+</head>
+<body style="background-color: #f2f4f5;">
+    <div class="wrap">
+        <div id="divTopMenu" class="divTopMenu"></div>
+        <div class="content">
+            <div class="main">
+                <div class="divLeftNav"></div>
+                <div class="right-area">
+                    <div class="breadcrumb-nav">
+                        <ul class="bn-list">
+                            <li>基础数据管理</li>
+                            <li class="bn-spacer"></li>
+                            <li class="last-menu">友情链接管理</li>
+                        </ul>
+                        
+                    </div>
+                    <div class="tab-filtrate-boxman">
+                        <div class="search-box tab-search-style right">
+                            <input class="search-ipt" type="text" id="txtkeyword" placeholder="关键字">
+                            <input type="hidden" id="searchServiceValue">
+                            <div class="search-btn" onclick="GetlinkData(1, 0);"></div>
+                        </div>
+                        <div class="manageraddbtn right">
+                            <a class="base-btn blue-btn sm-btn" href="javascript:" onclick="window.open('addlink.html');">添加友情链接</a>
+                        </div>
+                    </div>
+                    <div class="base-table-box tableStyle">
+                        <table class="base-table">
+                            <thead>
+                                <tr>
+                                    <th>标题</th>
+                                    <th>链接地址</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="linkBody"></tbody>
+                        </table>
+                        <div id='divNodata' style="display: none;">
+                            <div class="no-result-img"></div>
+                            <div style='text-align: center; margin-top: 5px; margin-bottom: 10px'>暂无数据</div>
+                        </div>
+                    </div>
+                    <div class="page-box">
+                        <div id="div_pager" class="div_pager">
+                        </div>
+                    </div>
+                    <div class="popupDiv divConfirm" style="display: none;">
+                        <div class="center" style="width: 290px; height: 268px;">
+                            <div class="popupBox padding45">
+                                <div class="quitTips">您确定要执行【删除】操作吗？</div>
+                                <div class="quitBtnBox">
+                                    <input class="baseBtn registerBtn blueBtn left" type="button" id="btnOk" onclick="Dellink()" value="确定" />
+                                    <input class="baseBtn registerBtn darkBlueBtn right" onclick="CloseConfirm();" type="button" id="btnCancel" value="取消">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="hidid" class="hidid" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
